@@ -29,6 +29,19 @@ $fontConfig: (
   input: mat-typography-level(inherit, 1.125, 400, 'Roboto', 1.5px)
 );
 
+
+//NIE UZYWAC, a przynajmniej nie powinno się używać, pobierać za pomocą
+//map-get($mat-accent, main);
+// $mat-accent to nazwa zestawu, może być jeszcze np. $mat-primary, albo $mat-warn
+// main to nazwa koloru, może być main, lighter, darker itd.
+$primary:#33691e;
+$primary-lighter:#c2d2bc;
+$primary-lighter:#204c12;
+$accent:#ff6d00;
+$accent-lighter:#ffd3b3;
+$accent-darker:#ff5000;
+
+
 // Foreground Elements
 
 // Light Theme Text
@@ -156,6 +169,7 @@ body {
   --text-primary-lighter-color: #{$dark-primary-text};
   --text-primary-darker-color: #{$light-primary-text};
 }
+
 $mat-primary: (
   main: #33691e,
   lighter: #c2d2bc,
