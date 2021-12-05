@@ -46,7 +46,9 @@
 .hover12 {
   position: relative;
 }
-
+.changeFontButton{
+  size: 5rem;
+}
 .changeFontButton img{
   opacity: 1;
   -webkit-transition: .3s ease-in-out;
@@ -54,8 +56,18 @@
 }
 .changeFontButton:hover{
  /* opacity: .2;*/
-  filter: contrast(0.3);
+  filter: contrast(0.1);
 }
 
+.menuButtons{
+  color: map-get($mat-primary, main);
+}
 
-
+.icon-display-3 {
+  transform: scale(3);
+  margin: 0px 2rem 0px 14px;
+}
+.icon-display-2 {
+  transform: scale(2.5);
+  margin: 0px 2rem 0px 14px;
+}

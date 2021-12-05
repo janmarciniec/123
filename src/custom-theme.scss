@@ -30,10 +30,11 @@ $fontConfig: (
 );
 
 
-//NIE UZYWAC, a przynajmniej nie powinno się używać, pobierać za pomocą
-//map-get($mat-accent, main);
+//NIE UZYWAC, a przynajmniej nie powinno się używać tych bezpośrednich(bo są dodane ręcznie)
+// , pobierać za pomocą map-get($mat-accent, main);
 // $mat-accent to nazwa zestawu, może być jeszcze np. $mat-primary, albo $mat-warn
 // main to nazwa koloru, może być main, lighter, darker itd.
+//pamiętać o imporcie w scss @import "../../custom-theme.scss";
 $primary:#33691e;
 $primary-lighter:#c2d2bc;
 $primary-lighter:#204c12;

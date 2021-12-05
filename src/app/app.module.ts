@@ -8,11 +8,18 @@ import { MatMenuModule} from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon'
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { CategoryGridComponent } from './category-grid/category-grid.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    CategoryGridComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +27,10 @@ import {MatButtonModule} from '@angular/material/button';
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule,
+    MatInputModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

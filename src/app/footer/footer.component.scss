@@ -1,0 +1,56 @@
+@import "../../custom-theme.scss";
+
+.line1 {
+  position: absolute;
+  top: 10%;
+  left: 0%;
+  transform: translate(-0%, -50%);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.line2 {
+  position: absolute;
+  top: 30%;
+  left: 0%;
+  transform: translate(-0%, -50%);
+}
+.line3 {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-0%, -50%);
+}
+.line4 {
+  position: absolute;
+  top: 70%;
+  left: 0%;
+  transform: translate(-0%, -50%);
+}
+.line5 {
+  position: absolute;
+  top: 90%;
+  left: 0%;
+  transform: translate(-0%, -50%);
+}
+
+.column0{
+  transform: translate(5%, -50%);
+}
+
+.column1{
+  left: 30%;
+}
+.column2{
+  left: 40%;
+}
+.column3{
+  left: 50%;
+}
+.column4{
+  left: 60%;
+}
+
+.footer{
+  background-color: #f1ebeb;
+}
+

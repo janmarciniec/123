@@ -1,0 +1,53 @@
+@import "../../custom-theme.scss";
+
+.grid{
+  margin: 1em;
+}
+
+.gridItem{
+  background-color: #ece6e6;
+  position: absolute;
+  border-style: solid;
+  border-radius: 2rem;
+  border-width: 0.4rem;
+  border-color: map-get($mat-primary, main);
+  margin-outside: 1rem;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.gridItem:hover{
+  /* opacity: .2;*/
+  filter: contrast(0.4);
+  cursor: pointer;
+}
+
+.bottom {
+  position: absolute;
+  top: 80%;
+  text-align: center;
+  transform: translate(-0%, -50%);
+}
+
+.top{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title{
+  text-align: center;
+  font-style: inherit;
+  font-size: 2.5em;
+  font-weight: bold;
+  padding: 1rem;
+}

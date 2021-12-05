@@ -1,0 +1,113 @@
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 20px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+
+.content {
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+}
+
+svg.material-icons {
+  height: 24px;
+  width: auto;
+}
+
+svg.material-icons:not(:last-child) {
+  margin-right: 8px;
+}
+
+.card svg.material-icons path {
+  fill: #888;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.card {
+  all: unset;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  background-color: #fafafa;
+  height: 40px;
+  width: 200px;
+  margin: 0 8px 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+}
+
+@import "../custom-theme.scss";
+
+#search {
+  background-color: map-get($mat-primary, lighter);
+  padding: 2rem;
+  width: fit-content;
+  border-radius: 5rem;
+}
+
+.selector{
+  margin: 1rem;
+  background-color: white;
+  padding: 0px;
+}
+
+.roundedLeftBorders{
+  border-radius: 2rem 0 0 2rem;
+}
+
+.spacer {
+  flex: 1;
+}
+#flexContent{
+  display: flex;
+  align-items: flex-end;
+  margin: 2rem;
+}
+
+.searchInput{
+  margin: 1rem 0 1rem 1rem;
+  background-color: white;
+  padding: 0px;
+}
+.searchButton{
+  margin: 1rem 1rem 1rem 0rem;
+  background-color: map-get($mat-accent, main);;
+  padding: 20px;
+  border-radius: 0rem 2rem 2rem 0;
+  font-size: inherit;
+}

@@ -9,3 +9,38 @@
 <div #fontChange>
 <app-toolbar></app-toolbar>
 <!-- Toolbar -->
+<div id="flexContent">
+  <div class="spacer"></div>
+  <div id="search">
+    <!-- Kategoria - selector -->
+  <mat-form-field appearance="fill" class="selector roundedLeftBorders">
+    <mat-label>Kategoria</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let category of categories" [value]="category.value">
+        {{category.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+    <!-- Lokalizacja - selector -->
+  <mat-form-field appearance="fill" class="selector">
+    <mat-label>Lokalizacja</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let location of locations" [value]="location.value">
+        {{location.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+    <!-- wyszukiwarka - input -->
+    <mat-form-field appearance="fill" class="searchInput">
+      <mat-label>Wyszukaj</mat-label>
+      <input matInput type="search" placeholder="np. Passat" value="">
+    </mat-form-field>
+    <button mat-raised-button class="searchButton">
+    Wyszukaj
+    </button>
+  </div>
+
+</div>
+  <app-category-grid>
+  </app-category-grid>
+  <app-footer></app-footer>
