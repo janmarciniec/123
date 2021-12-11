@@ -111,3 +111,27 @@ svg.material-icons:not(:last-child) {
   border-radius: 0rem 2rem 2rem 0;
   font-size: inherit;
 }
+
+p {
+  font-family: Lato;
+}
+.fs-11 {
+  p,span, .otherClasses {
+    font-size: 11px;
+  }
+}
+.fs-12 {
+  p,span, .otherClasses {
+    font-size: 12px;
+  }
+}
+.fs-13 {
+  p,span, .otherClasses {
+    font-size: 13px;
+  }
+}
+.fs-14 {
+  p,span, .otherClasses {
+    font-size: 14px;
+  }
+}

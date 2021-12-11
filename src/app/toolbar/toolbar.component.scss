@@ -59,6 +59,16 @@
   filter: contrast(0.1);
 }
 
+.changeFontButton:hover{
+  /* opacity: .2;*/
+  filter: contrast(0.1);
+}
+
+.icon:hover{
+  filter: contrast(0.1);
+  cursor: pointer;
+}
+
 .menuButtons{
   color: map-get($mat-primary, main);
 }
@@ -70,4 +80,8 @@
 .icon-display-2 {
   transform: scale(2.5);
   margin: 0px 2rem 0px 14px;
+}
+
+.pointer:hover{
+  cursor: pointer;
 }

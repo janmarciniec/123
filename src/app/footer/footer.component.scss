@@ -1,5 +1,12 @@
 @import "../../custom-theme.scss";
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10rem;            /* Footer height */
+}
+
 .line1 {
   position: absolute;
   top: 10%;
@@ -53,4 +60,3 @@
 .footer{
   background-color: #f1ebeb;
 }
-
