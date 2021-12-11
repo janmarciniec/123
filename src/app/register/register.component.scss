@@ -1,0 +1,113 @@
+@import "../../custom-theme.scss";
+
+.round{
+  border-radius: 5rem;
+  background: map-get($mat-accent, main); //pobranie koloru main z mat-accent
+  font-size: 1rem;
+  padding: 1rem 2rem 1rem 2rem;
+  color: #e6ebf1;
+
+}
+.pointer:hover{
+  cursor: pointer;
+}
+
+body {
+  margin:50px 0px; padding:0px;
+  text-align:center;
+}
+#form {
+  text-align: center;
+  width: 50%;
+  padding: 2rem;
+  background-color: map-get($mat-primary, main);
+  border-radius: 5rem;
+  margin: 3rem 25%;
+}
+
+.input{
+  background-color: white;
+  margin: 1rem;
+  width: 60%;
+}
+
+.whiteFont{
+  color: white;
+}
+
+//made for good footer placing
+#content{
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 10rem;
+}
+#content.form{
+  display: block;
+  text-align: center;
+}
+
+::ng-deep .mat-checkbox.mat-accent {
+  .mat-checkbox-frame {
+  border-color: white;
+}
+}
+:host::ng-deep.mat-checkbox-layout{
+  white-space: normal !important;
+}
+::ng-deep .mat-checkbox-inner-container {
+  margin-top: 3px !important;
+  display: block !important;
+}
+.checkbox{
+  text-align: left;
+  margin-left: 15%;
+  margin-right: 10%;
+}
+
+.flex{
+  margin-top: 1rem;
+  display:flex;
+  justify-content: flex-end;
+}
+.spacer {
+  flex: 1;
+}
+.spacer-2 {
+  flex: 2.5;
+}
+#loginButton{
+  background-color: #f1ebeb;
+  color: black;
+  padding: 1rem 3rem 1rem 3rem;
+}
+
+#login{
+  text-align: center;
+  width: 50%;
+  padding: 2rem;
+  background-color: map-get($mat-primary, main);
+  border-radius: 5rem;
+  margin: 3rem 25%;
+  color: white;
+}
+
+.divider{
+  color: white;
+  background-color: white;
+  margin: 0 25% 1rem 25%;
+}
+
+.link{
+  color: #7b92e9;
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+.redStar{
+  color: red;
+}
+
+.title{
+  font-size: 3rem;
+  padding: 2rem;
+}

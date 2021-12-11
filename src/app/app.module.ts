@@ -13,13 +13,21 @@ import {MatInputModule} from '@angular/material/input';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { CategoryGridComponent } from './category-grid/category-grid.component';
 import { FooterComponent } from './footer/footer.component';
+import {AppRoutingModule} from './app-routing.module';
+import { RegisterComponent } from './register/register.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { GlobalVariableService } from './GlobalVariableService'
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     CategoryGridComponent,
-    FooterComponent
+    FooterComponent,
+    RegisterComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +38,12 @@ import { FooterComponent } from './footer/footer.component';
     MatButtonModule,
     MatSelectModule,
     MatInputModule,
-    MatGridListModule
+    MatGridListModule,
+    AppRoutingModule,
+    MatCheckboxModule,
+    MatDividerModule
   ],
-  providers: [],
+  providers: [GlobalVariableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

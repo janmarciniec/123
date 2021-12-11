@@ -1,21 +1,29 @@
-<mat-toolbar color="primary">
-
+<div>
+<mat-toolbar color="primary" #fontChange>
+  <a routerLink='/'>
   <img
   width="40"
   alt="Angular Logo"
   src="assets/img/tree.png"
-  aria-label="hide"/>
+  aria-label="hide"
+  />
+  </a>
   <span>Gumtree</span>
+
 
   <div class="spacer"></div>
 <mat-menu #appMenu="matMenu" class="menuButtons">
   <button mat-menu-item aria-label="Login button" class="menuButtons">Zaloguj</button>
-  <button mat-menu-item aria-label="Login button" class="menuButtons">Zarejestruj</button>
+  <button routerLink="/register" mat-menu-item aria-label="Login button" class="menuButtons">Zarejestruj</button>
 </mat-menu>
+  <mat-icon class="icon-display-2 icon">contrast</mat-icon>
 
-  <a (click)="getParrent().changeFont('-')" class="changeFontButton"><mat-icon class="icon-display-2">text_decrease</mat-icon></a>
-  <a (click)="getParrent().changeFont('+')" class="changeFontButton"><mat-icon class="icon-display-3">text_increase</mat-icon></a>
-
+<!--
+  <a (click)="getParrent().changeFont('-')" class="changeFontButton"><mat-icon class="icon-display-2 icon">text_decrease</mat-icon></a>
+  <a (click)="getParrent().changeFont('+')" class="changeFontButton"><mat-icon class="icon-display-3 icon">text_increase</mat-icon></a>
+-->
+  <a (click)="globalVariableService.changeFontSize('-')" class="changeFontButton"><mat-icon class="icon-display-2 icon">text_decrease</mat-icon></a>
+  <a (click)="globalVariableService.changeFontSize('+')" class="changeFontButton"><mat-icon class="icon-display-3 icon">text_increase</mat-icon></a>
 <!--
   <img class="changeFontButton" src="assets/img/icons8-decrease-font-50.png" (click)="getParrent().changeFont('-')">
   <img class="changeFontButton"src="assets/img/icons8-increase-font-50.png" (click)="getParrent().changeFont('+')">
@@ -24,16 +32,10 @@
     <mat-icon>account_circle</mat-icon>
     Moje Gumtree
   </button>
-
-
-
-
-
-
-  <button class="round" >Dodaj ogłoszenie</button>
-
+  <button class="round pointer" >Dodaj ogłoszenie</button>
 
 </mat-toolbar>
+</div>
 <!--
 <div class="toolbar" role="banner" xmlns="http://www.w3.org/1999/html">
 

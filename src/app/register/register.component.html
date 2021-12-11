@@ -1,0 +1,41 @@
+<div #fontChange id="content">
+<app-toolbar></app-toolbar>
+  <div id="form">
+    <h1 class="title"><span class="whiteFont">REJESTRACJA</span></h1>
+  <form class="example-form">
+    <mat-form-field class="input" appearance="fill">
+      <mat-label>Adres e-mail</mat-label>
+      <input matInput placeholder="np. adres@mail.com" type="email">
+    </mat-form-field>
+    <br/>
+    <mat-form-field class="input" appearance="fill">
+      <mat-label>Hasło</mat-label>
+      <input matInput type="password">
+    </mat-form-field>
+    <br/>
+    <mat-form-field class="input" appearance="fill">
+      <mat-label>Powtórz hasło</mat-label>
+      <input matInput type="password">
+    </mat-form-field>
+    <br/>
+    <section class="checkbox whiteFont">
+      <mat-checkbox class="example-margin"><span class="redStar">*</span>Oświadczam, że znam i akceptuję postanowienia regulaminu</mat-checkbox>
+    </section>
+    <section class="checkbox whiteFont">
+      <mat-checkbox class="example-margin">Tak, chcę aby Gumtree oraz firmy z rodziny Adiventa powiadamiały mnie o wydarzeniach, aktualnościach, nowych funkcjach i promocjach.</mat-checkbox>
+    </section>
+    <div class="flex">
+      <div class="spacer-2"></div>
+      <button class="round pointer right" id="loginButton" >Zarejestruj</button>
+      <div class="spacer"></div>
+    </div>
+  </form>
+  </div>
+  <div id="login">
+    <h1>Masz już konto?</h1>
+    <mat-divider class="divider"></mat-divider>
+    <h1><a routerLink="/register" class="link">Zaloguj się!</a></h1>
+  </div>
+<app-footer></app-footer>
+
+</div>
