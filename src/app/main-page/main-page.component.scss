@@ -112,9 +112,9 @@ svg.material-icons:not(:last-child) {
 .searchButton{
   margin: 1rem 1rem 1rem 0rem;
   background-color: map-get($mat-accent, main);
-  padding: 20px;
+  padding: 1.2rem;
   border-radius: 0rem 2rem 2rem 0;
-  font-size: inherit;
+  font-size: 1em;
 }
 //made for good footer placing
 #content{

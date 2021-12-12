@@ -19,6 +19,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { GlobalVariableService } from './GlobalVariableService'
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {MatDividerModule} from '@angular/material/divider';
     CategoryGridComponent,
     FooterComponent,
     RegisterComponent,
-    MainPageComponent
+    MainPageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,27 @@
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Subscription} from "rxjs";
+import {GlobalVariableService} from "../GlobalVariableService";
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
+})
+export class LoginComponent implements OnInit {
+
+  // @ts-ignore
+  subscription: Subscription;
+
+  // @ts-ignore
+  @ViewChild('fontChange', { static: true }) fontChange: ElementRef;
+
+  constructor(public globalVariableService: GlobalVariableService) {
+  }
+
+  ngOnInit(): void {
+    this.subscription = this.globalVariableService.fixedFontSize$
+      .subscribe(fixed => {
+        (this.fontChange.nativeElement as HTMLParagraphElement).style.fontSize = `${fixed}px`;
+      });
+  }
+}

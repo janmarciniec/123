@@ -10,24 +10,18 @@
   </a>
   <span>Gumtree</span>
 
-
   <div class="spacer"></div>
-<mat-menu #appMenu="matMenu" class="menuButtons">
-  <button mat-menu-item aria-label="Login button" class="menuButtons">Zaloguj</button>
-  <button routerLink="/register" mat-menu-item aria-label="Login button" class="menuButtons">Zarejestruj</button>
-</mat-menu>
-  <mat-icon class="icon-display-2 icon">contrast</mat-icon>
 
-<!--
-  <a (click)="getParrent().changeFont('-')" class="changeFontButton"><mat-icon class="icon-display-2 icon">text_decrease</mat-icon></a>
-  <a (click)="getParrent().changeFont('+')" class="changeFontButton"><mat-icon class="icon-display-3 icon">text_increase</mat-icon></a>
--->
+  <mat-icon class="icon-display-2 icon">contrast</mat-icon>
   <a (click)="globalVariableService.changeFontSize('-')" class="changeFontButton"><mat-icon class="icon-display-2 icon">text_decrease</mat-icon></a>
   <a (click)="globalVariableService.changeFontSize('+')" class="changeFontButton"><mat-icon class="icon-display-3 icon">text_increase</mat-icon></a>
-<!--
-  <img class="changeFontButton" src="assets/img/icons8-decrease-font-50.png" (click)="getParrent().changeFont('-')">
-  <img class="changeFontButton"src="assets/img/icons8-increase-font-50.png" (click)="getParrent().changeFont('+')">
--->
+
+  <mat-menu #appMenu="matMenu" class="menuButtons">
+    <button routerLink="/login" mat-menu-item aria-label="Login button" class="menuButtons">Zaloguj</button>
+    <button routerLink="/register" mat-menu-item aria-label="Register button" class="menuButtons">Zarejestruj</button>
+  </mat-menu>
+
+
   <button mat-raised-button [matMenuTriggerFor]="appMenu"class="menuButtons">
     <mat-icon>account_circle</mat-icon>
     Moje Gumtree
@@ -36,23 +30,3 @@
 
 </mat-toolbar>
 </div>
-<!--
-<div class="toolbar" role="banner" xmlns="http://www.w3.org/1999/html">
-
-  <span>Announcements Portal</span>
-
-  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
-  </mat-menu>
-
-  <div class="spacer"></div>
-  <img class="changeFontButton" src="assets/img/icons8-decrease-font-50.png" (click)="getParrent().changeFont('-')">
-  <img class="changeFontButton"src="assets/img/icons8-increase-font-50.png" (click)="getParrent().changeFont('+')">
-  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-
-  <button class="round">Dodaj ogłoszenie</button>
-</div>
-
--->
