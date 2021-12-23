@@ -1,5 +1,5 @@
 <div>
-<mat-toolbar color="primary" #fontChange>
+<mat-toolbar class="bar" color="primary" #fontChange>
   <a routerLink='/'>
   <img
   width="40"
@@ -7,10 +7,11 @@
   src="assets/img/tree.png"
   aria-label="hide"
   />
-  </a>
-  <span>Gumtree</span>
 
+  <span class="pointer mainButton">Gumtree</span>
+  </a>
   <div class="spacer"></div>
+
 
   <mat-icon class="icon-display-2 icon">contrast</mat-icon>
   <a (click)="globalVariableService.changeFontSize('-')" class="changeFontButton"><mat-icon class="icon-display-2 icon">text_decrease</mat-icon></a>
@@ -19,6 +20,7 @@
   <mat-menu #appMenu="matMenu" class="menuButtons">
     <button routerLink="/login" mat-menu-item aria-label="Login button" class="menuButtons">Zaloguj</button>
     <button routerLink="/register" mat-menu-item aria-label="Register button" class="menuButtons">Zarejestruj</button>
+    <button routerLink="/personal-data" mat-menu-item aria-label="Personal data button" class="menuButtons">Moje dane</button>
   </mat-menu>
 
 
@@ -27,6 +29,25 @@
     Moje Gumtree
   </button>
   <button class="round pointer" >Dodaj ogłoszenie</button>
+
+
+  <img
+    height="60"
+    width="60"
+    alt="Angular Logo"
+    src="assets/img/poland.png"
+    aria-label="hide"
+    class="pointer"
+  />
+
+  <img
+    height="60"
+    width="60"
+    alt="Angular Logo"
+    src="assets/img/england.png"
+    aria-label="hide"
+    class="pointer"
+  />
 
 </mat-toolbar>
 </div>

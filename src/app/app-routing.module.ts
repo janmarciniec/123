@@ -5,10 +5,12 @@ import { RegisterComponent} from "./register/register.component";
 import { MainPageComponent} from "./main-page/main-page.component";
 import { Routes, RouterModule} from "@angular/router";
 import {LoginComponent} from "./login/login.component";
+import {PersonalDataPageComponent} from "./personal-data-page/personal-data-page.component";
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'personal-data', component: PersonalDataPageComponent},
   { path: '', component: MainPageComponent },
 ];
 

@@ -20,6 +20,14 @@ import { GlobalVariableService } from './GlobalVariableService'
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
 import { LoginComponent } from './login/login.component';
+import { PersonalDataPageComponent } from './personal-data-page/personal-data-page.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +37,8 @@ import { LoginComponent } from './login/login.component';
     FooterComponent,
     RegisterComponent,
     MainPageComponent,
-    LoginComponent
+    LoginComponent,
+    PersonalDataPageComponent
   ],
   imports: [
     BrowserModule,
@@ -43,9 +52,16 @@ import { LoginComponent } from './login/login.component';
     MatGridListModule,
     AppRoutingModule,
     MatCheckboxModule,
-    MatDividerModule
+    MatDividerModule,
+    NgbModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    FormsModule
   ],
-  providers: [GlobalVariableService],
+  providers: [GlobalVariableService,
+    MatNativeDateModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

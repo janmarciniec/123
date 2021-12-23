@@ -1,0 +1,184 @@
+<!--todo zmienic literki na polskie!-->
+
+<div #fontChange id="content">
+  <app-toolbar></app-toolbar>
+  <div class="content">
+    <div class="mat-h1 title">Mój profil</div>
+
+    <div class="mainContent">
+      <div class="mat-h2 subtitle">Dane osobowe</div>
+      <div class="mainContentData">
+        <form (submit)="$event.preventDefault()">
+          <div class="row">
+            <div class="col-md-8">
+              Nazwa użytkownika:
+              <br/>
+              <mat-form-field appearance="fill" class="input inputPosition">
+                <mat-label>Nazwa użytkownika</mat-label>
+                <input matInput placeholder="np. uzytkownik" type="text">
+              </mat-form-field>
+              Płeć:
+              <br/>
+              <mat-radio-group aria-label="Select an option" class="inputPosition">
+                <mat-radio-button class="radioButton" value="1">Kobieta</mat-radio-button>
+                <mat-radio-button class="radioButton" value="2">Mężczyzna</mat-radio-button>
+              </mat-radio-group>
+              <section class="example-section">
+                <mat-checkbox class="example-margin">Wyświetlanie płci na profilu</mat-checkbox>
+              </section>
+              <div class="row">
+                <div class="col-md-4" id="birthDateLabel">
+                  Data urodzenia:
+                </div>
+                <div class="col-md-8">
+                  <mat-form-field appearance="fill" class="dataPicker">
+                    <mat-label>Data urodzenia</mat-label>
+                    <input [matDatepicker]="picker" matInput>
+                    <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+              <mat-checkbox class="example-margin">Wyświetlanie daty urodzenia na profilu</mat-checkbox>
+
+            </div>
+            <div class="col-md-2">
+              <img id="personIcon" src="assets/img/person.png">
+              <div class="row">
+                <div class="col-md-2">
+              <button class="round pointer right" id="registerButton">Dodaj zdjęcie</button>
+                </div>
+                <div class="col-md-7">
+                </div>
+                <div class="col-md-2">
+              <button class="round pointer right" id="registerButton">Usuń zdjęcie</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="mat-h2 subtitle">Dane kontaktowe</div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              Adres email:
+              <mat-form-field appearance="fill" class="input inputPosition">
+                <mat-label>Adres e-mail</mat-label>
+                <input matInput placeholder="np. adres@mail.com" type="email">
+              </mat-form-field>
+              Numer telefonu:
+              <br/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-sm-6">
+              <mat-form-field appearance="fill" class="input" id="phoneNumberInput">
+                <mat-label>Telefon</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let phoneNumberType of phoneNumberTypes" [value]="phoneNumberType.value">
+                    {{phoneNumberType.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field appearance="fill" class="input secondInputPosition" id="phoneNumberInput">
+                <mat-label>Numer telefonu</mat-label>
+                <input matInput placeholder="np. 132 123 123" type="nuber" value="">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <button class="round pointer right" id="addPhoneNumberButton">Dodaj nowy numer</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              Lokalizacja:
+              <mat-form-field appearance="fill" class="input inputPosition">
+                <mat-label>Lokalizacja</mat-label>
+                <input matInput placeholder="np. Lublin" type="email">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              Adres twojej strony www:
+              <mat-form-field appearance="fill" class="input inputPosition">
+                <mat-label>Adres strony</mat-label>
+                <input matInput placeholder="www..." type="email">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="mat-h2 subtitle">Pozostałe informacje</div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              O Tobie:
+              <mat-form-field appearance="fill" class="input inputPosition textarea-wrapper">
+                <mat-label>O Tobie</mat-label>
+                <textarea (ngModelChange)="aboutYourselfValueChange(aboutYourselfValue)" [(ngModel)]="aboutYourselfValue"
+                          [maxLength]="350"
+                          [ngModelOptions]="{standalone: true}"
+                          cdkAutosizeMaxRows="5"
+                          cdkAutosizeMinRows="2"
+                          matInput><!--cdkTextareaAutosize-->
+                </textarea>
+              </mat-form-field>
+              <span class="remaning"> Dostępnych {{remainingTextAboutYourself}} znaków </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              Zainteresowania:
+              <mat-form-field appearance="fill" class="input inputPosition textarea-wrapper">
+                <mat-label>Zainteresowania</mat-label>
+                <textarea (ngModelChange)="interestsValueChange(interestsValue)" [(ngModel)]="interestsValue"
+                          [maxLength]="350"
+                          [ngModelOptions]="{standalone: true}"
+                          cdkAutosizeMaxRows="5"
+                          cdkAutosizeMinRows="2"
+                          matInput><!--cdkTextareaAutosize-->
+                </textarea>
+              </mat-form-field>
+              <span class="remaning"> Dostępnych {{remainingTextInterests}} znaków </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              <mat-checkbox class="example-margin">
+                <div class="text-wrap">
+                  Chce otrzymywać newslettery i ofety promocyjne
+                </div>
+              </mat-checkbox>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              <mat-checkbox class="example-margin">
+                <div class="text-wrap">
+                  Wysyłaj infromacje o moich ogłoszeniach i aktualizacjach Gumtree
+                </div>
+              </mat-checkbox>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              Wprowadź hasło i naciśnij przycisk by zapisać zmiany
+              <mat-form-field appearance="fill" class="input inputPosition">
+                <mat-label>Hasło</mat-label>
+                <input matInput type="password">
+              </mat-form-field>
+            </div>
+            <div class="col-md-4 align-self-center">
+              <button class="round pointer right" id="saveChanges">Zapisz zmiany</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,118 @@
+@import "../../custom-theme.scss";
+
+.content {
+  text-align: center;
+  width: 94%;
+  padding: 2rem;
+  background-color: map-get($mat-primary, main);
+  border-radius: 5rem;
+  margin: 3rem 3%;
+  color: white;
+}
+
+.title{
+  padding: 2rem;
+  font-size: 3em;
+  background-color: rgba(0, 0, 0, 0.4);
+  //background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0) 70%);
+  border-radius: 4rem;
+}
+
+.mainContent{
+  width: 70%;
+  margin: 0rem 15%;
+  text-align: left;
+}
+
+.mainContentData{
+  margin: 0 0rem 0 1rem;
+}
+
+.subtitle{
+  font-size: 2em;
+  text-align: left;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0) 70%);
+  border-radius: 4rem;
+  padding: 1rem;
+}
+
+.input{
+  background-color: white;
+  color: black;
+}
+
+.inputPosition{
+  margin: 1rem;
+  width: 100%;
+}
+
+.secondInputPosition{
+    margin: 1rem 0 1rem 0;
+    width: 100%;
+}
+
+#personIcon{
+  border: white;
+  height: 300px;
+  //size: 300px;
+}
+
+
+#content{
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 10rem;
+}
+
+.round{
+  border-radius: 5rem;
+  background: #f1ebeb; //pobranie koloru main z mat-accent
+  font-size: 1rem;
+  padding: 1rem 2rem 1rem 2rem;
+  color: #000000;
+
+}
+
+.pointer:hover{
+  cursor: pointer;
+}
+
+.radioButton{
+  margin: 0 0.5rem 0 0.5rem;
+}
+
+.dataPicker{
+ margin-top: 0.2rem;
+  margin-left: 1rem;
+  background-color: white;
+  color: map-get($mat-primary, main);
+  width: 100%;
+ // width: 79%
+}
+
+#phoneNumberInput{
+  width: 100%;
+  margin: 1rem 0 1rem 1rem;
+}
+
+#birthDateLabel{
+  margin: auto;
+}
+
+#addPhoneNumberButton{
+  margin-bottom: 1rem;
+}
+
+.textarea-wrapper {
+  position:relative;
+}
+.remaning {
+  position:absolute;
+  bottom: 1em;
+  right:10px;
+  color: black;
+}
+
+#saveChanges{
+  margin: auto;
+}
