@@ -28,6 +28,14 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 
+import { CategoryPageComponent } from './category-page/category-page.component';
+import { RouterModule, Routes } from '@angular/router';
+import { SubcategoriesComponent } from './subcategories/subcategories.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+
+const appRoutes: Routes = [
+  { path: 'category', component: CategoryPageComponent }
+]
 
 @NgModule({
   declarations: [
@@ -38,7 +46,9 @@ import { FormsModule } from '@angular/forms';
     RegisterComponent,
     MainPageComponent,
     LoginComponent,
-    PersonalDataPageComponent
+    PersonalDataPageComponent,
+    CategoryPageComponent,
+    SubcategoriesComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +68,9 @@ import { FormsModule } from '@angular/forms';
     MatDatepickerModule,
     MatFormFieldModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    NgxPaginationModule
   ],
   providers: [GlobalVariableService,
     MatNativeDateModule],

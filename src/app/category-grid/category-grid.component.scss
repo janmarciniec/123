@@ -11,7 +11,7 @@
   border-radius: 2rem;
   border-width: 0.4rem;
   border-color: map-get($mat-primary, main);
-  margin-outside: 1rem;
+  // margin-outside: 1rem;
 }
 
 .noselect {
@@ -50,4 +50,14 @@
   font-size: 2.5em;
   font-weight: bold;
   padding: 1rem;
+}
+
+.clicked {
+  opacity: 0.8;
+  background-color: map-get($mat-primary, lighter);
+}
+
+.border {
+  border: solid 1px gray;
+  border-radius: 5px;
 }

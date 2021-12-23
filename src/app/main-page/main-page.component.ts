@@ -18,6 +18,7 @@ export class MainPageComponent implements OnInit {
 
   // @ts-ignore
   subscription: Subscription;
+  selectedLocation = 'poland';
 
   constructor(public globalVariableService: GlobalVariableService) {
   }
@@ -47,8 +48,21 @@ export class MainPageComponent implements OnInit {
 
   locations: Map[] = [
     {value: 'poland', viewValue: 'Polska'},
+    {value: 'dolnoslaskie', viewValue: 'dolnośląskie'},
+    {value: 'kujawsko-pomorskie', viewValue: 'kujawsko-pomorskie'},
     {value: 'lubelskie', viewValue: 'lubelskie'},
+    {value: 'lubuskie', viewValue: 'lubuskie'},
+    {value: 'lodzkie', viewValue: 'łódzkie'},
+    {value: 'malopolskie', viewValue: 'małopolskie'},
+    {value: 'mazowieckie', viewValue: 'mazowieckie'},
+    {value: 'opolskie', viewValue: 'opolskie'},
+    {value: 'podkarpackie', viewValue: 'podkarpackie'},
     {value: 'podlaskie', viewValue: 'podlaskie'},
+    {value: 'pomorskie', viewValue: 'pomorskie'},
+    {value: 'slaskie', viewValue: 'śląskie'},
+    {value: 'swietokrzyskie', viewValue: 'świętokrzyskie'},
+    {value: 'warminsko-mazurskie', viewValue: 'warmińsko-mazurskie'},
+    {value: 'wielkopolskie', viewValue: 'wielkopolskie'},
     {value: 'zachodniopomorskie', viewValue: 'zachodniopomorskie'}
   ];
 
