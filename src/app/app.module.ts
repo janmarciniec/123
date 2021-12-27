@@ -32,9 +32,11 @@ import { CategoryPageComponent } from './category-page/category-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SubcategoriesComponent } from './subcategories/subcategories.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AnnouncementPageComponent } from './announcement-page/announcement-page.component';
 
 const appRoutes: Routes = [
-  { path: 'category', component: CategoryPageComponent }
+  { path: 'category', component: CategoryPageComponent },
+  { path: 'announcement/:id', component: AnnouncementPageComponent }
 ]
 
 @NgModule({
@@ -48,7 +50,8 @@ const appRoutes: Routes = [
     LoginComponent,
     PersonalDataPageComponent,
     CategoryPageComponent,
-    SubcategoriesComponent
+    SubcategoriesComponent,
+    AnnouncementPageComponent
   ],
   imports: [
     BrowserModule,

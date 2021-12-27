@@ -1,0 +1,66 @@
+<div #fontChange id="content">
+    <app-toolbar></app-toolbar>
+
+    <div *ngFor="let announcement of announcements">
+        <div class="container my-5" *ngIf="announcement.id === announcementId">
+
+            <div class="row mb-3">
+                <div class="col-12">
+                    <a href="/category" class="small-text green flex-start"><mat-icon>arrow_back_ios</mat-icon>Wróć</a>
+                    <p class="small-text mt-1" >
+                        <a href="/">Wszystkie ogłoszenia</a> > <a href="/category">Dom i Ogród</a> > <a href="/category">Meble</a> > <span class="green">{{ announcement.title }}</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-7">
+
+                    <div class="row">
+                        <div class="col-12 p-1 green-border">
+                            <!-- image -->
+                            <img src="{{ announcement.image }}" alt="" class="w-100">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 green-border mt-3 p-3">
+                            <!-- description -->
+                            <p id="date">Data dodania: <span id="date-value">{{ announcement.date }}</span></p>
+                            <p id="title">{{ announcement.title }}</p>
+                            <p id="price">{{ announcement.price }}</p>
+                            <p id="description" class="mt-5">Opis</p>
+                            <p id="description-value">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit id tortor a consequat. Nam finibus magna aliquam, ultrices felis quis, tempus enim. Duis eu ipsum sed nisi vehicula ultricies a ac odio. Mauris maximus porta massa, quis aliquam enim posuere sit amet. Phasellus sagittis erat ut suscipit euismod. Nunc accumsan risus tortor, et dignissim orci mollis sed. Aliquam consectetur tempus feugiat. Vivamus aliquam sed libero sit amet consequat. In id sem vel ligula cursus efficitur sit amet pellentesque tortor. Phasellus ullamcorper orci non libero commodo pretium. Morbi maximus odio vel bibendum facilisis. Phasellus ligula magna, dictum sit amet scelerisque eget, condimentum sit amet odio. In luctus ut mauris id tincidunt. Nulla arcu neque, condimentum in blandit a, pharetra et sem.</p>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <div class="col-4 green-border ml-3 p-3">
+                    <!-- seller -->
+                    <p id="seller" class="flex-start"><mat-icon>person_outline</mat-icon> {{ announcement.seller }}</p>
+                    <p id="more" class="mb-5">Zobacz więcej ogłoszeń</p>
+
+                    <button id="btn-number" class="btn me-1 py-2">Pokaż numer telefonu</button>
+                    <button id="btn-message" class="btn py-2">Wyślij wiadomość</button>
+
+                    <p id="location" class="mt-5">Lokalizacja:</p>
+                    <p id="location-value" class="flex-start"><mat-icon>place</mat-icon> {{ announcement.location }}</p>
+
+                    <img src="{{ announcement.map }}" alt="" class="w-100">
+
+                    <button (click)="announcement.favourite = !announcement.favourite" id="btn-favourite" class="btn mt-5 py-2">
+                        <span *ngIf="announcement.favourite == false" class="flex-start"><mat-icon class="me-1">star_outline</mat-icon>Dodaj do zachowanych</span>
+                        <span *ngIf="announcement.favourite == true" class="flex-start"><mat-icon class="me-1">star</mat-icon>Usuń z zachowanych</span>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    
+    <app-footer></app-footer>
+</div>

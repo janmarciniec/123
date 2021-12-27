@@ -98,14 +98,14 @@
     <div class="row announcement-card mb-4 mt-1" *ngFor="let announcement of announcements | paginate: { itemsPerPage: itemsPerPage, currentPage: page }">
       
       <div class="col-2 p-1">
-        <img src="{{ announcement.image }}" alt="" class="w-100">
+        <img src="{{ announcement.image }}" alt="" class="w-100 pointer" (click)="onSelect(announcement)">
       </div>
 
       <div class="col-10">
 
         <div class="row justify-content-between d-flex flex-row pt-3 ps-2 pe-2">
           <div class="col-10">
-            <span class="big-text">{{ announcement.title }}</span>
+            <span class="big-text pointer" (click)="onSelect(announcement)">{{ announcement.title }}</span>
           </div>
           <div class="col-2 d-flex justify-content-end">
             <span class="big-text">{{ announcement.price }}</span>
@@ -120,7 +120,7 @@
             <span (click)="announcement.favourite = !announcement.favourite" class="me-2">
               <mat-icon *ngIf="announcement.favourite == false" id="star_outline">star_outline</mat-icon>
               <mat-icon *ngIf="announcement.favourite == true" id="star">star</mat-icon>
-          </span>
+            </span>
           </div>
         </div>
 

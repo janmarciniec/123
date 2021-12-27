@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {Subscription} from "rxjs";
 import {GlobalVariableService} from "../GlobalVariableService";
+import { Router } from '@angular/router';
 
 interface Map {
   value: string;
@@ -8,6 +9,7 @@ interface Map {
 }
 
 export interface Announcement {
+  id: number;
   title: string;
   image: string;
   location: string;
@@ -36,13 +38,21 @@ export class CategoryPageComponent implements OnInit {
   itemsPerPage: number = 5;
   page: number = 1;
 
-  constructor(public globalVariableService: GlobalVariableService) { }
+  constructor(public globalVariableService: GlobalVariableService, private router: Router) { }
 
   ngOnInit(): void {
     this.subscription = this.globalVariableService.fixedFontSize$
       .subscribe(fixed => {
         (this.fontChange.nativeElement as HTMLParagraphElement).style.fontSize = `${fixed}px`;
       });
+  }
+
+  redirect(pageName: string) {
+    this.router.navigate(['/' + pageName]);
+  }
+
+  onSelect(announcement: Announcement) {
+    this.router.navigate(['/announcement', announcement.id]);
   }
 
   categories: Map[] = [
@@ -94,14 +104,14 @@ export class CategoryPageComponent implements OnInit {
   ];
 
   announcements: Announcement[] = [
-    {title: 'Kanapa narożna kolor szary, duża', image: 'assets/img/announcementImages/image.jpg', location: 'Wrocław', date: '19 listopada', price: '950 zł', favourite: false},
-    {title: 'Fotel w stylu skandynawskim, kolor Magenta', image: 'assets/img/announcementImages/image1.jpg', location: 'Warszawa', date: '19 listopada', price: '459 zł', favourite: false},
-    {title: 'Sofa rozkładana', image: 'assets/img/announcementImages/image2.jpg', location: 'Poznań', date: '18 listopada', price: '550 zł', favourite: false},
-    {title: 'Szafa przesuwna 150x200x58 połysk', image: 'assets/img/announcementImages/image3.jpg', location: 'Warszawa', date: '18 listopada', price: '990 zł', favourite: false},
-    {title: 'Stół rozkładany do jadalni 120 - 160 cm', image: 'assets/img/announcementImages/image4.jpg', location: 'Lublin', date: '18 listopada', price: '630 zł', favourite: false},
-    {title: 'Krzesła barowe', image: 'assets/img/announcementImages/image5.jpg', location: 'Poznań', date: '17 listopada', price: '450 zł', favourite: false},
-    {title: 'Stół szklany, jak nowy', image: 'assets/img/announcementImages/image6.jpg', location: 'Łódź', date: '17 listopada', price: '250 zł', favourite: false},
-    {title: 'Stolik drewniany 60x100cm (jasny dąb)', image: 'assets/img/announcementImages/image7.jpg', location: 'Zamość', date: '16 listopada', price: '300 zł', favourite: false},
+    {id: 1, title: 'Kanapa narożna kolor szary, duża', image: 'assets/img/announcementImages/image.jpg', location: 'Wrocław', date: '19 listopada', price: '950 zł', favourite: false},
+    {id: 2, title: 'Fotel w stylu skandynawskim, kolor Magenta', image: 'assets/img/announcementImages/image1.jpg', location: 'Warszawa', date: '19 listopada', price: '459 zł', favourite: false},
+    {id: 3, title: 'Sofa rozkładana', image: 'assets/img/announcementImages/image2.jpg', location: 'Poznań', date: '18 listopada', price: '550 zł', favourite: false},
+    {id: 4, title: 'Szafa przesuwna 150x200x58 połysk', image: 'assets/img/announcementImages/image3.jpg', location: 'Warszawa', date: '18 listopada', price: '990 zł', favourite: false},
+    {id: 5, title: 'Stół rozkładany do jadalni 120 - 160 cm', image: 'assets/img/announcementImages/image4.jpg', location: 'Lublin', date: '18 listopada', price: '630 zł', favourite: false},
+    {id: 6, title: 'Krzesła barowe', image: 'assets/img/announcementImages/image5.jpg', location: 'Poznań', date: '17 listopada', price: '450 zł', favourite: false},
+    {id: 7, title: 'Stół szklany, jak nowy', image: 'assets/img/announcementImages/image6.jpg', location: 'Łódź', date: '17 listopada', price: '250 zł', favourite: false},
+    {id: 8, title: 'Stolik drewniany 60x100cm (jasny dąb)', image: 'assets/img/announcementImages/image7.jpg', location: 'Zamość', date: '16 listopada', price: '300 zł', favourite: false},
   ];
 
 }
