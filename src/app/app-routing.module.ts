@@ -6,6 +6,7 @@ import { MainPageComponent} from "./main-page/main-page.component";
 import { Routes, RouterModule} from "@angular/router";
 import {LoginComponent} from "./login/login.component";
 import {PersonalDataPageComponent} from "./personal-data-page/personal-data-page.component";
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
@@ -19,6 +20,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [RouterModule]
 })

@@ -2,31 +2,82 @@
 <app-toolbar></app-toolbar>
   <div id="form">
     <h1 class="title"><span class="whiteFont">REJESTRACJA</span></h1>
-  <form class="example-form">
-    <mat-form-field class="input" appearance="fill">
+  <form class="form-group" #registerForm="ngForm">
+    <mat-form-field class="input" appearance="fill" [(ngModel)]="user.email">
       <mat-label>Adres e-mail</mat-label>
-      <input matInput placeholder="np. adres@mail.com" type="email">
+      <input matInput placeholder="np. adres@mail.com" id="email"
+             [(ngModel)]="user.email" name="email" #email="ngModel"
+             type="email" required minlength="4" maxlength="25" email>
     </mat-form-field>
+    <div *ngIf="email.invalid && (email.dirty || email.touched)"
+         class="redAlert">
+
+      <div *ngIf="email.errors?.['required']">
+        Name is <strong>required.</strong>
+      </div>
+      <div *ngIf="email.errors?.['minlength']">
+        Name must be <strong>at least 4</strong> characters long.
+      </div>
+      <div *ngIf="email.errors?.['email']">
+        Email is not correct.
+      </div>
+    </div>
+
     <br/>
     <mat-form-field class="input" appearance="fill">
       <mat-label>Hasło</mat-label>
-      <input matInput type="password">
+      <input matInput type="password"
+             required minlength="8"
+             [(ngModel)]="user.password" name="password" #password="ngModel"
+      >
     </mat-form-field>
     <br/>
     <mat-form-field class="input" appearance="fill">
       <mat-label>Powtórz hasło</mat-label>
-      <input matInput type="password">
+      <input matInput type="password"
+             required minlength="8"  pattern="{{ password.value }}"
+             [(ngModel)]="user.repeatedPassword" name="repeatedPassword" #repeatedPassword="ngModel"
+      >
+
     </mat-form-field>
+    <!--
+    <div *ngIf="password.value!==repeatedPassword.value && (password.dirty || password.touched) && (repeatedPassword.dirty || repeatedPassword.touched)" class="redAlert">
+    Password are not the same
+  </div>
+  -->
+    <div *ngIf="(password.invalid || repeatedPassword.invalid) && (password.dirty || password.touched || repeatedPassword.dirty || repeatedPassword.touched)"class="redAlert" >
+
+      <div *ngIf="password.errors?.['required']">
+        Password is <strong>required</strong>
+      </div>
+      <div *ngIf="repeatedPassword.errors?.['required']">
+        Repeated password is <strong>required</strong>
+      </div>
+    <mat-error *ngIf="repeatedPassword.errors?.['minlength'] || password.errors?.['minlength']">
+      Password must be <strong>at least 8</strong> characters long.
+    </mat-error>
+    <div *ngIf="repeatedPassword.errors?.['pattern']">
+      Password & Repeated Password does not match.
+    </div>
+
+
+    </div>
     <br/>
     <section class="checkbox whiteFont">
-      <mat-checkbox class="example-margin"><span class="redStar">*</span>Oświadczam, że znam i akceptuję postanowienia regulaminu</mat-checkbox>
+      <mat-checkbox class="example-margin" name="checked" value="false" [(ngModel)]="user.termsAccepted" #checked="ngModel" type="checkbox" required><span class="redStar">*</span>Oświadczam, że znam i akceptuję postanowienia regulaminu</mat-checkbox>
     </section>
+
+    <div *ngIf="checked.value===false && (checked.dirty || checked.touched)" class="redAlert">
+      Terms <strong>have to</strong> be accepted
+    </div>
+
+
     <section class="checkbox whiteFont">
       <mat-checkbox class="example-margin">Tak, chcę aby Gumtree oraz firmy z rodziny Adiventa powiadamiały mnie o wydarzeniach, aktualnościach, nowych funkcjach i promocjach.</mat-checkbox>
     </section>
     <div class="flex">
       <div class="spacer-2"></div>
-      <button class="round pointer right" id="loginButton" >Zarejestruj</button>
+      <button class="round pointer right" id="loginButton" type="submit" (click)="onSubmit()">Zarejestruj</button>
       <div class="spacer"></div>
     </div>
   </form>
