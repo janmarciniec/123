@@ -34,10 +34,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { SubcategoriesComponent } from './subcategories/subcategories.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AnnouncementPageComponent } from './announcement-page/announcement-page.component';
+import { SavedPageComponent } from './saved-page/saved-page.component';
 
 const appRoutes: Routes = [
   { path: 'category', component: CategoryPageComponent },
-  { path: 'announcement/:id', component: AnnouncementPageComponent }
+  { path: 'announcement/:id', component: AnnouncementPageComponent },
+  { path: 'saved', component: SavedPageComponent }
 ]
 
 @NgModule({
@@ -52,7 +54,8 @@ const appRoutes: Routes = [
     PersonalDataPageComponent,
     CategoryPageComponent,
     SubcategoriesComponent,
-    AnnouncementPageComponent
+    AnnouncementPageComponent,
+    SavedPageComponent
   ],
   imports: [
     BrowserModule,

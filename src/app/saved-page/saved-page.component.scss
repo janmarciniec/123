@@ -1,0 +1,168 @@
+:host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 20px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+  @import "../../custom-theme.scss";
+  
+  #search {
+    background-color: map-get($mat-primary, lighter);
+    padding: 0.2rem;
+    width: fit-content;
+    border-radius: 5rem;
+  }
+  
+  .selector{
+    margin: 1rem;
+    background-color: white;
+    padding: 0px;
+  }
+  
+  .roundedLeftBorders{
+    border-radius: 2rem 0 0 2rem;
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+
+  #flexContent{
+    font-size: 1rem;
+    display: flex;
+    align-items: flex-end;
+    margin: 2rem;
+  }
+  
+  .searchInput{
+    margin: 1rem 0 1rem 1rem;
+    background-color: white;
+    padding: 0px;
+  }
+  .searchButton{
+    margin: 1rem 1rem 1rem 0rem;
+    background-color: map-get($mat-accent, main);
+    padding: 1.2rem;
+    border-radius: 0rem 2rem 2rem 0;
+    font-size: 1em;
+  }
+
+  //made for good footer placing
+  #content{
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 10rem;
+  }
+  
+  #filters {
+    background-color: map-get($mat-primary, lighter);
+  }
+
+  .input {
+    width: 100px;
+ }
+
+ a {
+  text-decoration: none;
+  color: #383938;
+}
+
+.announcement-card {
+  background-color: #f5f5f5;
+  border: solid 3px;
+  border-color: #33691e;
+  border-radius: 5px;
+}
+
+img {
+  border-radius: 3px;
+}
+
+#star, #star_outline {
+  font-size: 40px;
+}
+
+#star {
+  color: #fdcc0d;
+}
+
+#star:hover, #star_outline:hover {
+  cursor: pointer;
+  color: #fdcc0d;
+}
+
+input.price {
+  padding: 10px;
+  border-radius: 5px;
+  border: solid #ccd4d5 1px;
+  font-size: 20px;
+}
+
+#filters {
+  border-radius: 5px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.small-text {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.big-text {
+  font-size: 1.8em;
+  font-weight: 500;
+}
+
+#date {
+  font-size: 1.2em;
+}
+
+#header {
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+.pointer:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#btn-delete {
+  color: #ff6d00;
+  background-color: white;
+  border: solid 3px #ff6d00;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+#btn-delete:hover {
+  opacity: 80%;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+}
+
+#title {
+  font-size: 2.2em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
