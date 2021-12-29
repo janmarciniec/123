@@ -8,53 +8,104 @@
     <div class="mainContent">
       <div class="mat-h2 subtitle">Dane osobowe</div>
       <div class="mainContentData">
-        <form (submit)="$event.preventDefault()">
+        <form #registerForm="ngForm" ><!--(submit)="$event.preventDefault()"-->
           <div class="row">
             <div class="col-md-8">
               Nazwa użytkownika:
               <br/>
               <mat-form-field appearance="fill" class="input inputPosition">
                 <mat-label>Nazwa użytkownika</mat-label>
-                <input matInput placeholder="np. uzytkownik" type="text">
+                <input matInput placeholder="np. uzytkownik" type="text"
+                       #username="ngModel"
+                       [(ngModel)]="user.username" name="username"
+                       pattern="^(?=.{5,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$"
+                >
               </mat-form-field>
+              <div
+              *ngIf="username.invalid"
+              class="redAlert">
+
+              Username is <strong>invalid</strong>
+                <br/>
+                Don't use spaces. Username must be <strong>at least 5</strong> characters long.
+
+            </div>
               Płeć:
               <br/>
-              <mat-radio-group aria-label="Select an option" class="inputPosition">
-                <mat-radio-button class="radioButton" value="1">Kobieta</mat-radio-button>
-                <mat-radio-button class="radioButton" value="2">Mężczyzna</mat-radio-button>
+              <mat-radio-group aria-label="Select an option" class="inputPosition" #radioGender="ngModel"
+                               [(ngModel)]="user.gender" name="radioGender" (change)="onRadioGenderChange($event)">
+                <mat-radio-button class="radioButton" value="women">Kobieta</mat-radio-button>
+                <mat-radio-button class="radioButton" value="man">Mężczyzna</mat-radio-button>
               </mat-radio-group>
               <section class="example-section">
-                <mat-checkbox class="example-margin">Wyświetlanie płci na profilu</mat-checkbox>
+                <mat-checkbox class="example-margin" #showGender="ngModel"
+                              [(ngModel)]="user.showGender" name="showGender"
+                              [disabled]="user.gender==='' ? true : false">Wyświetlanie płci na profilu</mat-checkbox>
               </section>
               <div class="row">
                 <div class="col-md-4" id="birthDateLabel">
                   Data urodzenia:
                 </div>
                 <div class="col-md-8">
+<!--  po polsku, ale gorsze
                   <mat-form-field appearance="fill" class="dataPicker">
                     <mat-label>Data urodzenia</mat-label>
-                    <input [matDatepicker]="picker" matInput>
-                    <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
+                    <input matInput type="date" #date="ngModel" [(ngModel)]="user.date" name="date" [max]="maxDate">
                   </mat-form-field>
+-->
+
+                  <mat-form-field appearance="fill" class="dataPicker">
+                    <mat-label>Data urodzenia</mat-label>
+                    <input [matDatepicker]="picker" matInput #date="ngModel" disabled
+                           [(ngModel)]="user.date" name="date" [max]="maxDate" [min]="minDate">
+                    <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
+                    <mat-datepicker #picker disabled="false"></mat-datepicker>
+                  </mat-form-field>
+<!--todo dorobić żeby było też po polsku -->
                 </div>
               </div>
-              <mat-checkbox class="example-margin">Wyświetlanie daty urodzenia na profilu</mat-checkbox>
+              <mat-checkbox class="example-margin"
+                            #showBirthDate="ngModel"
+                            [(ngModel)]="user.showBirthDate" name="showBirthDate"
+                            [disabled]="user.date==='' ? true : false">Wyświetlanie daty urodzenia na profilu</mat-checkbox>
 
             </div>
-            <div class="col-md-2">
-              <img id="personIcon" src="assets/img/person.png">
+            <!--
+            <div style="text-align:center">
+              <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+              <div><img [src]="url" *ngIf="url"></div>
+              <p>
+                <input type="file" (change)="selectFile($event)">
+              </p>
+            </div>
+            -->
+
+            <div class="col-md-4">
+              <div *ngIf="!url">
+                <img #image id="personIcon" src="assets/img/person.png">
+              </div>
+              <div *ngIf="url">
+                <img #image [src]="url" id="personIcon">
+              </div>
               <div class="row">
-                <div class="col-md-2">
-              <button class="round pointer right" id="registerButton">Dodaj zdjęcie</button>
+                <span *ngIf="msg" [innerHTML]=msg class="redAlert"></span>
+                <div class="col-sm-12 col-md-6">
+
+                  <!--<button class="round pointer right" >Dodaj zdjęcie</button>-->
+
+                  <button (click)="fileInput.click()" class="round pointer right">
+                    Dodaj zdjęcie
+                    <input #fileInput (change)="selectFile($event)" class="pointer" class="imageInput" type="file"/>
+                  </button>
                 </div>
-                <div class="col-md-7">
+
+                <div class="col-sm-12 col-md-6">
+                  <button (click)="deleteImage()" class="round pointer right">Usuń zdjęcie</button>
                 </div>
-                <div class="col-md-2">
-              <button class="round pointer right" id="registerButton">Usuń zdjęcie</button>
-                </div>
+
               </div>
             </div>
+
           </div>
           <div class="row">
             <div class="mat-h2 subtitle">Dane kontaktowe</div>
@@ -64,7 +115,7 @@
               Adres email:
               <mat-form-field appearance="fill" class="input inputPosition">
                 <mat-label>Adres e-mail</mat-label>
-                <input matInput placeholder="np. adres@mail.com" type="email">
+                <input matInput readonly type="email" value="TwojAdresEmail.com">
               </mat-form-field>
               Numer telefonu:
               <br/>
@@ -74,7 +125,7 @@
             <div class="col-md-4 col-sm-6">
               <mat-form-field appearance="fill" class="input" id="phoneNumberInput">
                 <mat-label>Telefon</mat-label>
-                <mat-select>
+                <mat-select #phoneNumberType="ngModel" [(ngModel)]="user.phoneNumberType" name="phoneNumberType">
                   <mat-option *ngFor="let phoneNumberType of phoneNumberTypes" [value]="phoneNumberType.value">
                     {{phoneNumberType.viewValue}}
                   </mat-option>
@@ -84,9 +135,28 @@
             <div class="col-md-4">
               <mat-form-field appearance="fill" class="input secondInputPosition" id="phoneNumberInput">
                 <mat-label>Numer telefonu</mat-label>
-                <input matInput placeholder="np. 132 123 123" type="nuber" value="">
+                <input #phoneNumber="ngModel" [(ngModel)]="user.phoneNumber" matInput name="phoneNumber"
+                       pattern="[0-9]{9}"
+                       placeholder="np. 132123123" type="nuber" value="">
               </mat-form-field>
             </div>
+
+
+            <!--errors messages-->
+            <div class="col-md-8">
+              <div
+                *ngIf="phoneNumber.invalid || (phoneNumberType.value==='' && phoneNumber.value!='')"
+                class="redAlert">
+
+                <div *ngIf="phoneNumberType.value==='' && phoneNumber.value!==''">
+                  Phone number type is also <strong>required</strong>
+                </div>
+                <div *ngIf="phoneNumber.invalid">
+                  Phone number is <strong>invalid!</strong>
+                </div>
+              </div>
+            </div>
+
           </div>
           <div class="row">
             <div class="col-md-4">
@@ -98,17 +168,32 @@
               Lokalizacja:
               <mat-form-field appearance="fill" class="input inputPosition">
                 <mat-label>Lokalizacja</mat-label>
-                <input matInput placeholder="np. Lublin" type="email">
+                <input matInput placeholder="np. Lublin" type="text" pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z0-9/]+)*$"
+                       #location="ngModel" [(ngModel)]="user.location" matInput name="location">
               </mat-form-field>
+
+              <div *ngIf="location.invalid"
+                   class="redAlert">
+                Location is <strong>invalid</strong>
+                <br/>
+                Permited chars: a-z, A-Z, /, 0-9.
+              </div>
             </div>
+
           </div>
           <div class="row">
             <div class="col-md-8">
               Adres twojej strony www:
               <mat-form-field appearance="fill" class="input inputPosition">
                 <mat-label>Adres strony</mat-label>
-                <input matInput placeholder="www..." type="email">
+                <input matInput placeholder="www..." type="text" pattern="(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})"
+                       #wwwAddress="ngModel" [(ngModel)]="user.wwwAddress" matInput name="wwwAddress">
               </mat-form-field>
+
+              <div *ngIf="wwwAddress.invalid"
+                   class="redAlert">
+                Your inserted address is <strong>invalid</strong>.
+              </div>
             </div>
           </div>
           <div class="row">
@@ -119,15 +204,14 @@
               O Tobie:
               <mat-form-field appearance="fill" class="input inputPosition textarea-wrapper">
                 <mat-label>O Tobie</mat-label>
-                <textarea (ngModelChange)="aboutYourselfValueChange(aboutYourselfValue)" [(ngModel)]="aboutYourselfValue"
+                <textarea [(ngModel)]="user.aboutMe" #aboutMe="ngModel" name="aboutMe"
                           [maxLength]="350"
-                          [ngModelOptions]="{standalone: true}"
                           cdkAutosizeMaxRows="5"
                           cdkAutosizeMinRows="2"
                           matInput><!--cdkTextareaAutosize-->
                 </textarea>
               </mat-form-field>
-              <span class="remaning"> Dostępnych {{remainingTextAboutYourself}} znaków </span>
+              <span class="remaning"> Dostępnych {{maxLetters-aboutYourselfValue.length}} znaków </span>
             </div>
           </div>
           <div class="row">
@@ -135,20 +219,21 @@
               Zainteresowania:
               <mat-form-field appearance="fill" class="input inputPosition textarea-wrapper">
                 <mat-label>Zainteresowania</mat-label>
-                <textarea (ngModelChange)="interestsValueChange(interestsValue)" [(ngModel)]="interestsValue"
+                <textarea  [(ngModel)]="user.interests" #interests="ngModel" name="interests"
                           [maxLength]="350"
-                          [ngModelOptions]="{standalone: true}"
+
                           cdkAutosizeMaxRows="5"
                           cdkAutosizeMinRows="2"
                           matInput><!--cdkTextareaAutosize-->
                 </textarea>
               </mat-form-field>
-              <span class="remaning"> Dostępnych {{remainingTextInterests}} znaków </span>
+              <span class="remaning"> Dostępnych {{maxLetters-interestsValue.length}} znaków </span>
             </div>
           </div>
           <div class="row">
             <div class="col-md-8">
-              <mat-checkbox class="example-margin">
+              <mat-checkbox class="example-margin" #newsletter="ngModel"
+                            [(ngModel)]="user.newsletter" name="newsletter">
                 <div class="text-wrap">
                   Chce otrzymywać newslettery i ofety promocyjne
                 </div>
@@ -157,7 +242,8 @@
           </div>
           <div class="row">
             <div class="col-md-8">
-              <mat-checkbox class="example-margin">
+              <mat-checkbox class="example-margin" #notifications="ngModel"
+                            [(ngModel)]="user.notifications" name="notifications">
                 <div class="text-wrap">
                   Wysyłaj infromacje o moich ogłoszeniach i aktualizacjach Gumtree
                 </div>
@@ -167,13 +253,14 @@
           <div class="row">
             <div class="col-md-6">
               Wprowadź hasło i naciśnij przycisk by zapisać zmiany
-              <mat-form-field appearance="fill" class="input inputPosition">
+              <mat-form-field appearance="fill" class="input inputPosition" >
                 <mat-label>Hasło</mat-label>
-                <input matInput type="password">
+                <input matInput type="password" #password="ngModel"
+                       [(ngModel)]="user.password" name="password">
               </mat-form-field>
             </div>
             <div class="col-md-4 align-self-center">
-              <button class="round pointer right" id="saveChanges">Zapisz zmiany</button>
+              <button class="round pointer right" id="saveChanges" type="submit" (click)="onSubmit()">Zapisz zmiany</button>
             </div>
           </div>
         </form>

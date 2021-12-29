@@ -15,6 +15,8 @@ export class RegisterComponent implements OnInit {
 
   // @ts-ignore
   subscription: Subscription;
+  user = {email: '', password: '', repeatedPassword: '', termsAccepted: false};
+
 
   // @ts-ignore
   @ViewChild('fontChange', { static: true }) fontChange: ElementRef;
@@ -32,7 +34,7 @@ export class RegisterComponent implements OnInit {
       });
   }
 
-  user = {email: '', password: '', repeatedPassword: '', termsAccepted: false};
+
 
   onSubmit(){
     if (this.registerForm.invalid) {

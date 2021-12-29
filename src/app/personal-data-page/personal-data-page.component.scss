@@ -116,3 +116,41 @@
 #saveChanges{
   margin: auto;
 }
+
+#addImageButton{
+  border-radius: 5rem;
+  background: #f1ebeb; //pobranie koloru main z mat-accent
+  font-size: 1rem;
+  padding: 1rem 2rem 1rem 2rem;
+  color: #000000;
+
+}
+.imageInput{
+  display: none;
+  margin: 20px;
+}
+
+.rightMargin{
+ text-align: center;
+}
+
+.redAlert{
+  color: #ff0000;
+  font-size: 1em;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 80%;
+  border-radius: 3rem;
+  padding: 1rem 0;
+  text-align: center;
+  margin: 0 10% 1rem;
+}
+.redAlert2{
+  color: #ff0000;
+  font-size: 1em;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 70%;
+  margin: 0 15%;
+  border-radius: 3rem;
+  padding: 1rem 0;
+  text-align: center;
+}
