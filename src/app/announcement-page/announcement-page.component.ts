@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Subscription } from "rxjs";
+import { GlobalVariableService } from "../GlobalVariableService";
 import { ActivatedRoute } from '@angular/router';
 
 export interface Announcement {
@@ -21,11 +23,22 @@ export interface Announcement {
 export class AnnouncementPageComponent implements OnInit {
 
   // @ts-ignore
-  public announcementId;
+  subscription: Subscription;
 
-  constructor(private route: ActivatedRoute) { }
+  // @ts-ignore
+  @ViewChild('fontChange', { static: true }) fontChange: ElementRef;
+
+  // @ts-ignore
+  public announcementId;
+  
+  constructor(public globalVariableService: GlobalVariableService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.subscription = this.globalVariableService.fixedFontSize$
+    .subscribe(fixed => {
+      (this.fontChange.nativeElement as HTMLParagraphElement).style.fontSize = `${fixed}px`;
+    });
+
     let tempId = this.route.snapshot.paramMap.get('id');
     let id = tempId !== null ? parseInt(tempId) : null;
     this.announcementId = id;
