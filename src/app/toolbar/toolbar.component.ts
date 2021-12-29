@@ -18,6 +18,9 @@ export class ToolbarComponent implements OnInit {
   fontSize: number=14;
 
   // @ts-ignore
+  lang: string;
+
+  // @ts-ignore
   subscription: Subscription;
   // @ts-ignore
   @ViewChild('fontChange', { static: true }) fontChange: ElementRef;
@@ -28,6 +31,13 @@ export class ToolbarComponent implements OnInit {
         this.fontSize=fixed;
         (this.fontChange.nativeElement as HTMLParagraphElement).style.fontSize = `${fixed}px`;
       });
+
+      this.lang = localStorage.getItem('lang') || 'pl';
+  }
+
+  changeLang(lang:string) {
+    localStorage.setItem('lang', lang);
+    window.location.reload();
   }
 
 }

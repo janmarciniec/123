@@ -1,42 +1,42 @@
 <div #fontChange id="content">
   <app-toolbar></app-toolbar>
   <div id="form">
-    <h1 class="title"><span class="whiteFont">LOGOWANIE</span></h1>
+    <h1 class="title"><span class="whiteFont">{{ 'LOGOWANIE' | translate }}</span></h1>
     <form class="example-form">
       <mat-form-field class="input" appearance="fill">
-        <mat-label>Adres e-mail</mat-label>
-        <input matInput placeholder="np. adres@mail.com" type="email">
+        <mat-label>{{ 'Adres e-mail' | translate }}</mat-label>
+        <input matInput placeholder="{{ 'np.' | translate }} adres@mail.com" type="email">
       </mat-form-field>
       <br/>
       <mat-form-field class="input" appearance="fill">
-        <mat-label>Hasło</mat-label>
+        <mat-label>{{ 'Hasło' | translate }}</mat-label>
         <input matInput type="password">
       </mat-form-field>
       <br/>
       <div class="flex">
         <div class="spacer-2"></div>
-        <button class="round pointer right" id="registerButton" >Zaloguj</button>
+        <button class="round pointer right" id="registerButton">{{ 'Zaloguj' | translate }}</button>
         <div class="spacer"></div>
       </div>
       <div class="dividerContainer">
         <div class="line"><mat-divider></mat-divider></div>
-        <div class="text mat-typography">lub</div>
+        <div class="text mat-typography">{{ 'lub' | translate }}</div>
         <div class="line"><mat-divider></mat-divider></div>
       </div>
       <div id="fbGoogleContainer">
         <button mat-button id="facebookButton" style="padding: 1rem;">
-          <img id="facebookLogo" src="assets/img/facebookLogo.png"> Login With Facebook
+          <img id="facebookLogo" src="assets/img/facebookLogo.png"> {{ 'Zaloguj przy użyciu konta Facebook' | translate }}
         </button>
         <button mat-button id="googleButton" style="padding: 1rem;">
-          <img id="googleLogo" src="assets/img/googleLogo.png"> Login With Google
+          <img id="googleLogo" src="assets/img/googleLogo.png"> {{ 'Zaloguj przy użyciu konta Google' | translate }}
         </button>
       </div>
     </form>
   </div>
   <div id="register">
-    <h1 class="hasAccount">Nie masz jeszcze konta?</h1>
+    <h1 class="hasAccount">{{ 'Nie masz jeszcze konta' | translate }}?</h1>
     <mat-divider class="divider"></mat-divider>
-    <h1 class="getAccount"><a routerLink="/register" class="link">Załóż konto!</a></h1>
+    <h1 class="getAccount"><a routerLink="/register" class="link">{{ 'Załóż konto' | translate }}!</a></h1>
   </div>
   <app-footer></app-footer>
 </div>

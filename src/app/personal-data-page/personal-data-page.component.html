@@ -3,19 +3,19 @@
 <div #fontChange id="content">
   <app-toolbar></app-toolbar>
   <div class="content">
-    <div class="mat-h1 title">Mój profil</div>
+    <div class="mat-h1 title">{{ 'Mój profil' | translate }}</div>
 
     <div class="mainContent">
-      <div class="mat-h2 subtitle">Dane osobowe</div>
+      <div class="mat-h2 subtitle">{{ 'Dane osobowe' | translate }}</div>
       <div class="mainContentData">
         <form #registerForm="ngForm" ><!--(submit)="$event.preventDefault()"-->
           <div class="row">
             <div class="col-md-8">
-              Nazwa użytkownika:
+              {{ 'Nazwa użytkownika' | translate }}:
               <br/>
               <mat-form-field appearance="fill" class="input inputPosition">
-                <mat-label>Nazwa użytkownika</mat-label>
-                <input matInput placeholder="np. uzytkownik" type="text"
+                <mat-label>{{ 'Nazwa użytkownika' | translate }}</mat-label>
+                <input matInput placeholder="{{ 'np.' | translate }} uzytkownik" type="text"
                        #username="ngModel"
                        [(ngModel)]="user.username" name="username"
                        pattern="^(?=.{5,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$"
@@ -30,21 +30,21 @@
                 Don't use spaces. Username must be <strong>at least 5</strong> characters long.
 
             </div>
-              Płeć:
+            {{ 'Płeć' | translate }}:
               <br/>
               <mat-radio-group aria-label="Select an option" class="inputPosition" #radioGender="ngModel"
                                [(ngModel)]="user.gender" name="radioGender" (change)="onRadioGenderChange($event)">
-                <mat-radio-button class="radioButton" value="women">Kobieta</mat-radio-button>
-                <mat-radio-button class="radioButton" value="man">Mężczyzna</mat-radio-button>
+                <mat-radio-button class="radioButton" value="women">{{ 'Kobieta' | translate }}</mat-radio-button>
+                <mat-radio-button class="radioButton" value="man">{{ 'Mężczyzna' | translate }}</mat-radio-button>
               </mat-radio-group>
               <section class="example-section">
                 <mat-checkbox class="example-margin" #showGender="ngModel"
                               [(ngModel)]="user.showGender" name="showGender"
-                              [disabled]="user.gender==='' ? true : false">Wyświetlanie płci na profilu</mat-checkbox>
+                              [disabled]="user.gender==='' ? true : false">{{ 'Wyświetlanie płci na profilu' | translate }}</mat-checkbox>
               </section>
               <div class="row">
                 <div class="col-md-4" id="birthDateLabel">
-                  Data urodzenia:
+                  {{ 'Data urodzenia' | translate }}:
                 </div>
                 <div class="col-md-8">
 <!--  po polsku, ale gorsze
@@ -55,7 +55,7 @@
 -->
 
                   <mat-form-field appearance="fill" class="dataPicker">
-                    <mat-label>Data urodzenia</mat-label>
+                    <mat-label>{{ 'Data urodzenia' | translate }}</mat-label>
                     <input [matDatepicker]="picker" matInput #date="ngModel" disabled
                            [(ngModel)]="user.date" name="date" [max]="maxDate" [min]="minDate">
                     <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
@@ -67,7 +67,7 @@
               <mat-checkbox class="example-margin"
                             #showBirthDate="ngModel"
                             [(ngModel)]="user.showBirthDate" name="showBirthDate"
-                            [disabled]="user.date==='' ? true : false">Wyświetlanie daty urodzenia na profilu</mat-checkbox>
+                            [disabled]="user.date==='' ? true : false">{{ 'Wyświetlanie daty urodzenia na profilu' | translate }}</mat-checkbox>
 
             </div>
             <!--
@@ -94,13 +94,13 @@
                   <!--<button class="round pointer right" >Dodaj zdjęcie</button>-->
 
                   <button (click)="fileInput.click()" class="round pointer right">
-                    Dodaj zdjęcie
+                    {{ 'Dodaj zdjęcie' | translate }}
                     <input #fileInput (change)="selectFile($event)" class="pointer" class="imageInput" type="file"/>
                   </button>
                 </div>
 
                 <div class="col-sm-12 col-md-6">
-                  <button (click)="deleteImage()" class="round pointer right">Usuń zdjęcie</button>
+                  <button (click)="deleteImage()" class="round pointer right">{{ 'Usuń zdjęcie' | translate }}</button>
                 </div>
 
               </div>
@@ -108,36 +108,36 @@
 
           </div>
           <div class="row">
-            <div class="mat-h2 subtitle">Dane kontaktowe</div>
+            <div class="mat-h2 subtitle">{{ 'Dane kontaktowe' | translate }}</div>
           </div>
           <div class="row">
             <div class="col-md-8">
-              Adres email:
+              {{ 'Adres e-mail' | translate }}:
               <mat-form-field appearance="fill" class="input inputPosition">
-                <mat-label>Adres e-mail</mat-label>
-                <input matInput readonly type="email" value="TwojAdresEmail.com">
+                <mat-label>{{ 'Adres e-mail' | translate }}</mat-label>
+                <input matInput readonly type="email" value="mail@mail.com">
               </mat-form-field>
-              Numer telefonu:
+              {{ 'Numer telefonu' | translate }}:
               <br/>
             </div>
           </div>
           <div class="row">
             <div class="col-md-4 col-sm-6">
               <mat-form-field appearance="fill" class="input" id="phoneNumberInput">
-                <mat-label>Telefon</mat-label>
+                <mat-label>{{ 'Telefon' | translate }}</mat-label>
                 <mat-select #phoneNumberType="ngModel" [(ngModel)]="user.phoneNumberType" name="phoneNumberType">
                   <mat-option *ngFor="let phoneNumberType of phoneNumberTypes" [value]="phoneNumberType.value">
-                    {{phoneNumberType.viewValue}}
+                    {{ phoneNumberType.viewValue | translate }}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
             </div>
             <div class="col-md-4">
               <mat-form-field appearance="fill" class="input secondInputPosition" id="phoneNumberInput">
-                <mat-label>Numer telefonu</mat-label>
+                <mat-label>{{ 'Numer telefonu' | translate }}</mat-label>
                 <input #phoneNumber="ngModel" [(ngModel)]="user.phoneNumber" matInput name="phoneNumber"
                        pattern="[0-9]{9}"
-                       placeholder="np. 132123123" type="nuber" value="">
+                       placeholder="{{ 'np.' | translate }} 132123123" type="nuber" value="">
               </mat-form-field>
             </div>
 
@@ -160,15 +160,15 @@
           </div>
           <div class="row">
             <div class="col-md-4">
-              <button class="round pointer right" id="addPhoneNumberButton">Dodaj nowy numer</button>
+              <button class="round pointer right" id="addPhoneNumberButton">{{ 'Dodaj nowy numer' | translate }}</button>
             </div>
           </div>
           <div class="row">
             <div class="col-md-8">
-              Lokalizacja:
+              {{ 'Lokalizacja' | translate }}:
               <mat-form-field appearance="fill" class="input inputPosition">
-                <mat-label>Lokalizacja</mat-label>
-                <input matInput placeholder="np. Lublin" type="text" pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z0-9/]+)*$"
+                <mat-label>{{ 'Lokalizacja' | translate }}</mat-label>
+                <input matInput placeholder="{{ 'np.' | translate }} Lublin" type="text" pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z0-9/]+)*$"
                        #location="ngModel" [(ngModel)]="user.location" matInput name="location">
               </mat-form-field>
 
@@ -183,9 +183,9 @@
           </div>
           <div class="row">
             <div class="col-md-8">
-              Adres twojej strony www:
+              {{ 'Adres Twojej strony www' | translate }}:
               <mat-form-field appearance="fill" class="input inputPosition">
-                <mat-label>Adres strony</mat-label>
+                <mat-label>{{ 'Adres strony' | translate }}</mat-label>
                 <input matInput placeholder="www..." type="text" pattern="(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})"
                        #wwwAddress="ngModel" [(ngModel)]="user.wwwAddress" matInput name="wwwAddress">
               </mat-form-field>
@@ -197,13 +197,13 @@
             </div>
           </div>
           <div class="row">
-            <div class="mat-h2 subtitle">Pozostałe informacje</div>
+            <div class="mat-h2 subtitle">{{ 'Pozostałe informacje' | translate }}</div>
           </div>
           <div class="row">
             <div class="col-md-8">
-              O Tobie:
+              {{ 'O Tobie' | translate }}:
               <mat-form-field appearance="fill" class="input inputPosition textarea-wrapper">
-                <mat-label>O Tobie</mat-label>
+                <mat-label>{{ 'O Tobie' | translate }}</mat-label>
                 <textarea [(ngModel)]="user.aboutMe" #aboutMe="ngModel" name="aboutMe"
                           [maxLength]="350"
                           cdkAutosizeMaxRows="5"
@@ -211,14 +211,14 @@
                           matInput><!--cdkTextareaAutosize-->
                 </textarea>
               </mat-form-field>
-              <span class="remaning"> Dostępnych {{maxLetters-aboutYourselfValue.length}} znaków </span>
+              <span class="remaning"> {{ 'Dostępnych' | translate }} {{maxLetters-aboutYourselfValue.length}} {{ 'znaków' | translate }} </span>
             </div>
           </div>
           <div class="row">
             <div class="col-md-8">
-              Zainteresowania:
+              {{ 'Zainteresowania' | translate }}:
               <mat-form-field appearance="fill" class="input inputPosition textarea-wrapper">
-                <mat-label>Zainteresowania</mat-label>
+                <mat-label>{{ 'Zainteresowania' | translate }}</mat-label>
                 <textarea  [(ngModel)]="user.interests" #interests="ngModel" name="interests"
                           [maxLength]="350"
 
@@ -227,7 +227,7 @@
                           matInput><!--cdkTextareaAutosize-->
                 </textarea>
               </mat-form-field>
-              <span class="remaning"> Dostępnych {{maxLetters-interestsValue.length}} znaków </span>
+              <span class="remaning"> {{ 'Dostępnych' | translate }} {{maxLetters-interestsValue.length}} {{ 'znaków' | translate }} </span>
             </div>
           </div>
           <div class="row">
@@ -235,7 +235,7 @@
               <mat-checkbox class="example-margin" #newsletter="ngModel"
                             [(ngModel)]="user.newsletter" name="newsletter">
                 <div class="text-wrap">
-                  Chce otrzymywać newslettery i ofety promocyjne
+                  {{ 'Chcę otrzymywać newslettery i oferty promocyjne' | translate }}.
                 </div>
               </mat-checkbox>
             </div>
@@ -245,22 +245,22 @@
               <mat-checkbox class="example-margin" #notifications="ngModel"
                             [(ngModel)]="user.notifications" name="notifications">
                 <div class="text-wrap">
-                  Wysyłaj infromacje o moich ogłoszeniach i aktualizacjach Gumtree
+                  {{ 'Wysyłaj informacje o moich ogłoszeniach i aktualizacjach Gumtree' | translate }}.
                 </div>
               </mat-checkbox>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
-              Wprowadź hasło i naciśnij przycisk by zapisać zmiany
+              {{ 'Wprowadź hasło i naciśnij przycisk by zapisać zmiany' | translate }}
               <mat-form-field appearance="fill" class="input inputPosition" >
-                <mat-label>Hasło</mat-label>
+                <mat-label>{{ 'Hasło' | translate }}</mat-label>
                 <input matInput type="password" #password="ngModel"
                        [(ngModel)]="user.password" name="password">
               </mat-form-field>
             </div>
             <div class="col-md-4 align-self-center">
-              <button class="round pointer right" id="saveChanges" type="submit" (click)="onSubmit()">Zapisz zmiany</button>
+              <button class="round pointer right" id="saveChanges" type="submit" (click)="onSubmit()">{{ 'Zapisz zmiany' | translate }}</button>
             </div>
           </div>
         </form>

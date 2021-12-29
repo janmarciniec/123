@@ -9,70 +9,70 @@
       <div id="search" #changeFont2>
         <!-- Kategoria - selector -->
         <mat-form-field appearance="fill" class="selector roundedLeftBorders">
-          <mat-label>Kategoria</mat-label>
+          <mat-label>{{ 'Kategoria' | translate }}</mat-label>
           <mat-select [(value)]="selectedCategory">
             <mat-option *ngFor="let category of categories" [value]="category.value">
-              {{category.viewValue}}
+              {{ category.viewValue | translate }}
             </mat-option>
           </mat-select>
         </mat-form-field>
         <!-- Lokalizacja - selector -->
         <mat-form-field appearance="fill" class="selector">
-          <mat-label>Lokalizacja</mat-label>
+          <mat-label>{{ 'Lokalizacja' | translate }}</mat-label>
           <mat-select [(value)]="selectedLocation">
             <mat-option *ngFor="let location of locations" [value]="location.value">
-              {{location.viewValue}}
+              {{ location.viewValue | translate }}
             </mat-option>
           </mat-select>
         </mat-form-field>
         <!-- wyszukiwarka - input -->
         <mat-form-field appearance="fill" class="searchInput">
-          <mat-label>Wyszukaj</mat-label>
-          <input matInput type="search" placeholder="np. Passat" value="">
+          <mat-label>{{ 'Wyszukaj' | translate }}</mat-label>
+          <input matInput type="search" placeholder="{{ 'np.' | translate }} Passat" value="">
         </mat-form-field>
         <button mat-raised-button class="searchButton">
-          Wyszukaj
+          {{ 'Wyszukaj' | translate }}
         </button>
       </div>
     </div>
 
     <div class="row mt-5 p-3 align-items-center" id="filters">
       
-      <div class="col-2"><p class="my-auto" id="header">Filtry</p></div>
+      <div class="col-2"><p class="my-auto" id="header">{{ 'Filtry' | translate }}</p></div>
       
       <div class="col-2">
-        <label for="category" class="small-text mb-1">Kategoria</label><br/>
+        <label for="category" class="small-text mb-1">{{ 'Kategoria' | translate }}</label><br/>
         <select class="form-select form-select-lg" name="category" id="category">
           <option *ngFor="let category of categories" [value]="category.value">
-            {{ category.viewValue }}
+            {{ category.viewValue | translate }}
           </option>
         </select>
       </div>
       
       <div class="col-2">
-        <label for="location" class="small-text mb-1">Lokalizacja</label><br/>
+        <label for="location" class="small-text mb-1">{{ 'Lokalizacja' | translate }}</label><br/>
         <select class="form-select form-select-lg" name="location">
           <option *ngFor="let location of locations" [value]="location.value">
-            {{ location.viewValue }}
+            {{ location.viewValue | translate }}
           </option>
         </select>
       </div>
       
       <div class="col-2">
-        <label for="type" class="small-text mb-1">Rodzaj oferty</label><br/>
+        <label for="type" class="small-text mb-1">{{ 'Rodzaj oferty' | translate }}</label><br/>
         <select class="form-select form-select-lg" name="type">
           <option *ngFor="let type of types" [value]="type.value">
-            {{ type.viewValue }}
+            {{ type.viewValue | translate }}
           </option>
         </select>
       </div>
       
       <div class="col-3 ms-5">
-        <label for="price-from" class="small-text mb-1">Cena</label><br/>
-        <input type="text" name="price-from" size="3" placeholder="Od" class="price">
+        <label for="price-from" class="small-text mb-1">{{ 'Cena' | translate }}</label><br/>
+        <input type="text" name="price-from" size="3" placeholder="{{ 'Od' | translate }}" class="price">
         <span class="small-text ms-1 me-3">zł</span>
 
-        <input type="text" name="price-to" size="3" placeholder="Do" class="price">
+        <input type="text" name="price-to" size="3" placeholder="{{ 'Do' | translate }}" class="price">
         <span class="small-text ms-1">zł</span>
       </div>
 
@@ -80,16 +80,16 @@
   
     <div class="row justify-content-between mt-4 mb-3 d-flex flex-row">
       <div class="col-8">
-        <p class="small-text mt-3"><a href="/">Wszystkie ogłoszenia</a> > <a href="/category">Dom i Ogród</a> > <a href="/category">Meble</a></p>
+        <p class="small-text mt-3"><a href="/">{{ 'Wszystkie ogłoszenia' | translate }}</a> > <a href="/category">{{ 'Dom i ogród' | translate }}</a> > <a href="/category">{{ 'Meble' | translate }}</a></p>
       </div>
 
       <div class="col-4 d-flex justify-content-end">
-        <p class="small-text me-2 mt-4">Sortuj według:</p>
+        <p class="small-text me-2 mt-4">{{ 'Sortuj według' | translate }}</p>
         <mat-form-field appearance="fill">
           <mat-select [(value)]="selectedSortBy">
-            <mat-option value="newest">Najnowsze</mat-option>
-            <mat-option value="cheapest">Najtańsze</mat-option>
-            <mat-option value="mostExp">Najdroższe</mat-option>
+            <mat-option value="newest">{{ 'Najnowsze' | translate }}</mat-option>
+            <mat-option value="cheapest">{{ 'Najtańsze' | translate }}</mat-option>
+            <mat-option value="mostExp">{{ 'Najdroższe' | translate }}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -108,7 +108,7 @@
             <span class="big-text pointer" (click)="onSelect(announcement)">{{ announcement.title }}</span>
           </div>
           <div class="col-2 d-flex justify-content-end">
-            <span class="big-text">{{ announcement.price }}</span>
+            <span class="big-text">{{ announcement.price }} {{ 'zł' | translate }}</span>
           </div>
         </div>
 

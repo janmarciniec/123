@@ -41,9 +41,24 @@ export class MainPageComponent implements OnInit {
   }
 
   categories: Map[] = [
-    {value: 'realEstate', viewValue: 'Nieruchomości'},
-    {value: 'homeAndGarden', viewValue: 'Dom i ogród'},
-    {value: 'musicAndEntertainment', viewValue: 'Muzyka i rozrywka'},
+    { value: 'homeAndGarden', viewValue: 'Dom i ogród' },
+    { value: 'electronics', viewValue: 'Elektronika' },
+    { value: 'antiquesAndCollections', viewValue: 'Antyki i kolekcje' },
+    { value: 'forBaby', viewValue: 'Dla dziecka' },
+    { value: 'realEstate', viewValue: 'Nieruchomości' },
+    { value: 'services', viewValue: 'Usługi' },
+    { value: 'musicAndEntertainment', viewValue: 'Muzyka i rozrywka' },
+    { value: 'boatsAndWaterVehicles', viewValue: 'Łodzie i pojazdy wodne' },
+    { value: 'lookingForJob', viewValue: 'Szukający zatrudnienia' },
+    { value: 'automotive', viewValue: 'Motoryzacja' },
+    { value: 'community', viewValue: 'Społeczność' },
+    { value: 'sportAndFitness', viewValue: 'Sport i fitness' },
+    { value: 'healthAndBeauty', viewValue: 'Zdrowie i uroda' },
+    { value: 'pets', viewValue: 'Zwierzaki' },
+    { value: 'fashion', viewValue: 'Moda' },
+    { value: 'jobOffers', viewValue: 'Oferty pracy' },
+    { value: 'exchange', viewValue: 'Wymiana/zamiana' },
+    { value: 'donate', viewValue: 'Oddam za darmo' }
   ];
 
   locations: Map[] = [

@@ -35,12 +35,19 @@ import { SubcategoriesComponent } from './subcategories/subcategories.component'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AnnouncementPageComponent } from './announcement-page/announcement-page.component';
 import { SavedPageComponent } from './saved-page/saved-page.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: 'category', component: CategoryPageComponent },
   { path: 'announcement/:id', component: AnnouncementPageComponent },
   { path: 'saved', component: SavedPageComponent }
 ]
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -80,9 +87,17 @@ const appRoutes: Routes = [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
   ],
   providers: [GlobalVariableService,
-    MatNativeDateModule],
+    MatNativeDateModule, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

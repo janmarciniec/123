@@ -4,8 +4,8 @@
     <h1 class="title"><span class="whiteFont">REJESTRACJA</span></h1>
   <form class="form-group" #registerForm="ngForm">
     <mat-form-field class="input" appearance="fill" [(ngModel)]="user.email">
-      <mat-label>Adres e-mail</mat-label>
-      <input matInput placeholder="np. adres@mail.com" id="email"
+      <mat-label>{{ 'Adres e-mail' | translate }}</mat-label>
+      <input matInput placeholder="{{ 'np.' | translate }} adres@mail.com" id="email"
              [(ngModel)]="user.email" name="email" #email="ngModel"
              type="email" required minlength="4" maxlength="25" email>
     </mat-form-field>
@@ -25,7 +25,7 @@
 
     <br/>
     <mat-form-field class="input" appearance="fill">
-      <mat-label>Hasło</mat-label>
+      <mat-label>{{ 'Hasło' | translate }}</mat-label>
       <input matInput type="password"
              required minlength="8"
              [(ngModel)]="user.password" name="password" #password="ngModel"
@@ -33,7 +33,7 @@
     </mat-form-field>
     <br/>
     <mat-form-field class="input" appearance="fill">
-      <mat-label>Powtórz hasło</mat-label>
+      <mat-label>{{ 'Powtórz hasło' | translate }}</mat-label>
       <input matInput type="password"
              required minlength="8"  pattern="{{ password.value }}"
              [(ngModel)]="user.repeatedPassword" name="repeatedPassword" #repeatedPassword="ngModel"
@@ -64,7 +64,7 @@
     </div>
     <br/>
     <section class="checkbox whiteFont">
-      <mat-checkbox class="example-margin" name="checked" value="false" [(ngModel)]="user.termsAccepted" #checked="ngModel" type="checkbox" required><span class="redStar">*</span>Oświadczam, że znam i akceptuję postanowienia regulaminu</mat-checkbox>
+      <mat-checkbox class="example-margin" name="checked" value="false" [(ngModel)]="user.termsAccepted" #checked="ngModel" type="checkbox" required><span class="redStar">*</span>{{ 'Oświadczam, że znam i akceptuję postanowienia regulaminu' | translate }}.</mat-checkbox>
     </section>
 
     <div *ngIf="checked.value===false && (checked.dirty || checked.touched)" class="redAlert">
@@ -73,19 +73,19 @@
 
 
     <section class="checkbox whiteFont">
-      <mat-checkbox class="example-margin">Tak, chcę aby Gumtree oraz firmy z rodziny Adiventa powiadamiały mnie o wydarzeniach, aktualnościach, nowych funkcjach i promocjach.</mat-checkbox>
+      <mat-checkbox class="example-margin">{{ 'Tak, chcę aby Gumtree oraz firmy z rodziny Adiventa powiadamiały mnie o wydarzeniach, aktualnościach, nowych funkcjach i promocjach' | translate }}.</mat-checkbox>
     </section>
     <div class="flex">
       <div class="spacer-2"></div>
-      <button class="round pointer right" id="loginButton" type="submit" (click)="onSubmit()">Zarejestruj</button>
+      <button class="round pointer right" id="loginButton" type="submit" (click)="onSubmit()">{{ 'Zarejestruj' | translate }}</button>
       <div class="spacer"></div>
     </div>
   </form>
   </div>
   <div id="login">
-    <h1 class="hasAccount">Masz już konto?</h1>
+    <h1 class="hasAccount">{{ 'Masz już konto' | translate }}?</h1>
     <mat-divider class="divider"></mat-divider>
-    <h1 class="getAccount"><a routerLink="/login" class="link">Zaloguj się!</a></h1>
+    <h1 class="getAccount"><a routerLink="/login" class="link">{{ 'Zaloguj się' | translate }}!</a></h1>
   </div>
 <app-footer></app-footer>
 

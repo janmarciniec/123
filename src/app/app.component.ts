@@ -2,6 +2,7 @@ import {Component, ElementRef, HostBinding, ViewChild} from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 import {GlobalVariableService} from "./GlobalVariableService";
 import {Subject} from "rxjs";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -19,10 +20,15 @@ export class AppComponent{
 
  // fsSubject = new Subject<number>();
 
-  constructor(public globalVariableService: GlobalVariableService) {
+  constructor(public globalVariableService: GlobalVariableService, private translateService: TranslateService) {
  /*   this.fsSubject.subscribe((value:any) => {
       (this.fontChange.nativeElement as HTMLParagraphElement).style.fontSize = `${value}px`;
     })*/
+
+    this.translateService.setDefaultLang('pl');
+    const lang = localStorage.getItem('lang') || 'pl';
+    this.translateService.use(lang);
+    document.documentElement.lang = lang;
   }
 /*
   // @ts-ignore

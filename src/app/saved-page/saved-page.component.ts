@@ -121,10 +121,10 @@ export class SavedPageComponent implements OnInit {
   ];
 
   announcements: Announcement[] = [
-    {id: 1, title: 'Kanapa narożna kolor szary, duża', image: 'assets/img/announcementImages/image.jpg', location: 'Wrocław', date: '19 listopada', price: '950 zł', favourite: true},
-    {id: 2, title: 'Fotel w stylu skandynawskim, kolor Magenta', image: 'assets/img/announcementImages/image1.jpg', location: 'Warszawa', date: '19 listopada', price: '459 zł', favourite: true},
-    {id: 3, title: 'Sofa rozkładana', image: 'assets/img/announcementImages/image2.jpg', location: 'Poznań', date: '18 listopada', price: '550 zł', favourite: true},
-    {id: 4, title: 'Szafa przesuwna 150x200x58 połysk', image: 'assets/img/announcementImages/image3.jpg', location: 'Warszawa', date: '18 listopada', price: '990 zł', favourite: true}
+    {id: 1, title: 'Kanapa narożna kolor szary, duża', image: 'assets/img/announcementImages/image.jpg', location: 'Wrocław', date: '19 listopada', price: '950', favourite: true},
+    {id: 2, title: 'Fotel w stylu skandynawskim, kolor Magenta', image: 'assets/img/announcementImages/image1.jpg', location: 'Warszawa', date: '19 listopada', price: '459', favourite: true},
+    {id: 3, title: 'Sofa rozkładana', image: 'assets/img/announcementImages/image2.jpg', location: 'Poznań', date: '18 listopada', price: '550', favourite: true},
+    {id: 4, title: 'Szafa przesuwna 150x200x58 połysk', image: 'assets/img/announcementImages/image3.jpg', location: 'Warszawa', date: '18 listopada', price: '990', favourite: true}
   ];
 
 }

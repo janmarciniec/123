@@ -18,37 +18,23 @@
   <a (click)="globalVariableService.changeFontSize('+')" class="changeFontButton"><mat-icon class="icon-display-3 icon">text_increase</mat-icon></a>
 
   <mat-menu #appMenu="matMenu" class="menuButtons">
-    <button routerLink="/login" mat-menu-item aria-label="Login button" class="menuButtons">Zaloguj</button>
-    <button routerLink="/register" mat-menu-item aria-label="Register button" class="menuButtons">Zarejestruj</button>
-    <button routerLink="/personal-data" mat-menu-item aria-label="Personal data button" class="menuButtons">Moje dane</button>
-    <button routerLink="/saved" mat-menu-item aria-label="Saved announcements button" class="menuButtons">Zachowane ogłoszenia</button>
+    <button routerLink="/login" mat-menu-item aria-label="Login button" class="menuButtons">{{ 'Zaloguj' | translate }}</button>
+    <button routerLink="/register" mat-menu-item aria-label="Register button" class="menuButtons">{{ 'Zarejestruj' | translate }}</button>
+    <button routerLink="/personal-data" mat-menu-item aria-label="Personal data button" class="menuButtons">{{ 'Moje dane' | translate }}</button>
+    <button routerLink="/saved" mat-menu-item aria-label="Saved announcements button" class="menuButtons">{{ 'Zachowane ogłoszenia' | translate }}</button>
   </mat-menu>
 
 
   <button mat-raised-button [matMenuTriggerFor]="appMenu"class="menuButtons">
     <mat-icon>account_circle</mat-icon>
-    Moje Gumtree
+    {{ 'Moje Gumtree' | translate }}
   </button>
-  <button class="round pointer" >Dodaj ogłoszenie</button>
+  <button class="round pointer">{{ 'Dodaj ogłoszenie' | translate }}</button>
 
-
-  <img
-    height="60"
-    width="60"
-    alt="Angular Logo"
-    src="assets/img/poland.png"
-    aria-label="hide"
-    class="pointer"
-  />
-
-  <img
-    height="60"
-    width="60"
-    alt="Angular Logo"
-    src="assets/img/england.png"
-    aria-label="hide"
-    class="pointer"
-  />
+  <select (change)="changeLang($any($event.target).value)" class="mx-2 p-2">
+    <option value="pl" [selected]="lang == 'pl'">Polski</option>
+    <option value="en" [selected]="lang == 'en'">English</option>
+  </select>
 
 </mat-toolbar>
 </div>
