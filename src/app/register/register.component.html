@@ -1,7 +1,7 @@
 <div #fontChange id="content">
 <app-toolbar></app-toolbar>
   <div id="form">
-    <h1 class="title"><span class="whiteFont">REJESTRACJA</span></h1>
+    <h1 class="title"><span class="whiteFont">{{ 'REJESTRACJA' | translate }}</span></h1>
   <form class="form-group" #registerForm="ngForm">
     <mat-form-field class="input" appearance="fill" [(ngModel)]="user.email">
       <mat-label>{{ 'Adres e-mail' | translate }}</mat-label>
