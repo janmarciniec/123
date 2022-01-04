@@ -21,7 +21,7 @@
   
   #search {
     background-color: map-get($mat-primary, lighter);
-    padding: 0.2rem;
+    padding: 0.1rem;
     width: fit-content;
     border-radius: 5rem;
   }
@@ -52,8 +52,10 @@
     background-color: white;
     padding: 0px;
   }
+  
   .searchButton{
-    margin: 1rem 1rem 1rem 0rem;
+    margin: 1rem 1rem 1rem 0.5rem;
+    color: white;
     background-color: map-get($mat-accent, main);
     padding: 1.2rem;
     border-radius: 0rem 2rem 2rem 0;

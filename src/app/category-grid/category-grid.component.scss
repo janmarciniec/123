@@ -1,11 +1,11 @@
 @import "../../custom-theme.scss";
 
 .grid{
-  margin: 1em;
+  margin-bottom: 4em;
+  padding: 2em;
 }
 
 .gridItem{
-  background-color: #ece6e6;
   position: absolute;
   border-style: solid;
   border-radius: 2rem;
@@ -44,12 +44,20 @@
   transform: translate(-50%, -50%);
 }
 
+.category {
+  color: map-get($mat-primary, main);
+  font-size: 1.2em;
+  font-weight: 500;
+  line-height: 1.1em;
+}
+
 .title{
   text-align: center;
   font-style: inherit;
   font-size: 2.5em;
   font-weight: bold;
-  padding: 1rem;
+  margin-top: 75px;
+  letter-spacing: 0.2em;
 }
 
 .clicked {

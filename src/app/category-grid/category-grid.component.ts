@@ -44,8 +44,8 @@ export class CategoryGridComponent implements OnInit {
     { id: 13, text: 'Zwierzaki', cols: 1, rows: 1, color: 'white', image: 'assets/img/categoryImages/zwierzaki.png', showSubcategories: false },
     { id: 14, text: 'Moda', cols: 1, rows: 1, color: 'white', image: 'assets/img/categoryImages/moda.png', showSubcategories: false },
     { id: 15, text: 'Oferty pracy', cols: 1, rows: 1, color: 'white', image: 'assets/img/categoryImages/oferty_pracy.png', showSubcategories: false },
-    { id: 16, text: 'Wymiana/zamiana', cols: 1, rows: 1, color: 'white', image: 'assets/img/categoryImages/empty.png', showSubcategories: false },
-    { id: 17, text: 'Oddam za darmo', cols: 1, rows: 1, color: 'white', image: 'assets/img/categoryImages/empty.png', showSubcategories: false }
+    { id: 16, text: 'Wymiana/zamiana', cols: 1, rows: 1, color: 'white', image: '', showSubcategories: false },
+    { id: 17, text: 'Oddam za darmo', cols: 1, rows: 1, color: 'white', image: '', showSubcategories: false }
   ];
 
   ngOnInit(): void {
