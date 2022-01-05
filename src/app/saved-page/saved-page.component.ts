@@ -73,6 +73,7 @@ export class SavedPageComponent implements OnInit {
   }
 
   categories: Map[] = [
+    { value: 'all', viewValue: 'Wszystkie' },
     { value: 'homeAndGarden', viewValue: 'Dom i ogród' },
     { value: 'electronics', viewValue: 'Elektronika' },
     { value: 'antiquesAndCollections', viewValue: 'Antyki i kolekcje' },
@@ -114,6 +115,7 @@ export class SavedPageComponent implements OnInit {
   ];
 
   types: Map[] = [
+    { value: 'all', viewValue: 'Wszystkie' },
     {value: 'sell', viewValue: 'Sprzedaż'},
     {value: 'free', viewValue: 'Za darmo'},
     {value: 'contact', viewValue: 'Proszę o kontakt'},

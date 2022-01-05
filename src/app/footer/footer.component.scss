@@ -4,7 +4,8 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 10rem;            /* Footer height */
+  background-color: #f1ebeb;
+  padding-top: 1em;
 }
 
 .line1 {
@@ -14,6 +15,7 @@
   transform: translate(-0%, -50%);
   font-weight: bold;
   text-transform: uppercase;
+  font-size: 1.1em;
 }
 .line2 {
   position: absolute;
@@ -23,21 +25,27 @@
 }
 .line3 {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 0%;
   transform: translate(-0%, -50%);
 }
+
 .line4 {
   position: absolute;
-  top: 70%;
+  top: 60%;
   left: 0%;
   transform: translate(-0%, -50%);
 }
 .line5 {
   position: absolute;
-  top: 90%;
+  top: 75%;
   left: 0%;
   transform: translate(-0%, -50%);
+}
+
+.line2:hover, .line3:hover, .line4:hover, .line5:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .column0{
@@ -55,8 +63,4 @@
 }
 .column4{
   left: 60%;
-}
-
-.footer{
-  background-color: #f1ebeb;
 }

@@ -31,9 +31,9 @@
   </button>
   <button class="round pointer">{{ 'Dodaj ogłoszenie' | translate }}</button>
 
-  <select (change)="changeLang($any($event.target).value)" class="mx-2 p-2">
-    <option value="pl" [selected]="lang == 'pl'">Polski</option>
-    <option value="en" [selected]="lang == 'en'">English</option>
+  <select (change)="changeLang($any($event.target).value)" class="mx-2 p-2" id="lang">
+    <option value="pl" [selected]="lang == 'pl'" id="lang-opt">{{ 'Język' | translate }}: polski</option>
+    <option value="en" [selected]="lang == 'en'" id="lang-opt">{{ 'Język' | translate }}: english</option>
   </select>
 
 </mat-toolbar>

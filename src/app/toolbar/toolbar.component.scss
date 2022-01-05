@@ -41,8 +41,7 @@
   background: map-get($mat-accent, main); //pobranie koloru main z mat-accent
   font-size: 1rem;
   padding: 0.5rem 2rem 0.5rem 2rem;
-  color: #e6ebf1;
-
+  color: white;
 }
 .hover12 {
   position: relative;
@@ -89,7 +88,7 @@
 }
 
 .bar{
-  padding: 2.5rem 0 2.5rem 0;
+  padding: 2.5rem 1rem 2.5rem 1rem;
 }
 
 .mainButton{
@@ -108,4 +107,15 @@ a {
 
 select {
   border-radius: 4px;
+}
+
+#lang {
+  color: map-get($mat-primary, main);
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+#lang-opt {
+  color: map-get($mat-primary, main);
+  font-weight: 500;
 }
