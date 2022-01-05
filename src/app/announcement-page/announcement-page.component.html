@@ -20,7 +20,7 @@
                     <div class="row">
                         <div class="col-12 p-1 green-border">
                             <!-- image -->
-                            <img src="{{ announcement.image }}" alt="" class="w-100">
+                            <img src="{{ announcement.image }}" alt="advertised item" class="w-100">
                         </div>
                     </div>
 
@@ -49,7 +49,7 @@
                     <p id="location" class="mt-5">{{ 'Lokalizacja' | translate }}:</p>
                     <p id="location-value" class="flex-start"><mat-icon>place</mat-icon> {{ announcement.location }}</p>
 
-                    <img src="{{ announcement.map }}" alt="" class="w-100">
+                    <img src="{{ announcement.map }}" alt="map" class="w-100">
 
                     <button (click)="announcement.favourite = !announcement.favourite" id="btn-favourite" class="center mt-5 py-2">
                         <span *ngIf="announcement.favourite == false" class="center"><mat-icon class="me-1">star_outline</mat-icon>{{ 'Dodaj do zachowanych' | translate }}</span>

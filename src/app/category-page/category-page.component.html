@@ -98,7 +98,7 @@
     <div class="row announcement-card mb-4 mt-1" *ngFor="let announcement of announcements | paginate: { itemsPerPage: itemsPerPage, currentPage: page }">
       
       <div class="col-2 p-1">
-        <img src="{{ announcement.image }}" alt="" class="w-100 pointer" (click)="onSelect(announcement)">
+        <img src="{{ announcement.image }}" alt="advertised item" class="w-100 pointer" (click)="onSelect(announcement)">
       </div>
 
       <div class="col-10">

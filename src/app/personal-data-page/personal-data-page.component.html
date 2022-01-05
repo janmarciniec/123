@@ -82,7 +82,7 @@
 
             <div class="col-md-4">
               <div *ngIf="!url">
-                <img #image id="personIcon" src="assets/img/person.png">
+                <img #image id="personIcon" src="assets/img/person.png" alt="default profile picture">
               </div>
               <div *ngIf="url">
                 <img #image [src]="url" id="personIcon">
