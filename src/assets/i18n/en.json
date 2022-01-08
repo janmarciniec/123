@@ -337,5 +337,20 @@
     "Szukam innych usług": "Looking for other services",
     "Szukam kursu, lekcji, korepetycji": "Looking for a course, lessons, tutoring",
     "Język": "Language",
-    "Wszystkie": "All"
+    "Wszystkie": "All",
+    "E-mail jest wymagany": "E-mail is required",
+    "E-mail musi składać się z co najmniej 4 znaków": "E-mail has to be at least 4 characters long",
+    "E-mail jest niepoprawny": "E-mail is not correct",
+    "Hasło jest wymagane": "Password is required",
+    "Powtórzenie hasła jest wymagane": "Repeated password is required",
+    "Hasło musi składać się z co najmniej 8 znaków": "Password has to be at least 8 characters long",
+    "Hasła nie są takie same": "Password does not match the repeated password",
+    "Wymagane zgody muszą być zaznaczone": "Terms have to be accepted",
+    "Nazwa użytkownika jest niepoprawna": "Username is invalid",
+    "Nie używaj spacji. Nazwa użytkownika musi składać się co najmniej z 5 znaków": "Don't use spaces. Username has to be at least 5 characters long",
+    "Typ telefonu jest wymagany": "Phone type is required",
+    "Numer telefonu jest niepoprawny": "Phone number is invalid",
+    "Lokalizacja jest niepoprawna": "Location is invalid",
+    "Dozwolone znaki": "Permitted characters",
+    "Adres strony jest niepoprawny": "Web address is invalid"
 }

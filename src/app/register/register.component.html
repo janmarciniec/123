@@ -13,13 +13,13 @@
          class="redAlert">
 
       <div *ngIf="email.errors?.['required']">
-        Name is <strong>required.</strong>
+        {{ 'E-mail jest wymagany' | translate }}.
       </div>
       <div *ngIf="email.errors?.['minlength']">
-        Name must be <strong>at least 4</strong> characters long.
+        {{ 'E-mail musi składać się z co najmniej 4 znaków' | translate }}.
       </div>
       <div *ngIf="email.errors?.['email']">
-        Email is not correct.
+        {{ 'E-mail jest niepoprawny' | translate }}.
       </div>
     </div>
 
@@ -48,16 +48,16 @@
     <div *ngIf="(password.invalid || repeatedPassword.invalid) && (password.dirty || password.touched || repeatedPassword.dirty || repeatedPassword.touched)"class="redAlert" >
 
       <div *ngIf="password.errors?.['required']">
-        Password is <strong>required</strong>
+        {{ 'Hasło jest wymagane' | translate }}.
       </div>
       <div *ngIf="repeatedPassword.errors?.['required']">
-        Repeated password is <strong>required</strong>
+        {{ 'Powtórzenie hasła jest wymagane' | translate }}.
       </div>
     <mat-error *ngIf="repeatedPassword.errors?.['minlength'] || password.errors?.['minlength']">
-      Password must be <strong>at least 8</strong> characters long.
+      {{ 'Hasło musi składać się z co najmniej 8 znaków' | translate }}.
     </mat-error>
     <div *ngIf="repeatedPassword.errors?.['pattern']">
-      Password & Repeated Password does not match.
+      {{ 'Hasła nie są takie same' | translate }}.
     </div>
 
 
@@ -68,7 +68,7 @@
     </section>
 
     <div *ngIf="checked.value===false && (checked.dirty || checked.touched)" class="redAlert">
-      Terms <strong>have to</strong> be accepted
+      {{ 'Wymagane zgody muszą być zaznaczone' | translate }}.
     </div>
 
 

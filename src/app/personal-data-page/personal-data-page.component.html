@@ -25,9 +25,9 @@
               *ngIf="username.invalid"
               class="redAlert">
 
-              Username is <strong>invalid</strong>
+              {{ 'Nazwa użytkownika jest niepoprawna' | translate }}.
                 <br/>
-                Don't use spaces. Username must be <strong>at least 5</strong> characters long.
+                {{ 'Nie używaj spacji. Nazwa użytkownika musi składać się co najmniej z 5 znaków' | translate }}.
 
             </div>
             {{ 'Płeć' | translate }}:
@@ -149,10 +149,10 @@
                 class="redAlert">
 
                 <div *ngIf="phoneNumberType.value==='' && phoneNumber.value!==''">
-                  Phone number type is also <strong>required</strong>
+                  {{ 'Typ telefonu jest wymagany' | translate }}.
                 </div>
                 <div *ngIf="phoneNumber.invalid">
-                  Phone number is <strong>invalid!</strong>
+                  {{ 'Numer telefonu jest niepoprawny' | translate }}.
                 </div>
               </div>
             </div>
@@ -174,9 +174,9 @@
 
               <div *ngIf="location.invalid"
                    class="redAlert">
-                Location is <strong>invalid</strong>
+                   {{ 'Lokalizacja jest niepoprawna' | translate }}.
                 <br/>
-                Permited chars: a-z, A-Z, /, 0-9.
+                {{ 'Dozwolone znaki' | translate }}: a-z, A-Z, /, 0-9.
               </div>
             </div>
 
@@ -192,7 +192,7 @@
 
               <div *ngIf="wwwAddress.invalid"
                    class="redAlert">
-                Your inserted address is <strong>invalid</strong>.
+                   {{ 'Adres strony jest niepoprawny' | translate }}.
               </div>
             </div>
           </div>
