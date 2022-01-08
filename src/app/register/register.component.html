@@ -1,7 +1,7 @@
 <div #fontChange id="content">
 <app-toolbar></app-toolbar>
   <div id="form">
-    <h1 class="title"><span class="whiteFont">{{ 'REJESTRACJA' | translate }}</span></h1>
+    <h1 class="title"><span class="whiteFont" tabindex="0">{{ 'REJESTRACJA' | translate }}</span></h1>
   <form class="form-group" #registerForm="ngForm">
     <mat-form-field class="input" appearance="fill" [(ngModel)]="user.email">
       <mat-label>{{ 'Adres e-mail' | translate }}</mat-label>
@@ -85,7 +85,7 @@
   <div id="login">
     <h1 class="hasAccount">{{ 'Masz już konto' | translate }}?</h1>
     <mat-divider class="divider"></mat-divider>
-    <h1 class="getAccount"><a routerLink="/login" class="link">{{ 'Zaloguj się' | translate }}!</a></h1>
+    <a routerLink="/login" class="link getAccount" role="link">{{ 'Zaloguj się' | translate }}!</a>
   </div>
 <app-footer></app-footer>
 

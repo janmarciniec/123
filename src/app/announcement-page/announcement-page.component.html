@@ -6,9 +6,9 @@
 
             <div class="row mb-3">
                 <div class="col-12">
-                    <a href="/category" class="small-text green flex-start"><mat-icon>arrow_back_ios</mat-icon>{{ 'Wróć' | translate }}</a>
+                    <a href="/category" class="small-text green flex-start" role="navigation"><mat-icon>arrow_back_ios</mat-icon>{{ 'Wróć' | translate }}</a>
                     <p class="small-text mt-1" >
-                        <a href="/">{{ 'Wszystkie ogłoszenia' | translate }}</a> > <a href="/category">{{ 'Dom i ogród' | translate }}</a> > <a href="/category">{{ 'Meble' | translate }}</a> > <span class="green">{{ announcement.title }}</span>
+                        <a href="/" role="navigation">{{ 'Wszystkie ogłoszenia' | translate }}</a> > <a href="/category" role="navigation">{{ 'Dom i ogród' | translate }}</a> > <a href="/category" role="navigation">{{ 'Meble' | translate }}</a> > <span class="green" tabindex="0" role="navigation">{{ announcement.title }}</span>
                     </p>
                 </div>
             </div>
@@ -18,7 +18,7 @@
                 <div class="col-7">
 
                     <div class="row">
-                        <div class="col-12 p-1 green-border">
+                        <div class="col-12 p-1 green-border" tabindex="0" aria-label="Picture of the advertised item">
                             <!-- image -->
                             <img src="{{ announcement.image }}" alt="advertised item" class="w-100">
                         </div>
@@ -27,11 +27,11 @@
                     <div class="row">
                         <div class="col-12 green-border mt-3 p-3">
                             <!-- description -->
-                            <p id="date">{{ 'Data dodania' | translate }}: <span id="date-value">{{ announcement.date }}</span></p>
-                            <p id="title">{{ announcement.title }}</p>
-                            <p id="price">{{ announcement.price }} {{ 'zł' | translate }}</p>
-                            <p id="description" class="mt-5">{{ 'Opis' | translate }}</p>
-                            <p id="description-value">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit id tortor a consequat. Nam finibus magna aliquam, ultrices felis quis, tempus enim. Duis eu ipsum sed nisi vehicula ultricies a ac odio. Mauris maximus porta massa, quis aliquam enim posuere sit amet. Phasellus sagittis erat ut suscipit euismod. Nunc accumsan risus tortor, et dignissim orci mollis sed. Aliquam consectetur tempus feugiat. Vivamus aliquam sed libero sit amet consequat. In id sem vel ligula cursus efficitur sit amet pellentesque tortor. Phasellus ullamcorper orci non libero commodo pretium. Morbi maximus odio vel bibendum facilisis. Phasellus ligula magna, dictum sit amet scelerisque eget, condimentum sit amet odio. In luctus ut mauris id tincidunt. Nulla arcu neque, condimentum in blandit a, pharetra et sem.</p>
+                            <p id="date" tabindex="0">{{ 'Data dodania' | translate }}: <span id="date-value">{{ announcement.date }}</span></p>
+                            <p id="title" tabindex="0">{{ announcement.title }}</p>
+                            <p id="price" tabindex="0">{{ announcement.price }} {{ 'zł' | translate }}</p>
+                            <p id="description" class="mt-5" tabindex="0">{{ 'Opis' | translate }}</p>
+                            <p id="description-value" tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit id tortor a consequat. Nam finibus magna aliquam, ultrices felis quis, tempus enim. Duis eu ipsum sed nisi vehicula ultricies a ac odio. Mauris maximus porta massa, quis aliquam enim posuere sit amet. Phasellus sagittis erat ut suscipit euismod. Nunc accumsan risus tortor, et dignissim orci mollis sed. Aliquam consectetur tempus feugiat. Vivamus aliquam sed libero sit amet consequat. In id sem vel ligula cursus efficitur sit amet pellentesque tortor. Phasellus ullamcorper orci non libero commodo pretium. Morbi maximus odio vel bibendum facilisis. Phasellus ligula magna, dictum sit amet scelerisque eget, condimentum sit amet odio. In luctus ut mauris id tincidunt. Nulla arcu neque, condimentum in blandit a, pharetra et sem.</p>
                         </div>
                         
                     </div>
@@ -40,16 +40,17 @@
 
                 <div class="col-4 green-border ml-3 p-3">
                     <!-- seller -->
-                    <p id="seller" class="flex-start"><mat-icon>person_outline</mat-icon> {{ announcement.seller }}</p>
-                    <p id="more" class="mb-5">{{ 'Zobacz więcej ogłoszeń' | translate }}</p>
+                    <p tabindex="0">Dodane przez:</p>
+                    <p id="seller" class="flex-start" tabindex="0"><mat-icon>person_outline</mat-icon> {{ announcement.seller }}</p>
+                    <p id="more" class="mb-5" tabindex="0" role="link" aria-label="See more announcements from this user">{{ 'Zobacz więcej ogłoszeń' | translate }}</p>
 
                     <button id="btn-number" class="btn me-1 py-2 mb-1">{{ 'Pokaż numer telefonu' | translate }}</button>
                     <button id="btn-message" class="btn py-2 mb-1">{{ 'Wyślij wiadomość' | translate }}</button>
 
-                    <p id="location" class="mt-5">{{ 'Lokalizacja' | translate }}:</p>
-                    <p id="location-value" class="flex-start"><mat-icon>place</mat-icon> {{ announcement.location }}</p>
+                    <p id="location" class="mt-5" tabindex="0">{{ 'Lokalizacja' | translate }}:</p>
+                    <p id="location-value" class="flex-start" tabindex="0"><mat-icon>place</mat-icon> {{ announcement.location }}</p>
 
-                    <img src="{{ announcement.map }}" alt="map" class="w-100">
+                    <img src="{{ announcement.map }}" alt="map" class="w-100" tabindex="0" aria-label="Map of location">
 
                     <button (click)="announcement.favourite = !announcement.favourite" id="btn-favourite" class="center mt-5 py-2">
                         <span *ngIf="announcement.favourite == false" class="center"><mat-icon class="me-1">star_outline</mat-icon>{{ 'Dodaj do zachowanych' | translate }}</span>

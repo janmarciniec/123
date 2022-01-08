@@ -6,7 +6,7 @@
       <div class="row">
         
         <div class="col-7 mt-5 pt-5">
-          <p id="title">{{ 'Zachowane ogłoszenia' | translate }}</p>
+          <p id="title" tabindex="0" role="heading">{{ 'Zachowane ogłoszenia' | translate }}</p>
         </div>
       
         <div class="col-5">
@@ -14,7 +14,7 @@
             
             <div class="spacer"></div>
       
-            <div id="search" #changeFont2>
+            <div id="search" #changeFont2 tabindex="0" aria-label="Search panel">
               <!-- wyszukiwarka - input -->
               <mat-form-field appearance="fill" class="searchInput roundedLeftBorders">
                 <mat-label>{{ 'Czego szukasz' | translate }}?</mat-label>
@@ -29,13 +29,13 @@
 
       </div>
   
-      <div class="row mt-3 p-3 align-items-center" id="filters">
+      <div class="row mt-3 p-3 align-items-center" id="filters" tabindex="0" aria-label="Filters panel">
         
         <div class="col-2"><p class="my-auto" id="header">{{ 'Filtry' | translate }}</p></div>
         
         <div class="col-2">
           <label for="category" class="small-text mb-1">{{ 'Kategoria' | translate }}</label><br/>
-          <select class="form-select form-select-lg" name="category" id="category">
+          <select class="form-select form-select-lg" name="category" id="category" aria-label="Category">
             <option *ngFor="let category of categories" [value]="category.value">
               {{ category.viewValue | translate }}
             </option>
@@ -44,7 +44,7 @@
         
         <div class="col-2">
           <label for="location" class="small-text mb-1">{{ 'Lokalizacja' | translate }}</label><br/>
-          <select class="form-select form-select-lg" name="location">
+          <select class="form-select form-select-lg" name="location" aria-label="Location">
             <option *ngFor="let location of locations" [value]="location.value">
               {{ location.viewValue | translate }}
             </option>
@@ -53,7 +53,7 @@
         
         <div class="col-2">
           <label for="type" class="small-text mb-1">{{ 'Rodzaj oferty' | translate }}</label><br/>
-          <select class="form-select form-select-lg" name="type">
+          <select class="form-select form-select-lg" name="type" aria-label="Offer type">
             <option *ngFor="let type of types" [value]="type.value">
               {{ type.viewValue | translate }}
             </option>
@@ -62,10 +62,10 @@
         
         <div class="col-3 ms-5">
           <label for="price-from" class="small-text mb-1">{{ 'Cena' | translate }}</label><br/>
-          <input type="text" name="price-from" size="3" placeholder="{{ 'Od' | translate }}" class="price">
+          <input type="text" name="price-from" size="3" placeholder="{{ 'Od' | translate }}" class="price" aria-label="Price">
           <span class="small-text ms-1 me-3">zł</span>
   
-          <input type="text" name="price-to" size="3" placeholder="{{ 'Do' | translate }}" class="price">
+          <input type="text" name="price-to" size="3" placeholder="{{ 'Do' | translate }}" class="price" aria-label="Price">
           <span class="small-text ms-1">zł</span>
         </div>
   
@@ -79,7 +79,7 @@
         <div class="col-8 d-flex justify-content-end">
           <p class="small-text me-2 mt-4">{{ 'Sortuj według' | translate }}:</p>
           <mat-form-field appearance="fill">
-            <mat-select [(value)]="selectedSortBy">
+            <mat-select [(value)]="selectedSortBy" aria-label="Sort by">
               <mat-option value="newest">{{ 'Najnowsze' | translate }}</mat-option>
               <mat-option value="cheapest">{{ 'Najtańsze' | translate }}</mat-option>
               <mat-option value="mostExp">{{ 'Najdroższe' | translate }}</mat-option>
@@ -88,29 +88,29 @@
         </div>
       </div>
 
-      <span *ngFor="let announcement of announcements | paginate: { itemsPerPage: itemsPerPage, currentPage: page }">
+      <span *ngFor="let announcement of announcements | paginate: { itemsPerPage: itemsPerPage, currentPage: page }" tabindex="0" aria-label="Announcement">
         <div class="row announcement-card mb-4 mt-1" *ngIf="announcement.favourite == true">
 
-          <div class="col-2 p-1">
+          <div class="col-2 p-1" tabindex="0" aria-label="Picture of the advertised item">
             <img src="{{ announcement.image }}" alt="advertised item" class="w-100 pointer" (click)="onSelect(announcement)">
           </div>
     
           <div class="col-10">
     
             <div class="row justify-content-between d-flex flex-row pt-3 ps-2 pe-2">
-              <div class="col-10">
+              <div class="col-10" tabindex="0">
                 <span class="big-text pointer" (click)="onSelect(announcement)">{{ announcement.title }}</span>
               </div>
-              <div class="col-2 d-flex justify-content-end">
+              <div class="col-2 d-flex justify-content-end" tabindex="0">
                 <span class="big-text">{{ announcement.price }} {{ 'zł' | translate }}</span>
               </div>
             </div>
     
             <div class="row justify-content-between d-flex flex-row mt-4 pt-4 ps-2 pe-1">
-              <div class="col-6 pt-4">
+              <div class="col-6 pt-4" tabindex="0">
                 <span id="date">{{ announcement.location }}, {{ announcement.date }}</span>
               </div>
-              <div class="col-6 d-flex justify-content-end pt-2">
+              <div class="col-6 d-flex justify-content-end pt-2" tabindex="0" role="button" aria-checked="true" aria-label="Add to favourites">
                 <span (click)="announcement.favourite = !announcement.favourite" class="me-2">
                   <mat-icon *ngIf="announcement.favourite == true" id="star">star</mat-icon>
                 </span>
@@ -123,13 +123,13 @@
       </span>
   
       <div class="row mt-5" *ngIf="countFavourites() > 0">
-        <div class="col-12 text-center">
+        <div class="col-12 text-center" tabindex="0">
           <pagination-controls (pageChange)="page = $event"></pagination-controls>
         </div>
       </div>
 
       <div class="row" *ngIf="countFavourites() == 0">
-        <div class="col-12 text-center small-text">
+        <div class="col-12 text-center small-text" tabindex="0">
           {{ 'Brak zachowanych ogłoszeń' | translate }}.
         </div>
       </div>

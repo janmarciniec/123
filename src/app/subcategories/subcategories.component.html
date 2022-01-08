@@ -1,11 +1,11 @@
 <div class="row mb-2 pt-4">
         <div class="col-12">
-                <a href="/category"><mat-icon class="me-1">arrow_forward_ios</mat-icon>{{ 'Wszystkie ogłoszenia z kategorii' | translate }}: <b>{{ categories[id].name | translate }}</b></a>
+                <a href="/category" role="link"><mat-icon class="me-1">arrow_forward_ios</mat-icon>{{ 'Wszystkie ogłoszenia z kategorii' | translate }}: <b>{{ categories[id].name | translate }}</b></a>
         </div>
 </div>
 <hr>
 <div class="row mt-2">
         <div class="col-4 mb-3" *ngFor="let subcategory of categories[id].subcategories">
-                <a href="/category" class="subcategory"><mat-icon class="me-1">arrow_forward_ios</mat-icon> {{ subcategory | translate }}</a>
+                <a href="/category" class="subcategory" role="link"><mat-icon class="me-1">arrow_forward_ios</mat-icon> {{ subcategory | translate }}</a>
         </div>
 </div>

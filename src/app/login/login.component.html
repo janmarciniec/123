@@ -1,7 +1,7 @@
 <div #fontChange id="content">
   <app-toolbar></app-toolbar>
   <div id="form">
-    <h1 class="title"><span class="whiteFont">{{ 'LOGOWANIE' | translate }}</span></h1>
+    <h1 class="title" tabindex="0"><span class="whiteFont">{{ 'LOGOWANIE' | translate }}</span></h1>
     <form class="example-form">
       <mat-form-field class="input" appearance="fill">
         <mat-label>{{ 'Adres e-mail' | translate }}</mat-label>
@@ -25,10 +25,10 @@
       </div>
       <div id="fbGoogleContainer">
         <button mat-button id="facebookButton" style="padding: 1rem;">
-          <img id="facebookLogo" src="assets/img/facebookLogo.png" alt="Facebook logo"> {{ 'Zaloguj przy użyciu konta Facebook' | translate }}
+          <img id="facebookLogo" src="assets/img/facebookLogo.png" alt="Facebook logo" aria-hidden="true"> {{ 'Zaloguj przy użyciu konta Facebook' | translate }}
         </button>
         <button mat-button id="googleButton" style="padding: 1rem;">
-          <img id="googleLogo" src="assets/img/googleLogo.png" alt="Google logo"> {{ 'Zaloguj przy użyciu konta Google' | translate }}
+          <img id="googleLogo" src="assets/img/googleLogo.png" alt="Google logo" aria-hidden="true"> {{ 'Zaloguj przy użyciu konta Google' | translate }}
         </button>
       </div>
     </form>
@@ -36,7 +36,7 @@
   <div id="register">
     <h1 class="hasAccount">{{ 'Nie masz jeszcze konta' | translate }}?</h1>
     <mat-divider class="divider"></mat-divider>
-    <h1 class="getAccount"><a routerLink="/register" class="link">{{ 'Załóż konto' | translate }}!</a></h1>
+    <a routerLink="/register" class="link getAccount" role="link">{{ 'Załóż konto' | translate }}!</a>
   </div>
   <app-footer></app-footer>
 </div>

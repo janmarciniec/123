@@ -3,10 +3,10 @@
 <div #fontChange id="content">
   <app-toolbar></app-toolbar>
   <div class="content">
-    <div class="mat-h1 title">{{ 'Mój profil' | translate }}</div>
+    <div class="mat-h1 title" tabindex="0" role="heading" aria-level="1">{{ 'Mój profil' | translate }}</div>
 
     <div class="mainContent">
-      <div class="mat-h2 subtitle">{{ 'Dane osobowe' | translate }}</div>
+      <div class="mat-h2 subtitle" tabindex="0" role="heading" aria-level="2">{{ 'Dane osobowe' | translate }}</div>
       <div class="mainContentData">
         <form #registerForm="ngForm" ><!--(submit)="$event.preventDefault()"-->
           <div class="row">
@@ -46,7 +46,7 @@
                 <div class="col-md-4" id="birthDateLabel">
                   {{ 'Data urodzenia' | translate }}:
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8" tabindex="0" aria-label="Date of birth">
 <!--  po polsku, ale gorsze
                   <mat-form-field appearance="fill" class="dataPicker">
                     <mat-label>Data urodzenia</mat-label>
@@ -108,7 +108,7 @@
 
           </div>
           <div class="row">
-            <div class="mat-h2 subtitle">{{ 'Dane kontaktowe' | translate }}</div>
+            <div class="mat-h2 subtitle" tabindex="0" role="heading" aria-level="2">{{ 'Dane kontaktowe' | translate }}</div>
           </div>
           <div class="row">
             <div class="col-md-8">
@@ -197,7 +197,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="mat-h2 subtitle">{{ 'Pozostałe informacje' | translate }}</div>
+            <div class="mat-h2 subtitle" tabindex="0" role="heading" aria-level="2">{{ 'Pozostałe informacje' | translate }}</div>
           </div>
           <div class="row">
             <div class="col-md-8">
