@@ -31,7 +31,15 @@
                             <p id="title" tabindex="0">{{ announcement.title }}</p>
                             <p id="price" tabindex="0">{{ announcement.price }} {{ 'zł' | translate }}</p>
                             <p id="description" class="mt-5" tabindex="0">{{ 'Opis' | translate }}</p>
-                            <p id="description-value" tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit id tortor a consequat. Nam finibus magna aliquam, ultrices felis quis, tempus enim. Duis eu ipsum sed nisi vehicula ultricies a ac odio. Mauris maximus porta massa, quis aliquam enim posuere sit amet. Phasellus sagittis erat ut suscipit euismod. Nunc accumsan risus tortor, et dignissim orci mollis sed. Aliquam consectetur tempus feugiat. Vivamus aliquam sed libero sit amet consequat. In id sem vel ligula cursus efficitur sit amet pellentesque tortor. Phasellus ullamcorper orci non libero commodo pretium. Morbi maximus odio vel bibendum facilisis. Phasellus ligula magna, dictum sit amet scelerisque eget, condimentum sit amet odio. In luctus ut mauris id tincidunt. Nulla arcu neque, condimentum in blandit a, pharetra et sem.</p>
+                            <p id="description-value" tabindex="0">
+                                Dzień dobry,<br/>
+                                na sprzedaż <span class="lowercase">{{ announcement.title }}</span>, w bardzo dobrym stanie. Posiada<span *ngIf="announcement.id == 6">ją</span> jedynie naturalne ślady użytkowania.
+                                Cena {{ announcement.price }} zł do rozsądnej negocjacji.
+                                Odbiór i transport osobisty.
+                                <br/>
+                                <br/>
+                                Zapraszam na moje pozostałe ogłoszenia.
+                            </p>
                         </div>
                         
                     </div>
