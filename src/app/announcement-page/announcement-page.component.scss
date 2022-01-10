@@ -1,3 +1,5 @@
+@import "../../custom-theme.scss";
+
 :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 20px;
@@ -200,9 +202,9 @@ a:hover {
 }
 
 #btn-number {
-  color: #ff6d00;
+  color: map-get($mat-accent, main);
   background-color: white;
-  border: solid 3px #ff6d00;
+  border: solid 3px map-get($mat-accent, main);
   border-radius: 5px;
   font-size: 1.1em;
   font-weight: 600;
@@ -214,8 +216,8 @@ a:hover {
 
 #btn-message {
   color: white;
-  background-color: #ff6d00;
-  border: solid 3px #ff6d00;
+  background-color: map-get($mat-accent, main);
+  border: solid 3px map-get($mat-accent, main);
   border-radius: 5px;
   font-size: 1.1em;
   font-weight: 600;
@@ -236,9 +238,9 @@ a:hover {
 }
 
 #btn-favourite {
-  color: #ff6d00;
+  color: map-get($mat-accent, main);
   background-color: white;
-  border: solid 3px #ff6d00;
+  border: solid 3px map-get($mat-accent, main);
   border-radius: 5px;
   font-size: 1.1em;
   font-weight: 600;

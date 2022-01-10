@@ -1,3 +1,5 @@
+@import "../../custom-theme.scss";
+
 :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 20px;
@@ -98,12 +100,12 @@ img {
 }
 
 #star {
-  color: #fdcc0d;
+  color: map-get($mat-accent, main);
 }
 
 #star:hover, #star_outline:hover {
   cursor: pointer;
-  color: #fdcc0d;
+  color: map-get($mat-accent, main);
 }
 
 input.price {
@@ -146,9 +148,9 @@ a:hover {
 }
 
 #btn-delete {
-  color: #ff6d00;
+  color: map-get($mat-accent, main);
   background-color: white;
-  border: solid 3px #ff6d00;
+  border: solid 3px map-get($mat-accent, main);
   border-radius: 5px;
   font-size: 1.2em;
   font-weight: 600;

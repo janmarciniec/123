@@ -97,12 +97,12 @@ img {
 }
 
 #star {
-  color: #fdcc0d;
+  color: map-get($mat-accent, main);
 }
 
 #star:hover, #star_outline:hover {
   cursor: pointer;
-  color: #fdcc0d;
+  color: map-get($mat-accent, main);
 }
 
 input.price {

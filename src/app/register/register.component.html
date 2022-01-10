@@ -64,7 +64,7 @@
     </div>
     <br/>
     <section class="checkbox whiteFont">
-      <mat-checkbox class="example-margin" name="checked" value="false" [(ngModel)]="user.termsAccepted" #checked="ngModel" type="checkbox" required><span class="redStar">*</span>{{ 'Oświadczam, że znam i akceptuję postanowienia regulaminu' | translate }}.</mat-checkbox>
+      <mat-checkbox class="example-margin" name="checked" value="false" [(ngModel)]="user.termsAccepted" #checked="ngModel" type="checkbox" required><span class="redStar">*</span> {{ 'Oświadczam, że znam i akceptuję postanowienia regulaminu' | translate }}.</mat-checkbox>
     </section>
 
     <div *ngIf="checked.value===false && (checked.dirty || checked.touched)" class="redAlert">
