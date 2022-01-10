@@ -8,7 +8,7 @@
                 <div class="col-12">
                     <a href="/category" class="small-text green flex-start" role="navigation"><mat-icon>arrow_back_ios</mat-icon>{{ 'Wróć' | translate }}</a>
                     <p class="small-text mt-1" >
-                        <a href="/" role="navigation">{{ 'Wszystkie ogłoszenia' | translate }}</a> > <a href="/category" role="navigation">{{ 'Dom i ogród' | translate }}</a> > <a href="/category" role="navigation">{{ 'Meble' | translate }}</a> > <span class="green" tabindex="0" role="navigation">{{ announcement.title }}</span>
+                        <a href="/" role="navigation">{{ 'Wszystkie ogłoszenia' | translate }}</a> > <a href="/category" role="navigation">{{ 'Dom i ogród' | translate }}</a> > <a href="/category" role="navigation">{{ 'Meble' | translate }}</a> > <span class="green" tabindex="0" role="navigation">{{ announcement.title | translate }}</span>
                     </p>
                 </div>
             </div>
@@ -27,18 +27,18 @@
                     <div class="row">
                         <div class="col-12 green-border mt-3 p-3">
                             <!-- description -->
-                            <p id="date" tabindex="0">{{ 'Data dodania' | translate }}: <span id="date-value">{{ announcement.date }}</span></p>
-                            <p id="title" tabindex="0">{{ announcement.title }}</p>
+                            <p id="date" tabindex="0">{{ 'Data dodania' | translate }}: <span id="date-value">{{ announcement.date | translate }}</span></p>
+                            <p id="title" tabindex="0">{{ announcement.title | translate }}</p>
                             <p id="price" tabindex="0">{{ announcement.price }} {{ 'zł' | translate }}</p>
                             <p id="description" class="mt-5" tabindex="0">{{ 'Opis' | translate }}</p>
                             <p id="description-value" tabindex="0">
-                                Dzień dobry,<br/>
-                                na sprzedaż <span class="lowercase">{{ announcement.title }}</span>, w bardzo dobrym stanie. Posiada<span *ngIf="announcement.id == 6">ją</span> jedynie naturalne ślady użytkowania.
-                                Cena {{ announcement.price }} zł do rozsądnej negocjacji.
-                                Odbiór i transport osobisty.
+                                {{ 'Dzień dobry' | translate }},<br/>
+                                {{ 'na sprzedaż' | translate }} <span class="lowercase">{{ announcement.title | translate }}</span>, {{ 'w bardzo dobrym stanie' | translate }}. {{ 'Posiada' | translate }}<span *ngIf="announcement.id == 6">ją</span> {{ 'jedynie naturalne ślady użytkowania' | translate }}.
+                                {{ 'Cena' | translate }} {{ announcement.price }} {{ 'zł' | translate }} {{ 'do rozsądnej negocjacji' | translate }}.
+                                {{ 'Odbiór i transport osobisty' | translate }}.
                                 <br/>
                                 <br/>
-                                Zapraszam na moje pozostałe ogłoszenia.
+                                {{ 'Zapraszam na moje pozostałe ogłoszenia' | translate }}.
                             </p>
                         </div>
                         
@@ -48,7 +48,7 @@
 
                 <div class="col-4 green-border ml-3 p-3">
                     <!-- seller -->
-                    <p tabindex="0">Dodane przez:</p>
+                    <p tabindex="0">{{ 'Dodane przez' | translate }}:</p>
                     <p id="seller" class="flex-start" tabindex="0"><mat-icon>person_outline</mat-icon> {{ announcement.seller }}</p>
                     <p id="more" class="mb-5" tabindex="0" role="link" aria-label="See more announcements from this user">{{ 'Zobacz więcej ogłoszeń' | translate }}</p>
 

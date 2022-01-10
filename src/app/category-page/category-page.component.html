@@ -105,7 +105,7 @@
 
         <div class="row justify-content-between d-flex flex-row pt-3 ps-2 pe-2">
           <div class="col-10" tabindex="0">
-            <span class="big-text pointer" (click)="onSelect(announcement)">{{ announcement.title }}</span>
+            <span class="big-text pointer" (click)="onSelect(announcement)">{{ announcement.title | translate }}</span>
           </div>
           <div class="col-2 d-flex justify-content-end" tabindex="0">
             <span class="big-text">{{ announcement.price }} {{ 'zł' | translate }}</span>
@@ -114,7 +114,7 @@
 
         <div class="row justify-content-between d-flex flex-row mt-4 pt-4 ps-2 pe-1">
           <div class="col-6 pt-4" tabindex="0">
-            <span id="date">{{ announcement.location }}, {{ announcement.date }}</span>
+            <span id="date">{{ announcement.location }}, {{ announcement.date | translate }}</span>
           </div>
           <div class="col-6 d-flex justify-content-end pt-2" tabindex="0" role="button" aria-checked="false" aria-label="Add to favourites">
             <span (click)="announcement.favourite = !announcement.favourite;" class="me-2">
