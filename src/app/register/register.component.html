@@ -1,6 +1,6 @@
 <div #fontChange id="content">
 <app-toolbar></app-toolbar>
-  <div id="form">
+  <div id="form" [ngClass]="{'contrast-theme-form' : contrast }">
     <h1 class="title"><span class="whiteFont" tabindex="0">{{ 'REJESTRACJA' | translate }}</span></h1>
   <form class="form-group" #registerForm="ngForm">
     <mat-form-field class="input" appearance="fill" [(ngModel)]="user.email">
@@ -82,7 +82,7 @@
     </div>
   </form>
   </div>
-  <div id="login">
+  <div id="login" [ngClass]="{'contrast-theme-form' : contrast }">
     <h1 class="hasAccount">{{ 'Masz już konto' | translate }}?</h1>
     <mat-divider class="divider"></mat-divider>
     <a routerLink="/login" class="link getAccount" role="link">{{ 'Zaloguj się' | translate }}!</a>

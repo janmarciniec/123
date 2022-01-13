@@ -1,10 +1,28 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable, of} from "rxjs";
 
 @Injectable()
 export class GlobalVariableService {
   public fontSize:number = 14;
 //  public data: Observable<number>;
+
+  public contrast:boolean=false;
+
+  private fixedContrast = new BehaviorSubject<boolean>(false); // false is your initial value
+  fixedContrast$ = this.fixedContrast.asObservable();
+
+  private set isContrastFixed(value: boolean) {
+    this.fixedContrast.next(value);
+  }
+
+  getContrast(): Observable<boolean>{
+    return of(this.contrast);
+  }
+
+  public changeContrast() {
+    this.isContrastFixed=!this.contrast;
+    this.contrast=!this.contrast;
+  }
 
 
   private fixedFontSize = new BehaviorSubject<number>(14); // 14 is your initial value

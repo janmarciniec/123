@@ -1,5 +1,13 @@
 @import "../../custom-theme.scss";
 
+.contrast-theme {
+  @import "../../contrast-theme.scss";
+}
+
+.contrast-theme-form{
+  background-color: black !important;
+}
+
 .round{
   border-radius: 5rem;
   background: map-get($mat-accent, main); //pobranie koloru main z mat-accent

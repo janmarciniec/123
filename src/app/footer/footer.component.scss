@@ -1,5 +1,11 @@
 @import "../../custom-theme.scss";
 
+.contrast-theme {
+  @import "../../contrast-theme.scss";
+  color: white;
+  background-color: black !important;
+}
+
 .footer {
   position: absolute;
   bottom: 0;

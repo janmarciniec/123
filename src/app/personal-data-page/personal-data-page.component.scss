@@ -1,5 +1,45 @@
 @import "../../custom-theme.scss";
 
+.contrast-theme {
+  @import "../../contrast-theme.scss";
+}
+
+.contrast-theme-background{
+  background-color: black !important;
+  color: white !important;
+  //border-color: white !important;
+ // border: white !important;
+}
+
+.contrast-theme-checkbox{
+  background-color: #f6f3f3;
+  color: black;
+  border-color: black;
+  padding: 0.2rem;
+}
+
+::ng-deep .mat-checkbox-frame {
+  border-color: #030000
+}
+
+.contrast-theme-radiobutton{
+  color: white;
+  border-color: white;
+}
+
+.contrast-theme-radiobutton ::ng-deep .mat-radio-container{
+  background-color: white;
+}
+
+
+::ng-deep.mat-checkbox-disabled .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #ccc !important;
+}
+
+::ng-deep.mat-checkbox-disabled {
+  color: red !important;
+}
+
 .content {
   text-align: center;
   width: 94%;

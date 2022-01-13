@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Subscription} from "rxjs";
+import {GlobalVariableService} from "../GlobalVariableService";
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  // @ts-ignore
+  subscription2: Subscription;
+  contrast=false;
+
+  constructor(public globalVariableService: GlobalVariableService) {
+  }
 
   ngOnInit(): void {
+    this.subscription2=this.globalVariableService.fixedContrast$
+      .subscribe(fixed=>{
+        this.contrast=fixed;
+      });
   }
 
 }

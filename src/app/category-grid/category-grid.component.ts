@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {GlobalVariableService} from "../GlobalVariableService";
+import {Subscription} from "rxjs";
 
 export interface Tile {
   id: number,
@@ -24,7 +26,11 @@ export class CategoryGridComponent implements OnInit {
   // @ts-ignore
   id: number;
 
-  constructor() {
+  // @ts-ignore
+  subscription2: Subscription;
+  contrast=false;
+
+  constructor(public globalVariableService: GlobalVariableService) {
   }
 
   tiles: Tile[] = [
@@ -49,6 +55,10 @@ export class CategoryGridComponent implements OnInit {
   ];
 
   ngOnInit(): void {
+    this.subscription2=this.globalVariableService.fixedContrast$
+      .subscribe(fixed=>{
+        this.contrast=fixed;
+      });
   }
 
   toggleShowSubcategories(id: number) {

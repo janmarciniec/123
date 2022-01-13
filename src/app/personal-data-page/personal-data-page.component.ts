@@ -1,7 +1,6 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Subscription} from "rxjs";
 import {GlobalVariableService} from "../GlobalVariableService";
-import {MatCardImage} from "@angular/material/card";
 import {NgForm} from "@angular/forms";
 
 interface Map {
@@ -27,6 +26,11 @@ export class PersonalDataPageComponent implements OnInit {
   minDate: Date = new Date(1900,0,1);
  // remainingTextAboutYourself: number= this.maxLetters;
  // remainingTextInterests: number= this.maxLetters;
+
+
+  // @ts-ignore
+  subscription2: Subscription;
+  contrast=false;
 
 
 
@@ -57,6 +61,10 @@ export class PersonalDataPageComponent implements OnInit {
     this.subscription = this.globalVariableService.fixedFontSize$
       .subscribe(fixed => {
         (this.fontChange.nativeElement as HTMLParagraphElement).style.fontSize = `${fixed}px`;
+      });
+    this.subscription2=this.globalVariableService.fixedContrast$
+      .subscribe(fixed=>{
+        this.contrast=fixed;
       });
   }
 /*

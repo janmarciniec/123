@@ -1,5 +1,5 @@
-<div>
-<mat-toolbar class="bar" color="primary" #fontChange>
+<div [ngClass]="{'contrast-theme' : contrast }">
+<mat-toolbar class="bar" #fontChange [ngClass]="{'contrast-theme contrast-theme-bar' : contrast }">
   <a routerLink='/' role="navigation" aria-label="Home page">
   <img
   width="40"
@@ -8,31 +8,31 @@
   aria-hidden="true"
   />
 
-  <span class="pointer mainButton">Gumtree</span>
+  <span class="pointer mainButton" [ngClass]="{'contrast-theme-icons' : contrast }">Gumtree</span>
   </a>
   <div class="spacer"></div>
 
 
-  <a tabindex="0" role="button" aria-label="High contrast toggler"><mat-icon class="icon-display-2 icon">contrast</mat-icon></a>
-  <a (click)="globalVariableService.changeFontSize('-')" class="changeFontButton" tabindex="0" role="button" aria-label="Decrease font size"><mat-icon class="icon-display-2 icon">text_decrease</mat-icon></a>
-  <a (click)="globalVariableService.changeFontSize('+')" class="changeFontButton" tabindex="0" role="button" aria-label="Increase font size"><mat-icon class="icon-display-3 icon">text_increase</mat-icon></a>
+  <a tabindex="0" role="button" class="changeFontButton" [ngClass]="{'contrast-theme-icons' : contrast }" aria-label="High contrast toggler" (click)="globalVariableService.changeContrast()"><mat-icon class="icon-display-2 icon">contrast</mat-icon></a>
+  <a (click)="globalVariableService.changeFontSize('-')" class="changeFontButton" tabindex="0" role="button" aria-label="Decrease font size" [ngClass]="{'contrast-theme-icons' : contrast }"><mat-icon class="icon-display-2 icon">text_decrease</mat-icon></a>
+  <a (click)="globalVariableService.changeFontSize('+')" class="changeFontButton" tabindex="0" role="button" aria-label="Increase font size"><mat-icon class="icon-display-3 icon" [ngClass]="{'contrast-theme-icons' : contrast }">text_increase</mat-icon></a>
 
-  <mat-menu #appMenu="matMenu" class="menuButtons">
-    <button routerLink="/login" mat-menu-item class="menuButtons">{{ 'Zaloguj' | translate }}</button>
-    <button routerLink="/register" mat-menu-item class="menuButtons">{{ 'Zarejestruj' | translate }}</button>
-    <button routerLink="/personal-data" mat-menu-item class="menuButtons">{{ 'Moje dane' | translate }}</button>
-    <button routerLink="/saved" mat-menu-item class="menuButtons">{{ 'Zachowane ogłoszenia' | translate }}</button>
+  <mat-menu #appMenu="matMenu" class="menuButtons" >
+    <button routerLink="/login" mat-menu-item class="menuButtons" [ngClass]="{'contrast-theme-button' : contrast }">{{ 'Zaloguj' | translate }}</button>
+    <button routerLink="/register" mat-menu-item class="menuButtons" [ngClass]="{'contrast-theme-button' : contrast }">{{ 'Zarejestruj' | translate }}</button>
+    <button routerLink="/personal-data" mat-menu-item class="menuButtons" [ngClass]="{'contrast-theme-button' : contrast }">{{ 'Moje dane' | translate }}</button>
+    <button routerLink="/saved" mat-menu-item class="menuButtons" [ngClass]="{'contrast-theme-button' : contrast }">{{ 'Zachowane ogłoszenia' | translate }}</button>
   </mat-menu>
 
 
-  <button mat-raised-button [matMenuTriggerFor]="appMenu"class="menuButtons">
+  <button mat-raised-button [matMenuTriggerFor]="appMenu" class="menuButtons" [ngClass]="{'contrast-theme-button' : contrast }">
     <mat-icon>account_circle</mat-icon>
     {{ 'Moje Gumtree' | translate }}
   </button>
-  <button class="round pointer">{{ 'Dodaj ogłoszenie' | translate }}</button>
+  <button class="round pointer" [ngClass]="{'contrast-theme-button' : contrast }">{{ 'Dodaj ogłoszenie' | translate }}</button>
 
-  <select (change)="changeLang($any($event.target).value)" class="mx-2 p-2" id="lang">
-    <option value="pl" [selected]="lang == 'pl'" id="lang-opt">{{ 'Język' | translate }}: polski</option>
+  <select (change)="changeLang($any($event.target).value)" class="mx-2 p-2" id="lang" [ngClass]="{'contrast-theme-button' : contrast }">
+    <option value="pl" [selected]="lang == 'pl'" id="lang-opt" [ngClass]="{'contrast-theme-button' : contrast }">{{ 'Język' | translate }}: polski</option>
     <option value="en" [selected]="lang == 'en'" id="lang-opt">{{ 'Język' | translate }}: english</option>
   </select>
 

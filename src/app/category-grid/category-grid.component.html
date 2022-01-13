@@ -5,9 +5,8 @@
     <app-subcategories *ngIf="tile.showSubcategories" [id]="tile.id" class="border mat-elevation-z8"></app-subcategories>
   </div>
 </div>
-
-<div class="grid">
-<mat-grid-list cols="9" rowHeight="150px">
+<div class="grid" [ngClass]="{'contrast-theme-category' : contrast }">
+<mat-grid-list cols="9" rowHeight="150px" [ngClass]="{'contrast-theme-images' : contrast }">
   <mat-grid-tile class="gridItem noselect"
     *ngFor="let tile of tiles; let i = index;"
     [colspan]="tile.cols"
@@ -16,9 +15,10 @@
     [class.clicked] = "tile.showSubcategories"
     tabindex="0"
     role="button"
-    aria-checked="false">
+    aria-checked="false"
+    [ngClass]="{'contrast-theme-images' : contrast }">
  <!--   [style.background]="tile.color"-->
-    <div [class.bottom]="tile.image != ''" class="category">{{ tile.text | translate }}</div>
+    <div [class.bottom]="tile.image != ''" class="category" [ngClass]="{'contrast-theme-category' : contrast }">{{ tile.text | translate }}</div>
     <img class="top" *ngIf="tile.image != ''" src="{{tile.image}}" alt="thumbnail of the {{ tile.text }} category" style="object-fit: scale-down; width: 100%; height: 50%" aria-hidden="true">
 
   <!--  <img src="https://picsum.photos/id/1/200/{{300 }}" alt="" style="object-fit: cover; width: 100%; height: 100%">

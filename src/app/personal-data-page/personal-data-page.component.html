@@ -1,8 +1,6 @@
-<!--todo zmienic literki na polskie!-->
-
-<div #fontChange id="content">
+<div #fontChange id="content" >
   <app-toolbar></app-toolbar>
-  <div class="content">
+  <div class="content" [ngClass]="{'contrast-theme-background' : contrast }">
     <div class="mat-h1 title" tabindex="0" role="heading" aria-level="1">{{ 'Mój profil' | translate }}</div>
 
     <div class="mainContent">
@@ -32,13 +30,13 @@
             </div>
             {{ 'Płeć' | translate }}:
               <br/>
-              <mat-radio-group aria-label="Select an option" class="inputPosition" #radioGender="ngModel"
+              <mat-radio-group aria-label="Select an option" class="inputPosition" #radioGender="ngModel" [ngClass]="{'contrast-theme-radiobutton' : contrast }"
                                [(ngModel)]="user.gender" name="radioGender" (change)="onRadioGenderChange($event)">
                 <mat-radio-button class="radioButton" value="women">{{ 'Kobieta' | translate }}</mat-radio-button>
                 <mat-radio-button class="radioButton" value="man">{{ 'Mężczyzna' | translate }}</mat-radio-button>
               </mat-radio-group>
               <section class="example-section">
-                <mat-checkbox class="example-margin" #showGender="ngModel"
+                <mat-checkbox class="example-margin" #showGender="ngModel" [ngClass]="{'contrast-theme-checkbox' : contrast }"
                               [(ngModel)]="user.showGender" name="showGender"
                               [disabled]="user.gender==='' ? true : false">{{ 'Wyświetlanie płci na profilu' | translate }}</mat-checkbox>
               </section>
@@ -64,7 +62,7 @@
 <!--todo dorobić żeby było też po polsku -->
                 </div>
               </div>
-              <mat-checkbox class="example-margin"
+              <mat-checkbox class="example-margin" [ngClass]="{'contrast-theme-checkbox' : contrast }"
                             #showBirthDate="ngModel"
                             [(ngModel)]="user.showBirthDate" name="showBirthDate"
                             [disabled]="user.date==='' ? true : false">{{ 'Wyświetlanie daty urodzenia na profilu' | translate }}</mat-checkbox>
@@ -232,7 +230,7 @@
           </div>
           <div class="row">
             <div class="col-md-8">
-              <mat-checkbox class="example-margin" #newsletter="ngModel"
+              <mat-checkbox class="example-margin" #newsletter="ngModel" [ngClass]="{'contrast-theme-checkbox' : contrast }"
                             [(ngModel)]="user.newsletter" name="newsletter">
                 <div class="text-wrap">
                   {{ 'Chcę otrzymywać newslettery i oferty promocyjne' | translate }}.
@@ -242,7 +240,7 @@
           </div>
           <div class="row">
             <div class="col-md-8">
-              <mat-checkbox class="example-margin" #notifications="ngModel"
+              <mat-checkbox class="example-margin" #notifications="ngModel" [ngClass]="{'contrast-theme-checkbox' : contrast }"
                             [(ngModel)]="user.notifications" name="notifications">
                 <div class="text-wrap">
                   {{ 'Wysyłaj informacje o moich ogłoszeniach i aktualizacjach Gumtree' | translate }}.

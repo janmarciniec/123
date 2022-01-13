@@ -1,6 +1,33 @@
 
 @import "../../custom-theme.scss";
 
+
+.contrast-theme {
+  @import "../../contrast-theme.scss";
+}
+/*
+.contrast-theme-icons{
+  color: black;
+}
+
+
+
+.contrast-theme-bar{
+  background-color: #00f9ff;
+}
+
+*/
+
+.contrast-theme-button{
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.bar{
+  color: map-get($mat-primary, main);
+  background-color: map-get($mat-primary, main);
+}
+
 .toolbar {
   position: absolute;
   top: 0;
@@ -8,8 +35,8 @@
   right: 0;
   display: flex;
   align-items: center;
-  background-color: #1976d2;
-  color: white;
+//  background-color: #1976d2;
+ // color: white;
   font-weight: 600;
   padding: 1rem 0 1rem 0;
 }
@@ -41,14 +68,14 @@
   background: map-get($mat-accent, main); //pobranie koloru main z mat-accent
   font-size: 1rem;
   padding: 0.5rem 2rem 0.5rem 2rem;
-  color: white;
+ // color: white;
 }
 .hover12 {
   position: relative;
 }
 .changeFontButton{
   size: 5rem;
-  color: white;
+ // color: white;
 }
 .changeFontButton img{
   opacity: 1;
@@ -92,7 +119,7 @@
 }
 
 .mainButton{
-  color: white;
+ // color: white;
   text-decoration: none;
 }
 
@@ -102,7 +129,8 @@
 
 a {
   text-decoration: none;
-  color: white;
+  //color: white;
+  color: map-get($mat-contrast, main);
 }
 
 select {

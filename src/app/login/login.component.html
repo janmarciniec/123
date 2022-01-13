@@ -1,6 +1,6 @@
 <div #fontChange id="content">
   <app-toolbar></app-toolbar>
-  <div id="form">
+  <div id="form" [ngClass]="{'contrast-theme-form' : contrast }">
     <h1 class="title" tabindex="0"><span class="whiteFont">{{ 'LOGOWANIE' | translate }}</span></h1>
     <form class="example-form">
       <mat-form-field class="input" appearance="fill">
@@ -23,7 +23,7 @@
         <div class="text mat-typography">{{ 'lub' | translate }}</div>
         <div class="line"><mat-divider></mat-divider></div>
       </div>
-      <div id="fbGoogleContainer">
+      <div id="fbGoogleContainer" >
         <button mat-button id="facebookButton" style="padding: 1rem;">
           <img id="facebookLogo" src="assets/img/facebookLogo.png" alt="Facebook logo" aria-hidden="true"> {{ 'Zaloguj przy użyciu konta Facebook' | translate }}
         </button>
@@ -33,7 +33,7 @@
       </div>
     </form>
   </div>
-  <div id="register">
+  <div id="register" [ngClass]="{'contrast-theme-form' : contrast }">
     <h1 class="hasAccount">{{ 'Nie masz jeszcze konta' | translate }}?</h1>
     <mat-divider class="divider"></mat-divider>
     <a routerLink="/register" class="link getAccount" role="link">{{ 'Załóż konto' | translate }}!</a>

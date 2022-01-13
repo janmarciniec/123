@@ -1,7 +1,7 @@
 /**
 * Generated theme by Material Theme Generator
 * https://materialtheme.arcsine.dev
-* Fork at: https://materialtheme.arcsine.dev/?c=YHBhbGV0dGU$YHByaW1hcnk$YF48IzMzNjkxZSIsIj9lcjwjYzJkMmJjIiwiO2VyPCMyMDRjMTJ$LCIlPmBePCNmZjZkMDAiLCI~ZXI8I2ZmZDNiMyIsIjtlcjwjZmY1MDAwfiwid2Fybj5gXjwjZmYwMDAwIiwiP2VyPCNmZmIzYjMiLCI7ZXI8I2ZmMDAwMH4sIj9UZXh0PCMwMDAwMDAiLCI~PTwjZmFmYWZhIiwiO1RleHQ8I2ZmZmZmZiIsIjs9PCMyYzJjMmN$LCJmb250cz5bYEA8KC00fixgQDwoLTN$LGBAPCgtMn4sYEA8KC0xfixgQDxoZWFkbGluZX4sYEA8dGl0bGV$LGBAPHN1YiktMn4sYEA8c3ViKS0xfixgQDxib2R5LTJ$LGBAPGJvZHktMX4sYEA8YnV0dG9ufixgQDxjYXB0aW9ufixgQDxpbnB1dCIsInNpemU$bnVsbH1dLCJpY29uczxGaWxsZWQiLCI~bmVzcz50cnVlLCJ2ZXJzaW9uPjExfQ==
+* Fork at: https://materialtheme.arcsine.dev/?c=YHBhbGV0dGU$YHByaW1hcnk$YF48IzAwZmJmZiIsIj9lcjwjYjNmZWZmIiwiO2VyPCMwMGY5ZmZ$LCIlPmBePCMwNTAwMDAiLCI~ZXI8I2I0YjNiMyIsIjtlcjwjMDMwMDAwfiwid2Fybj5gXjwjZmYwMDAwIiwiP2VyPCNmZmIzYjMiLCI7ZXI8I2ZmMDAwMH4sIj9UZXh0PCMwMDAwMDAiLCI~PTwjZmFmYWZhIiwiO1RleHQ8I2ZmZmZmZiIsIjs9PCMyYzJjMmN$LCJmb250cz5bYEA8KC00fixgQDwoLTN$LGBAPCgtMn4sYEA8KC0xfixgQDxoZWFkbGluZX4sYEA8dGl0bGV$LGBAPHN1YiktMn4sYEA8c3ViKS0xfixgQDxib2R5LTJ$LGBAPGJvZHktMX4sYEA8YnV0dG9ufixgQDxjYXB0aW9ufixgQDxpbnB1dCIsInNpemU$bnVsbH1dLCJpY29uczxGaWxsZWQiLCI~bmVzcz5mYWxzZSwidmVyc2lvbj4xMX0=
 */
 
 @import '~@angular/material/theming';
@@ -28,20 +28,6 @@ $fontConfig: (
   caption: mat-typography-level(12px, 20px, 400, 'Roboto', 0.0333em),
   input: mat-typography-level(inherit, 1.125, 400, 'Roboto', 1.5px)
 );
-
-
-//NIE UZYWAC, a przynajmniej nie powinno się używać tych bezpośrednich(bo są dodane ręcznie)
-// , pobierać za pomocą map-get($mat-accent, main);
-// $mat-accent to nazwa zestawu, może być jeszcze np. $mat-primary, albo $mat-warn
-// main to nazwa koloru, może być main, lighter, darker itd.
-//pamiętać o imporcie w scss @import "../../custom-theme.scss";
-$primary:#33691e;
-$primary-lighter:#c2d2bc;
-$primary-lighter:#204c12;
-$accent:#ff6d00;
-$accent-lighter:#ffd3b3;
-$accent-darker:#ff5000;
-
 
 // Foreground Elements
 
@@ -163,49 +149,47 @@ $mat-dark-theme-background: (
 // Theme Config
 
 body {
-  --primary-color: #33691e;
-  --primary-lighter-color: #c2d2bc;
-  --primary-darker-color: #204c12;
-  --text-primary-color: #{$light-primary-text};
+  --primary-color: #00fbff;
+  --primary-lighter-color: #b3feff;
+  --primary-darker-color: #00f9ff;
+  --text-primary-color: #{$dark-primary-text};
   --text-primary-lighter-color: #{$dark-primary-text};
-  --text-primary-darker-color: #{$light-primary-text};
+  --text-primary-darker-color: #{$dark-primary-text};
 }
-
 $mat-primary: (
-  main: #33691e,
-  lighter: #c2d2bc,
-  darker: #204c12,
-  200: #33691e, // For slide toggle,
+  main: #00fbff,
+  lighter: #b3feff,
+  darker: #00f9ff,
+  200: #00fbff, // For slide toggle,
   contrast : (
-    main: $light-primary-text,
+    main: $dark-primary-text,
     lighter: $dark-primary-text,
-    darker: $light-primary-text,
+    darker: $dark-primary-text,
   )
 );
 $theme-primary: mat-palette($mat-primary, main, lighter, darker);
 
 
 body {
-  --accent-color: #c25400;
-  --accent-lighter-color: #ffd3b3;
-  --accent-darker-color: #ff5000;
-  --text-accent-color: #{$dark-primary-text};
+  --accent-color: #050000;
+  --accent-lighter-color: #b4b3b3;
+  --accent-darker-color: #030000;
+  --text-accent-color: #{$light-primary-text};
   --text-accent-lighter-color: #{$dark-primary-text};
   --text-accent-darker-color: #{$light-primary-text};
 }
 $mat-accent: (
-  main: #c25400,
-  lighter: #ffd3b3,
-  darker: #ff5000,
-  200: #ff6d00, // For slide toggle,
+  main: #050000,
+  lighter: #b4b3b3,
+  darker: #030000,
+  200: #050000, // For slide toggle,
   contrast : (
-    main: $dark-primary-text,
+    main: $light-primary-text,
     lighter: $dark-primary-text,
     darker: $light-primary-text,
   )
 );
 $theme-accent: mat-palette($mat-accent, main, lighter, darker);
-
 
 
 body {
@@ -230,8 +214,8 @@ $mat-warn: (
 $theme-warn: mat-palette($mat-warn, main, lighter, darker);
 ;
 
-$theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
-$altTheme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
+$theme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
+$altTheme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 
 // Theme Init
 @include angular-material-theme($theme);
@@ -264,5 +248,5 @@ $altTheme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
 }
 
 $mat-contrast: (
-  main: #ffffff
+  main: #000000
 )

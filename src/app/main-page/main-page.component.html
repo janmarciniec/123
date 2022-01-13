@@ -1,7 +1,7 @@
-<div #fontChange id="content">
+<div #fontChange id="content" [ngClass]="{'contrast-theme' : contrast }">
 <app-toolbar></app-toolbar>
 <!-- Toolbar -->
-<div id="flexContent" #fontChange2>
+<div id="flexContent" #fontChange2 [ngClass]="{'contrast-theme contrast-theme-bar' : contrast }">
   <div class="spacer"></div>
   <div id="search" #changeFont2 tabindex="0" aria-label="Search panel">
     <!-- Kategoria - selector -->

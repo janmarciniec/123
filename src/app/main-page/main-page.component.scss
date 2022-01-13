@@ -78,6 +78,10 @@ svg.material-icons:not(:last-child) {
 
 @import "../../custom-theme.scss";
 
+.contrast-theme {
+  @import "../../contrast-theme.scss";
+}
+
 #search {
   background-color: map-get($mat-primary, lighter);
   padding: 0.1rem;
