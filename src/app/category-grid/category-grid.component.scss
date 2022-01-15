@@ -1,18 +1,5 @@
 @import "../../custom-theme.scss";
 
-.contrast-theme {
-  @import "../../contrast-theme.scss";
-}
-
-.contrast-theme-category{
-  color: black !important;
-}
-
-.contrast-theme-images{
-  color: black !important;
-  border-color: black !important;
-}
-
 .grid{
   margin-bottom: 4em;
   padding: 1em 2em 2em 2em;
@@ -81,4 +68,13 @@
 .border {
   border: solid 1px gray;
   border-radius: 5px;
+}
+
+.high-contrast {
+  color: yellow;
+}
+
+.high-contrast-bordered {
+  border: solid 2px yellow;
+  background-color: black !important;
 }

@@ -1,23 +1,5 @@
 @import "../../custom-theme.scss";
 
-.contrast-theme {
-  @import "../../contrast-theme.scss";
-}
-
-.contrast-theme-background{
-  background-color: black !important;
-  color: white !important;
-  //border-color: white !important;
- // border: white !important;
-}
-
-.contrast-theme-checkbox{
-  background-color: #f6f3f3;
-  color: black;
-  border-color: black;
-  padding: 0.2rem;
-}
-
 ::ng-deep .mat-checkbox-frame {
   border-color: #030000
 }
@@ -193,4 +175,20 @@
   border-radius: 3rem;
   padding: 1rem 0;
   text-align: center;
+}
+
+.high-contrast {
+  background-color: black;
+  color: yellow !important;
+}
+
+.high-contrast-bordered {
+  background-color: black !important;
+  color: yellow !important;
+  border: solid 1px yellow !important;
+}
+
+.high-contrast-background {
+  background-color: yellow !important;
+  color: black !important;
 }

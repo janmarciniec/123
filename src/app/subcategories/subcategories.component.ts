@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {GlobalVariableService} from "../GlobalVariableService";
+import {Subscription} from "rxjs";
 
 export interface Category {
   id: number;
@@ -14,8 +16,11 @@ export interface Category {
 export class SubcategoriesComponent implements OnInit {
   // @ts-ignore
   @Input() id: number;
+  contrast=false;
+  // @ts-ignore
+  subscription: Subscription;
 
-  constructor() { }
+  constructor(public globalVariableService: GlobalVariableService) { }
 
   //todo check what is "Cesje"
 
@@ -41,6 +46,10 @@ export class SubcategoriesComponent implements OnInit {
   ];
 
   ngOnInit(): void {
+    this.subscription=this.globalVariableService.fixedContrast$
+    .subscribe(fixed=>{
+      this.contrast=fixed;
+    });
   }
 
 }

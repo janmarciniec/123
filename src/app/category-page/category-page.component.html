@@ -1,4 +1,4 @@
-<div #fontChange id="content">
+<div #fontChange id="content" [ngClass]="{'high-contrast' : contrast}">
   <app-toolbar></app-toolbar>
 
   <div class="container mb-5">
@@ -6,7 +6,7 @@
     <div id="flexContent" #fontChange2>
       <div class="spacer"></div>
 
-      <div id="search" #changeFont2 tabindex="0" aria-label="Search panel">
+      <div id="search" #changeFont2 tabindex="0" aria-label="Search panel" [ngClass]="{'high-contrast-bordered' : contrast}">
         <!-- Kategoria - selector -->
         <mat-form-field appearance="fill" class="selector roundedLeftBorders">
           <mat-label>{{ 'Kategoria' | translate }}</mat-label>
@@ -30,13 +30,13 @@
           <mat-label>{{ 'Czego szukasz' | translate }}?</mat-label>
           <input matInput type="search" placeholder="{{ 'np.' | translate }} Passat" value="">
         </mat-form-field>
-        <button mat-raised-button class="searchButton">
+        <button mat-raised-button class="searchButton" [ngClass]="{'high-contrast-bordered' : contrast}">
           {{ 'Szukaj' | translate }}
         </button>
       </div>
     </div>
 
-    <div class="row mt-5 p-3 align-items-center" id="filters" tabindex="0" aria-label="Filters panel">
+    <div class="row mt-5 p-3 align-items-center" id="filters" tabindex="0" aria-label="Filters panel" [ngClass]="{'high-contrast-bordered' : contrast}">
       
       <div class="col-2"><p class="my-auto" id="header">{{ 'Filtry' | translate }}</p></div>
       
@@ -80,22 +80,20 @@
   
     <div class="row justify-content-between mt-4 mb-3 d-flex flex-row">
       <div class="col-8">
-        <p class="small-text mt-3"><a href="/" role="navigation">{{ 'Wszystkie ogłoszenia' | translate }}</a> > <a href="/category" role="navigation">{{ 'Dom i ogród' | translate }}</a> > <a href="/category" role="navigation">{{ 'Meble' | translate }}</a></p>
+        <p class="small-text mt-3" [ngClass]="{'high-contrast' : contrast}"><a href="/" role="navigation">{{ 'Wszystkie ogłoszenia' | translate }}</a> > <a href="/category" role="navigation">{{ 'Dom i ogród' | translate }}</a> > <a href="/category" role="navigation">{{ 'Meble' | translate }}</a></p>
       </div>
 
       <div class="col-4 d-flex justify-content-end">
-        <p class="small-text me-2 mt-4">{{ 'Sortuj według' | translate }}</p>
-        <mat-form-field appearance="fill">
-          <mat-select [(value)]="selectedSortBy" aria-label="Sort by">
-            <mat-option value="newest">{{ 'Najnowsze' | translate }}</mat-option>
-            <mat-option value="cheapest">{{ 'Najtańsze' | translate }}</mat-option>
-            <mat-option value="mostExp">{{ 'Najdroższe' | translate }}</mat-option>
-          </mat-select>
-        </mat-form-field>
+        <p class="small-text me-2 mt-3">{{ 'Sortuj według' | translate }}:</p>
+          <select class="px-2" id="sort-by" name="sort-by" aria-label="Sort by" [ngClass]="{'high-contrast-bordered' : contrast}">
+            <option value="newest">{{ 'Najnowsze' | translate }}</option>
+            <option value="cheapest">{{ 'Najtańsze' | translate }}</option>
+            <option value="mostExp">{{ 'Najdroższe' | translate }}</option>
+          </select>
       </div>
     </div>
 
-    <div class="row announcement-card mb-4 mt-1" *ngFor="let announcement of announcements | paginate: { itemsPerPage: itemsPerPage, currentPage: page }" tabindex="0" aria-label="Announcement">
+    <div class="row announcement-card mb-4 mt-1" *ngFor="let announcement of announcements | paginate: { itemsPerPage: itemsPerPage, currentPage: page }" tabindex="0" aria-label="Announcement" [ngClass]="{'high-contrast-bordered' : contrast}">
       
       <div class="col-2 p-1" tabindex="0" aria-label="Picture of the advertised item">
         <img src="{{ announcement.image }}" alt="advertised item" class="w-100 pointer" (click)="onSelect(announcement)" aira-hidden="true">

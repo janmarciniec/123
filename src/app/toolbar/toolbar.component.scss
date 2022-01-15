@@ -1,31 +1,10 @@
 
 @import "../../custom-theme.scss";
 
-
-.contrast-theme {
-  @import "../../contrast-theme.scss";
-}
-/*
-.contrast-theme-icons{
-  color: black;
-}
-
-
-
-.contrast-theme-bar{
-  background-color: #00f9ff;
-}
-
-*/
-
-.contrast-theme-button{
-  background-color: #ffffff !important;
-  color: #000000 !important;
-}
-
 .bar{
   color: map-get($mat-primary, main);
   background-color: map-get($mat-primary, main);
+  border-bottom: solid 1px white;
 }
 
 .toolbar {
@@ -68,7 +47,7 @@
   background: map-get($mat-accent, main); //pobranie koloru main z mat-accent
   font-size: 1rem;
   padding: 0.5rem 2rem 0.5rem 2rem;
- // color: white;
+  color: white;
 }
 .hover12 {
   position: relative;
@@ -146,4 +125,15 @@ select {
 #lang-opt {
   color: map-get($mat-primary, main);
   font-weight: 500;
+}
+
+.high-contrast, .high-contrast > * {
+  background-color: black !important;
+  color: yellow !important;
+}
+
+.high-contrast-bordered {
+  background-color: black !important;
+  color: yellow !important;
+  border: solid 1px yellow !important;
 }

@@ -1,13 +1,5 @@
 @import "../../custom-theme.scss";
 
-.contrast-theme {
-  @import "../../contrast-theme.scss";
-}
-
-.contrast-theme-form{
-  background-color: black !important;
-}
-
 .round{
   border-radius: 5rem;
   background: map-get($mat-accent, main); //pobranie koloru main z mat-accent
@@ -53,8 +45,6 @@ body {
   display: block;
   text-align: center;
 }
-
-
 
 .flex{
   margin-top: 1rem;
@@ -171,4 +161,15 @@ body {
 .getAccount{
   margin: 0.1em;
   font-size: 3em;
+}
+
+.high-contrast, .high-contrast > * {
+  background-color: black;
+  color: yellow !important;
+}
+
+.high-contrast-bordered {
+  background-color: black !important;
+  color: yellow !important;
+  border: solid 1px yellow !important;
 }

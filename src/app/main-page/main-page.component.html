@@ -1,9 +1,9 @@
-<div #fontChange id="content" [ngClass]="{'contrast-theme' : contrast }">
+<div #fontChange id="content" [ngClass]="{'high-contrast' : contrast}">
 <app-toolbar></app-toolbar>
 <!-- Toolbar -->
-<div id="flexContent" #fontChange2 [ngClass]="{'contrast-theme contrast-theme-bar' : contrast }">
+<div id="flexContent" #fontChange2>
   <div class="spacer"></div>
-  <div id="search" #changeFont2 tabindex="0" aria-label="Search panel">
+  <div id="search" #changeFont2 tabindex="0" aria-label="Search panel" [ngClass]="{'high-contrast-bordered' : contrast}">
     <!-- Kategoria - selector -->
     <mat-form-field appearance="fill" class="selector roundedLeftBorders">
       <mat-label>{{ 'Kategoria' | translate }}</mat-label>
@@ -27,7 +27,7 @@
       <mat-label>{{ 'Czego szukasz' | translate }}?</mat-label>
       <input matInput type="search" placeholder="{{ 'np.' | translate }} Passat" value="">
     </mat-form-field>
-    <button mat-raised-button class="searchButton">
+    <button mat-raised-button class="searchButton" [ngClass]="{'high-contrast-bordered' : contrast}">
       {{ 'Szukaj' | translate }}
     </button>
   </div>

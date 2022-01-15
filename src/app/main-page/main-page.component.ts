@@ -39,7 +39,6 @@ export class MainPageComponent implements OnInit {
       .subscribe(fixed=>{
         this.contrast=fixed;
       });
-
   }
 
   ngOnDestroy() {
