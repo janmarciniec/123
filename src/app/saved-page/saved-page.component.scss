@@ -8,7 +8,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   .content {
     display: flex;
     margin: 82px auto 32px;
@@ -17,27 +17,27 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
 
   @import "../../custom-theme.scss";
-  
+
   #search {
     background-color: map-get($mat-primary, lighter);
     padding: 0.1rem;
     width: fit-content;
     border-radius: 5rem;
   }
-  
+
   .selector{
     margin: 1rem;
     background-color: white;
     padding: 0px;
   }
-  
+
   .roundedLeftBorders{
     border-radius: 2rem 0 0 2rem;
   }
-  
+
   .spacer {
     flex: 1;
   }
@@ -48,13 +48,13 @@
     align-items: flex-end;
     margin: 2rem;
   }
-  
+
   .searchInput{
     margin: 1rem 0 1rem 1rem;
     background-color: white;
     padding: 0px;
   }
-  
+
   .searchButton{
     margin: 1rem 1rem 1rem 0.5rem;
     color: white;
@@ -70,7 +70,7 @@
     min-height: 100vh;
     padding-bottom: 10rem;
   }
-  
+
   #filters {
     background-color: map-get($mat-primary, lighter);
   }
@@ -197,3 +197,6 @@ select#sort-by option {
   color: yellow !important;
   border: solid 1px yellow !important;
 }
+.high-contrast-bordered input{
+   color: black !important;
+ }
