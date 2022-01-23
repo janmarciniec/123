@@ -200,3 +200,21 @@ select#sort-by option {
 .high-contrast-bordered input{
    color: black !important;
  }
+
+.pagination{
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.high-contrast .pagination ::ng-deep .current {
+  background-color: red;
+}
+
+.high-contrast .pagination ::ng-deep .ngx-pagination {
+  background-color: yellow;
+}
+
+.high-contrast .pagination ::ng-deep .ngx-pagination ::ng-deep .disabled {
+  color: #c67e7e;
+  font-style: italic;
+}

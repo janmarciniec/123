@@ -1,19 +1,19 @@
 <div #fontChange id="content" [ngClass]="{'high-contrast' : contrast}">
     <app-toolbar></app-toolbar>
-  
+
     <div class="container mb-5">
-  
+
       <div class="row">
-        
+
         <div class="col-7 mt-5 pt-5">
           <p id="title" tabindex="0" role="heading">{{ 'Zachowane ogłoszenia' | translate }}</p>
         </div>
-      
+
         <div class="col-5">
           <div id="flexContent" #fontChange2>
-            
+
             <div class="spacer"></div>
-      
+
             <div id="search" #changeFont2 tabindex="0" aria-label="Search panel" [ngClass]="{'high-contrast-bordered' : contrast}">
               <!-- wyszukiwarka - input -->
               <mat-form-field appearance="fill" class="searchInput roundedLeftBorders">
@@ -28,11 +28,11 @@
         </div>
 
       </div>
-  
+
       <div class="row mt-3 p-3 align-items-center" id="filters" tabindex="0" aria-label="Filters panel" [ngClass]="{'high-contrast-bordered' : contrast}">
-        
+
         <div class="col-2"><p class="my-auto" id="header">{{ 'Filtry' | translate }}</p></div>
-        
+
         <div class="col-2">
           <label for="category" class="small-text mb-1">{{ 'Kategoria' | translate }}</label><br/>
           <select class="form-select form-select-lg" name="category" id="category" aria-label="Category">
@@ -41,7 +41,7 @@
             </option>
           </select>
         </div>
-        
+
         <div class="col-2">
           <label for="location" class="small-text mb-1">{{ 'Lokalizacja' | translate }}</label><br/>
           <select class="form-select form-select-lg" name="location" aria-label="Location">
@@ -50,7 +50,7 @@
             </option>
           </select>
         </div>
-        
+
         <div class="col-2">
           <label for="type" class="small-text mb-1">{{ 'Rodzaj oferty' | translate }}</label><br/>
           <select class="form-select form-select-lg" name="type" aria-label="Offer type">
@@ -59,23 +59,23 @@
             </option>
           </select>
         </div>
-        
+
         <div class="col-3 ms-5">
           <label for="price-from" class="small-text mb-1">{{ 'Cena' | translate }}</label><br/>
           <input type="text" name="price-from" size="3" placeholder="{{ 'Od' | translate }}" class="price" aria-label="Price">
           <span class="small-text ms-1 me-3">zł</span>
-  
+
           <input type="text" name="price-to" size="3" placeholder="{{ 'Do' | translate }}" class="price" aria-label="Price">
           <span class="small-text ms-1">zł</span>
         </div>
-  
+
       </div>
-    
+
       <div class="row justify-content-between mt-4 mb-3 d-flex flex-row">
         <div class="col-4">
           <button id="btn-delete" class="mt-2 py-2 center" (click)="removeFavourites()" [ngClass]="{'high-contrast-bordered' : contrast}"><mat-icon class="me-1">delete</mat-icon>{{ 'Usuń wszystkie' | translate }}</button>
         </div>
-  
+
         <div class="col-8 d-flex justify-content-end">
           <p class="small-text me-2 mt-3">{{ 'Sortuj według' | translate }}:</p>
           <select class="px-2" id="sort-by" name="sort-by" aria-label="Sort by" [ngClass]="{'high-contrast-bordered' : contrast}">
@@ -92,9 +92,9 @@
           <div class="col-2 p-1" tabindex="0" aria-label="Picture of the advertised item">
             <img src="{{ announcement.image }}" alt="advertised item" class="w-100 pointer" (click)="onSelect(announcement)">
           </div>
-    
+
           <div class="col-10">
-    
+
             <div class="row justify-content-between d-flex flex-row pt-3 ps-2 pe-2">
               <div class="col-10" tabindex="0">
                 <span class="big-text pointer" (click)="onSelect(announcement)">{{ announcement.title | translate }}</span>
@@ -103,7 +103,7 @@
                 <span class="big-text">{{ announcement.price }} {{ 'zł' | translate }}</span>
               </div>
             </div>
-    
+
             <div class="row justify-content-between d-flex flex-row mt-4 pt-4 ps-2 pe-1">
               <div class="col-6 pt-4" tabindex="0">
                 <span id="date">{{ announcement.location }}, {{ announcement.date | translate }}</span>
@@ -114,15 +114,16 @@
                 </span>
               </div>
             </div>
-    
+
           </div>
 
         </div>
       </span>
-  
+
       <div class="row mt-5" *ngIf="countFavourites() > 0">
         <div class="col-12 text-center" tabindex="0">
-          <pagination-controls (pageChange)="page = $event"></pagination-controls>
+          <pagination-controls nextLabel="{{'Następna' | translate }}" previousLabel="{{'Poprzednia' | translate }}" class="pagination"
+                               (pageChange)="page = $event" [ngClass]="{'high-contrast' : contrast}"></pagination-controls>
         </div>
       </div>
 
@@ -131,7 +132,7 @@
           {{ 'Brak zachowanych ogłoszeń' | translate }}.
         </div>
       </div>
-  
+
     </div>
     <app-footer></app-footer>
   </div>
