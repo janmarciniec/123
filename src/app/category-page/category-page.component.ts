@@ -1,7 +1,7 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Subscription} from "rxjs";
 import {GlobalVariableService} from "../GlobalVariableService";
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
 
 interface Map {
   value: string;
