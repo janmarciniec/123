@@ -131,3 +131,17 @@ body {
   border-radius: 3rem;
   padding: 1rem 0;
 }
+
+.high-contrast, .high-contrast > * {
+  background-color: black;
+  color: yellow !important;
+}
+
+.high-contrast-bordered {
+  background-color: black !important;
+  color: yellow !important;
+  border: solid 1px yellow !important;
+}
+.high-contrast-bordered input {
+  color: black !important;
+}

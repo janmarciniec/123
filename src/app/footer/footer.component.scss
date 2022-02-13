@@ -6,6 +6,7 @@
   width: 100%;
   background-color: #f1ebeb;
   padding-top: 1em;
+  border-top: solid 1px white;
 }
 
 .line1 {
@@ -63,4 +64,15 @@
 }
 .column4{
   left: 60%;
+}
+
+.high-contrast, .high-contrast > * {
+  background-color: black !important;
+  color: yellow !important;
+}
+
+.high-contrast-bordered {
+  background-color: black !important;
+  color: yellow !important;
+  border: solid 1px yellow;
 }

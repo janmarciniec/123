@@ -1,7 +1,7 @@
-<div #fontChange id="content">
+<div #fontChange id="content" [ngClass]="{'high-contrast' : contrast}">
   <app-toolbar></app-toolbar>
-  <div id="form">
-    <h1 class="title" tabindex="0"><span class="whiteFont">{{ 'LOGOWANIE' | translate }}</span></h1>
+  <div id="form" [ngClass]="{'high-contrast-bordered' : contrast}">
+    <h1 class="title" tabindex="0" [ngClass]="{'high-contrast' : contrast}"><span class="whiteFont">{{ 'LOGOWANIE' | translate }}</span></h1>
     <form class="example-form">
       <mat-form-field class="input" appearance="fill">
         <mat-label>{{ 'Adres e-mail' | translate }}</mat-label>
@@ -15,28 +15,28 @@
       <br/>
       <div class="flex">
         <div class="spacer-2"></div>
-        <button class="round pointer right" id="registerButton">{{ 'Zaloguj' | translate }}</button>
+        <button class="round pointer right" id="registerButton" [ngClass]="{'high-contrast-bordered' : contrast}">{{ 'Zaloguj' | translate }}</button>
         <div class="spacer"></div>
       </div>
       <div class="dividerContainer">
-        <div class="line"><mat-divider></mat-divider></div>
-        <div class="text mat-typography">{{ 'lub' | translate }}</div>
-        <div class="line"><mat-divider></mat-divider></div>
+        <div class="line" [ngClass]="{'high-contrast' : contrast}"><mat-divider></mat-divider></div>
+        <div class="text mat-typography" [ngClass]="{'high-contrast' : contrast}">{{ 'lub' | translate }}</div>
+        <div class="line" [ngClass]="{'high-contrast' : contrast}"><mat-divider></mat-divider></div>
       </div>
-      <div id="fbGoogleContainer">
-        <button mat-button id="facebookButton" style="padding: 1rem;">
+      <div id="fbGoogleContainer" >
+        <button mat-button id="facebookButton" style="padding: 1rem;" [ngClass]="{'high-contrast-bordered' : contrast}">
           <img id="facebookLogo" src="assets/img/facebookLogo.png" alt="Facebook logo" aria-hidden="true"> {{ 'Zaloguj przy użyciu konta Facebook' | translate }}
         </button>
-        <button mat-button id="googleButton" style="padding: 1rem;">
+        <button mat-button id="googleButton" style="padding: 1rem;" [ngClass]="{'high-contrast-bordered' : contrast}">
           <img id="googleLogo" src="assets/img/googleLogo.png" alt="Google logo" aria-hidden="true"> {{ 'Zaloguj przy użyciu konta Google' | translate }}
         </button>
       </div>
     </form>
   </div>
-  <div id="register">
+  <div id="register" [ngClass]="{'high-contrast-bordered' : contrast}">
     <h1 class="hasAccount">{{ 'Nie masz jeszcze konta' | translate }}?</h1>
-    <mat-divider class="divider"></mat-divider>
-    <a routerLink="/register" class="link getAccount" role="link">{{ 'Załóż konto' | translate }}!</a>
+    <mat-divider class="divider" [ngClass]="{'high-contrast' : contrast}"></mat-divider>
+    <a routerLink="/register" class="link getAccount" role="link" [ngClass]="{'high-contrast' : contrast}">{{ 'Załóż konto' | translate }}!</a>
   </div>
   <app-footer></app-footer>
 </div>

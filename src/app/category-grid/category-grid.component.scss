@@ -69,3 +69,12 @@
   border: solid 1px gray;
   border-radius: 5px;
 }
+
+.high-contrast {
+  color: yellow;
+}
+
+.high-contrast-bordered {
+  border: solid 2px yellow;
+  background-color: black !important;
+}

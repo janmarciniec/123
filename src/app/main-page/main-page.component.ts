@@ -1,6 +1,4 @@
-import {Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
-import {AppComponent} from "../app.component";
-import { Output, EventEmitter } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {GlobalVariableService} from "../GlobalVariableService";
 import {Subscription} from "rxjs";
 
@@ -18,7 +16,10 @@ export class MainPageComponent implements OnInit {
 
   // @ts-ignore
   subscription: Subscription;
+  // @ts-ignore
+  subscription2: Subscription;
   selectedLocation = 'poland';
+  contrast=false;
 
   constructor(public globalVariableService: GlobalVariableService) {
   }
@@ -33,6 +34,10 @@ export class MainPageComponent implements OnInit {
       .subscribe(fixed => {
         (this.fontChange.nativeElement as HTMLParagraphElement).style.fontSize = `${fixed}px`;
         (this.fontChange2.nativeElement as HTMLParagraphElement).style.fontSize = `${fixed}px`;
+      });
+    this.subscription2=this.globalVariableService.fixedContrast$
+      .subscribe(fixed=>{
+        this.contrast=fixed;
       });
   }
 

@@ -1,7 +1,7 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Subscription} from "rxjs";
 import {GlobalVariableService} from "../GlobalVariableService";
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
 
 interface Map {
   value: string;
@@ -28,6 +28,9 @@ export class CategoryPageComponent implements OnInit {
 
   // @ts-ignore
   subscription: Subscription;
+  // @ts-ignore
+  subscription2: Subscription;
+  contrast=false;
 
   // @ts-ignore
   @ViewChild('fontChange', { static: true }) fontChange: ElementRef;
@@ -44,6 +47,11 @@ export class CategoryPageComponent implements OnInit {
     this.subscription = this.globalVariableService.fixedFontSize$
       .subscribe(fixed => {
         (this.fontChange.nativeElement as HTMLParagraphElement).style.fontSize = `${fixed}px`;
+      });
+
+    this.subscription2=this.globalVariableService.fixedContrast$
+      .subscribe(fixed=>{
+        this.contrast=fixed;
       });
   }
 

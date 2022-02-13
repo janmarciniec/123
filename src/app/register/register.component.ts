@@ -1,8 +1,8 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {GlobalVariableService} from "../GlobalVariableService";
 import {Subscription} from "rxjs";
-import {FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
-import { Router} from '@angular/router';
+import {NgForm} from "@angular/forms";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -17,6 +17,9 @@ export class RegisterComponent implements OnInit {
   subscription: Subscription;
   user = {email: '', password: '', repeatedPassword: '', termsAccepted: false};
 
+  // @ts-ignore
+  subscription2: Subscription;
+  contrast=false;
 
   // @ts-ignore
   @ViewChild('fontChange', { static: true }) fontChange: ElementRef;
@@ -31,6 +34,10 @@ export class RegisterComponent implements OnInit {
     this.subscription = this.globalVariableService.fixedFontSize$
       .subscribe(fixed => {
         (this.fontChange.nativeElement as HTMLParagraphElement).style.fontSize = `${fixed}px`;
+      });
+    this.subscription2=this.globalVariableService.fixedContrast$
+      .subscribe(fixed=>{
+        this.contrast=fixed;
       });
   }
 

@@ -1,4 +1,4 @@
-<div #fontChange id="content">
+<div #fontChange id="content" [ngClass]="{'high-contrast' : contrast}">
     <app-toolbar></app-toolbar>
 
     <div *ngFor="let announcement of announcements">
@@ -6,8 +6,8 @@
 
             <div class="row mb-3">
                 <div class="col-12">
-                    <a href="/category" class="small-text green flex-start" role="navigation"><mat-icon>arrow_back_ios</mat-icon>{{ 'Wróć' | translate }}</a>
-                    <p class="small-text mt-1" >
+                    <a href="/category" class="small-text green flex-start" role="navigation" [ngClass]="{'high-contrast' : contrast}"><mat-icon>arrow_back_ios</mat-icon>{{ 'Wróć' | translate }}</a>
+                    <p class="small-text mt-1" [ngClass]="{'high-contrast' : contrast}">
                         <a href="/" role="navigation">{{ 'Wszystkie ogłoszenia' | translate }}</a> > <a href="/category" role="navigation">{{ 'Dom i ogród' | translate }}</a> > <a href="/category" role="navigation">{{ 'Meble' | translate }}</a> > <span class="green" tabindex="0" role="navigation">{{ announcement.title | translate }}</span>
                     </p>
                 </div>
@@ -18,14 +18,14 @@
                 <div class="col-7">
 
                     <div class="row">
-                        <div class="col-12 p-1 green-border" tabindex="0" aria-label="Picture of the advertised item">
+                        <div class="col-12 p-1 green-border" tabindex="0" aria-label="Picture of the advertised item" [ngClass]="{'high-contrast-bordered' : contrast}">
                             <!-- image -->
                             <img src="{{ announcement.image }}" alt="advertised item" class="w-100">
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-12 green-border mt-3 p-3">
+                        <div class="col-12 green-border mt-3 p-3" [ngClass]="{'high-contrast-bordered' : contrast}">
                             <!-- description -->
                             <p id="date" tabindex="0">{{ 'Data dodania' | translate }}: <span id="date-value">{{ announcement.date | translate }}</span></p>
                             <p id="title" tabindex="0">{{ announcement.title | translate }}</p>
@@ -46,21 +46,21 @@
 
                 </div>
 
-                <div class="col-4 green-border ml-3 p-3">
+                <div class="col-4 green-border ml-3 p-3" [ngClass]="{'high-contrast-bordered' : contrast}">
                     <!-- seller -->
                     <p tabindex="0">{{ 'Dodane przez' | translate }}:</p>
                     <p id="seller" class="flex-start" tabindex="0"><mat-icon>person_outline</mat-icon> {{ announcement.seller }}</p>
-                    <p id="more" class="mb-5" tabindex="0" role="link" aria-label="See more announcements from this user">{{ 'Zobacz więcej ogłoszeń' | translate }}</p>
+                    <p id="more" class="mb-5" tabindex="0" role="link" aria-label="See more announcements from this user" [ngClass]="{'high-contrast' : contrast}">{{ 'Zobacz więcej ogłoszeń' | translate }}</p>
 
-                    <button id="btn-number" class="btn me-1 py-2 mb-1">{{ 'Pokaż numer telefonu' | translate }}</button>
-                    <button id="btn-message" class="btn py-2 mb-1">{{ 'Wyślij wiadomość' | translate }}</button>
+                    <button id="btn-number" class="btn me-1 py-2 mb-1" [ngClass]="{'high-contrast-bordered' : contrast}">{{ 'Pokaż numer telefonu' | translate }}</button>
+                    <button id="btn-message" class="btn py-2 mb-1" [ngClass]="{'high-contrast-bordered' : contrast}">{{ 'Wyślij wiadomość' | translate }}</button>
 
                     <p id="location" class="mt-5" tabindex="0">{{ 'Lokalizacja' | translate }}:</p>
                     <p id="location-value" class="flex-start" tabindex="0"><mat-icon>place</mat-icon> {{ announcement.location }}</p>
 
                     <img src="{{ announcement.map }}" alt="map" class="w-100" tabindex="0" aria-label="Map of location">
 
-                    <button (click)="announcement.favourite = !announcement.favourite" id="btn-favourite" class="center mt-5 py-2">
+                    <button (click)="announcement.favourite = !announcement.favourite" id="btn-favourite" class="center mt-5 py-2" [ngClass]="{'high-contrast-bordered' : contrast}">
                         <span *ngIf="announcement.favourite == false" class="center"><mat-icon class="me-1">star_outline</mat-icon>{{ 'Dodaj do zachowanych' | translate }}</span>
                         <span *ngIf="announcement.favourite == true" class="center"><mat-icon class="me-1">star</mat-icon>{{ 'Usuń z zachowanych' | translate }}</span>
                     </button>

@@ -262,3 +262,14 @@ a:hover {
 .lowercase {
   text-transform: lowercase;
 }
+
+.high-contrast, .high-contrast > * {
+  background-color: black;
+  color: yellow !important;
+}
+
+.high-contrast-bordered {
+  background-color: black !important;
+  color: yellow !important;
+  border: solid 1px yellow !important;
+}

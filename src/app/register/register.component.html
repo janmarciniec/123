@@ -1,7 +1,7 @@
-<div #fontChange id="content">
+<div #fontChange id="content" [ngClass]="{'high-contrast' : contrast}">
 <app-toolbar></app-toolbar>
-  <div id="form">
-    <h1 class="title"><span class="whiteFont" tabindex="0">{{ 'REJESTRACJA' | translate }}</span></h1>
+  <div id="form" [ngClass]="{'high-contrast-bordered' : contrast}">
+    <h1 class="title"><span class="whiteFont" tabindex="0" [ngClass]="{'high-contrast' : contrast}">{{ 'REJESTRACJA' | translate }}</span></h1>
   <form class="form-group" #registerForm="ngForm">
     <mat-form-field class="input" appearance="fill" [(ngModel)]="user.email">
       <mat-label>{{ 'Adres e-mail' | translate }}</mat-label>
@@ -64,7 +64,7 @@
     </div>
     <br/>
     <section class="checkbox whiteFont">
-      <mat-checkbox class="example-margin" name="checked" value="false" [(ngModel)]="user.termsAccepted" #checked="ngModel" type="checkbox" required><span class="redStar">*</span> {{ 'Oświadczam, że znam i akceptuję postanowienia regulaminu' | translate }}.</mat-checkbox>
+      <mat-checkbox class="example-margin" name="checked" value="false" [(ngModel)]="user.termsAccepted" #checked="ngModel" type="checkbox" required [ngClass]="{'high-contrast' : contrast}"><span class="redStar" [ngClass]="{'high-contrast' : contrast}">*</span> {{ 'Oświadczam, że znam i akceptuję postanowienia regulaminu' | translate }}.</mat-checkbox>
     </section>
 
     <div *ngIf="checked.value===false && (checked.dirty || checked.touched)" class="redAlert">
@@ -73,19 +73,19 @@
 
 
     <section class="checkbox whiteFont">
-      <mat-checkbox class="example-margin">{{ 'Tak, chcę aby Gumtree oraz firmy z rodziny Adiventa powiadamiały mnie o wydarzeniach, aktualnościach, nowych funkcjach i promocjach' | translate }}.</mat-checkbox>
+      <mat-checkbox class="example-margin" [ngClass]="{'high-contrast' : contrast}">{{ 'Tak, chcę aby Gumtree oraz firmy z rodziny Adiventa powiadamiały mnie o wydarzeniach, aktualnościach, nowych funkcjach i promocjach' | translate }}.</mat-checkbox>
     </section>
     <div class="flex">
       <div class="spacer-2"></div>
-      <button class="round pointer right" id="loginButton" type="submit" (click)="onSubmit()">{{ 'Zarejestruj' | translate }}</button>
+      <button class="round pointer right" id="loginButton" type="submit" (click)="onSubmit()" [ngClass]="{'high-contrast-bordered' : contrast}">{{ 'Zarejestruj' | translate }}</button>
       <div class="spacer"></div>
     </div>
   </form>
   </div>
-  <div id="login">
+  <div id="login" [ngClass]="{'high-contrast-bordered' : contrast}">
     <h1 class="hasAccount">{{ 'Masz już konto' | translate }}?</h1>
-    <mat-divider class="divider"></mat-divider>
-    <a routerLink="/login" class="link getAccount" role="link">{{ 'Zaloguj się' | translate }}!</a>
+    <mat-divider class="divider" [ngClass]="{'high-contrast' : contrast}"></mat-divider>
+    <a routerLink="/login" class="link getAccount" role="link" [ngClass]="{'high-contrast' : contrast}">{{ 'Zaloguj się' | translate }}!</a>
   </div>
 <app-footer></app-footer>
 

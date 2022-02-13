@@ -2,7 +2,6 @@
   font-size: 1rem;
 }
 
-
 :host {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 20px;
@@ -123,4 +122,19 @@ svg.material-icons:not(:last-child) {
   min-height: 100vh;
   padding-bottom: 10rem;
   line-height: 1em;
+}
+
+.high-contrast, .high-contrast > * {
+  background-color: black;
+  color: yellow;
+}
+
+.high-contrast-bordered {
+  background-color: black !important;
+  color: yellow !important;
+  border: solid 1px yellow;
+}
+
+.high-contrast-bordered input{
+  color: black;
 }

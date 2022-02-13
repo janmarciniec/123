@@ -1,5 +1,27 @@
 @import "../../custom-theme.scss";
 
+::ng-deep .mat-checkbox-frame {
+  border-color: #030000
+}
+
+.contrast-theme-radiobutton{
+  color: white;
+  border-color: white;
+}
+
+.contrast-theme-radiobutton ::ng-deep .mat-radio-container{
+  background-color: white;
+}
+
+
+::ng-deep.mat-checkbox-disabled .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #ccc !important;
+}
+
+::ng-deep.mat-checkbox-disabled {
+  color: red !important;
+}
+
 .content {
   text-align: center;
   width: 94%;
@@ -153,4 +175,24 @@
   border-radius: 3rem;
   padding: 1rem 0;
   text-align: center;
+}
+
+.high-contrast {
+  background-color: black;
+  color: yellow !important;
+}
+
+.high-contrast-bordered {
+  background-color: black !important;
+  color: yellow !important;
+  border: solid 1px yellow !important;
+}
+
+.high-contrast-bordered input{
+  color: #070707 !important;
+}
+
+.high-contrast-background {
+  background-color: yellow !important;
+  color: black !important;
 }

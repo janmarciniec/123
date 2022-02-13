@@ -1,6 +1,12 @@
 
 @import "../../custom-theme.scss";
 
+.bar{
+  color: map-get($mat-primary, main);
+  background-color: map-get($mat-primary, main);
+  border-bottom: solid 1px white;
+}
+
 .toolbar {
   position: absolute;
   top: 0;
@@ -8,8 +14,8 @@
   right: 0;
   display: flex;
   align-items: center;
-  background-color: #1976d2;
-  color: white;
+//  background-color: #1976d2;
+ // color: white;
   font-weight: 600;
   padding: 1rem 0 1rem 0;
 }
@@ -48,7 +54,7 @@
 }
 .changeFontButton{
   size: 5rem;
-  color: white;
+ // color: white;
 }
 .changeFontButton img{
   opacity: 1;
@@ -92,7 +98,7 @@
 }
 
 .mainButton{
-  color: white;
+ // color: white;
   text-decoration: none;
 }
 
@@ -102,7 +108,8 @@
 
 a {
   text-decoration: none;
-  color: white;
+  //color: white;
+  color: map-get($mat-contrast, main);
 }
 
 select {
@@ -118,4 +125,15 @@ select {
 #lang-opt {
   color: map-get($mat-primary, main);
   font-weight: 500;
+}
+
+.high-contrast, .high-contrast > * {
+  background-color: black !important;
+  color: yellow !important;
+}
+
+.high-contrast-bordered {
+  background-color: black !important;
+  color: yellow !important;
+  border: solid 1px yellow !important;
 }

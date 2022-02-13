@@ -24,6 +24,9 @@ export class AnnouncementPageComponent implements OnInit {
 
   // @ts-ignore
   subscription: Subscription;
+  // @ts-ignore
+  subscription2: Subscription;
+  contrast=false;
 
   // @ts-ignore
   @ViewChild('fontChange', { static: true }) fontChange: ElementRef;
@@ -37,6 +40,11 @@ export class AnnouncementPageComponent implements OnInit {
     this.subscription = this.globalVariableService.fixedFontSize$
     .subscribe(fixed => {
       (this.fontChange.nativeElement as HTMLParagraphElement).style.fontSize = `${fixed}px`;
+    });
+
+    this.subscription2=this.globalVariableService.fixedContrast$
+    .subscribe(fixed=>{
+      this.contrast=fixed;
     });
 
     let tempId = this.route.snapshot.paramMap.get('id');
