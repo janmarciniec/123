@@ -17,13 +17,12 @@
   <a (click)="globalVariableService.changeFontSize('+')" class="changeFontButton" tabindex="0" role="button" aria-label="Increase font size"><mat-icon class="icon-display-3 icon" >text_increase</mat-icon></a>
 
   <mat-menu #appMenu="matMenu" class="menuButtons">
-    <button routerLink="/login" mat-menu-item class="menuButtons" [ngClass]="{'high-contrast-bordered' : contrast }">{{ 'Zaloguj' | translate }}</button>
-    <button routerLink="/register" mat-menu-item class="menuButtons" [ngClass]="{'high-contrast-bordered' : contrast }">{{ 'Zarejestruj' | translate }}</button>
-    <button routerLink="/personal-data" mat-menu-item class="menuButtons" [ngClass]="{'high-contrast-bordered' : contrast }">{{ 'Moje dane' | translate }}</button>
-    <button routerLink="/saved" mat-menu-item class="menuButtons" [ngClass]="{'high-contrast-bordered' : contrast }">{{ 'Zachowane ogłoszenia' | translate }}</button>
+    <button *ngIf="!isAuth" routerLink="/login" mat-menu-item class="menuButtons" [ngClass]="{'high-contrast-bordered' : contrast }">{{ 'Zaloguj' | translate }}</button>
+    <button *ngIf="!isAuth" routerLink="/register" mat-menu-item class="menuButtons" [ngClass]="{'high-contrast-bordered' : contrast }">{{ 'Zarejestruj' | translate }}</button>
+    <button *ngIf="isAuth" routerLink="/personal-data" mat-menu-item class="menuButtons" [ngClass]="{'high-contrast-bordered' : contrast }">{{ 'Moje dane' | translate }}</button>
+    <button *ngIf="isAuth" routerLink="/saved" mat-menu-item class="menuButtons" [ngClass]="{'high-contrast-bordered' : contrast }">{{ 'Zachowane ogłoszenia' | translate }}</button>
+    <button *ngIf="isAuth" (click)="securityService.logout()" mat-menu-item class="menuButtons" [ngClass]="{'high-contrast-bordered' : contrast }">{{ 'Wyloguj' | translate }}</button>
   </mat-menu>
-
-
   <button mat-raised-button [matMenuTriggerFor]="appMenu" class="menuButtons" [ngClass]="{'high-contrast-bordered' : contrast }">
     <mat-icon>account_circle</mat-icon>
     {{ 'Moje Gumtree' | translate }}

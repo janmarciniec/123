@@ -3,19 +3,19 @@
   <div id="form" [ngClass]="{'high-contrast-bordered' : contrast}">
     <h1 class="title" tabindex="0" [ngClass]="{'high-contrast' : contrast}"><span class="whiteFont">{{ 'LOGOWANIE' | translate }}</span></h1>
     <form class="example-form">
-      <mat-form-field class="input" appearance="fill">
+      <mat-form-field class="input" appearance="fill" >
         <mat-label>{{ 'Adres e-mail' | translate }}</mat-label>
-        <input matInput placeholder="{{ 'np.' | translate }} adres@mail.com" type="email">
+        <input matInput placeholder="{{ 'np.' | translate }} adres@mail.com" type="email" #login>
       </mat-form-field>
       <br/>
       <mat-form-field class="input" appearance="fill">
-        <mat-label>{{ 'Hasło' | translate }}</mat-label>
-        <input matInput type="password">
+        <mat-label>{{ 'Hasło' | translate }}</mat-label >
+        <input matInput type="password" #password>
       </mat-form-field>
       <br/>
       <div class="flex">
         <div class="spacer-2"></div>
-        <button class="round pointer right" id="registerButton" [ngClass]="{'high-contrast-bordered' : contrast}">{{ 'Zaloguj' | translate }}</button>
+        <button class="round pointer right" id="registerButton" [ngClass]="{'high-contrast-bordered' : contrast}" (click)="securityService.signInWithEmailAndPassword(login.value, password.value)">{{ 'Zaloguj' | translate }}</button>
         <div class="spacer"></div>
       </div>
       <div class="dividerContainer">

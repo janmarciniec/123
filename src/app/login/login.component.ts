@@ -1,6 +1,7 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Subscription} from "rxjs";
 import {GlobalVariableService} from "../GlobalVariableService";
+import {SecurityService} from "../SecurityService";
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   // @ts-ignore
   @ViewChild('fontChange', { static: true }) fontChange: ElementRef;
 
-  constructor(public globalVariableService: GlobalVariableService) {
+  constructor(public globalVariableService: GlobalVariableService,public securityService: SecurityService) {
   }
 
   ngOnInit(): void {

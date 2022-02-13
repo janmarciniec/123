@@ -30,7 +30,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 
 import {CategoryPageComponent} from './category-page/category-page.component';
-import {RouterModule, Routes} from '@angular/router';
+import {Routes} from '@angular/router';
 import {SubcategoriesComponent} from './subcategories/subcategories.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {AnnouncementPageComponent} from './announcement-page/announcement-page.component';
@@ -38,6 +38,8 @@ import {SavedPageComponent} from './saved-page/saved-page.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {MatDialogModule} from '@angular/material/dialog';
+import {DialogComponent} from './dialog/dialog.component';
 
 const appRoutes: Routes = [
   { path: 'category', component: CategoryPageComponent },
@@ -62,7 +64,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     CategoryPageComponent,
     SubcategoriesComponent,
     AnnouncementPageComponent,
-    SavedPageComponent
+    SavedPageComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -82,12 +85,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatDatepickerModule,
     MatFormFieldModule,
     MatNativeDateModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true }),
     NgxPaginationModule,
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    MatDialogModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

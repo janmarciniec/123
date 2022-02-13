@@ -3,6 +3,7 @@ import {GlobalVariableService} from "../GlobalVariableService";
 import {Subscription} from "rxjs";
 import {NgForm} from "@angular/forms";
 import {Router} from '@angular/router';
+import {SecurityService} from "../SecurityService";
 
 @Component({
   selector: 'app-register',
@@ -27,7 +28,7 @@ export class RegisterComponent implements OnInit {
   // @ts-ignore
   @ViewChild('registerForm', { static: true }) registerForm: NgForm;
 
-  constructor(public globalVariableService: GlobalVariableService, private router: Router) {
+  constructor(public globalVariableService: GlobalVariableService, private router: Router, private securityService: SecurityService) {
   }
 
   ngOnInit(): void {
@@ -45,7 +46,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(){
     if (this.registerForm.invalid) {
-      Object.keys( this.registerForm.controls).forEach(key => {
+      Object.keys(this.registerForm.controls).forEach(key => {
         this.registerForm.controls[key].markAsDirty();
       });
       return;
@@ -54,7 +55,8 @@ export class RegisterComponent implements OnInit {
     console.log(this.registerForm.value)
     console.log(this.registerForm.value.email)
     if(this.registerForm.valid){
-      this.router.navigate(["/login"]);
+      this.securityService.signUp(this.user.email, this.user.password)
+    //  this.router.navigate(["/login"]);
     }
   }
 

@@ -1,6 +1,7 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {GlobalVariableService} from "../GlobalVariableService";
 import {Subscription} from "rxjs";
+import {SecurityService} from "../SecurityService";
 
 @Component({
   selector: 'app-toolbar',
@@ -10,12 +11,14 @@ import {Subscription} from "rxjs";
 
 export class ToolbarComponent implements OnInit {
    //constructor(@Inject(AppComponent) private parent: AppComponent) { }
-  constructor(public globalVariableService: GlobalVariableService){}
+  constructor(public globalVariableService: GlobalVariableService, public securityService: SecurityService){}
 
   fontSize: number=14;
 
   // @ts-ignore
   lang: string;
+
+  isAuth: boolean =false;
 
   contrast: boolean=false;
 
@@ -36,6 +39,10 @@ export class ToolbarComponent implements OnInit {
       .subscribe(fixed=>{
         this.contrast=fixed;
       });
+    this.securityService.isAuth$.subscribe(sub => {
+      console.log(sub);
+      this.isAuth=sub;
+    })
 
       this.lang = localStorage.getItem('lang') || 'pl';
 
