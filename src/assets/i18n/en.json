@@ -376,5 +376,14 @@
     "17 listopada": "17th November",
     "16 listopada": "16th November",
     "Następna": "Next",
-    "Poprzednia": "Previous"
+    "Poprzednia": "Previous",
+    "Rejestracja": "Registration",
+    "Zostałeś zarejestrowany!": "You have been successfully registered!",
+    "Logowanie": "Login",
+    "Zostałeś zalogowany!": "You have successfully Logged in",
+    "Zły email lub hasło": "Wrong email or password",
+    "Wylogowanie": "Logout",
+    "Zostałeś pomyślnie wylogowany": "You have been successfully logged out",
+    "Wyloguj": "Log out"
+
 }

@@ -28,9 +28,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
-
 import {CategoryPageComponent} from './category-page/category-page.component';
-import {Routes} from '@angular/router';
 import {SubcategoriesComponent} from './subcategories/subcategories.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {AnnouncementPageComponent} from './announcement-page/announcement-page.component';
@@ -41,11 +39,6 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
 import {DialogComponent} from './dialog/dialog.component';
 
-const appRoutes: Routes = [
-  { path: 'category', component: CategoryPageComponent },
-  { path: 'announcement/:id', component: AnnouncementPageComponent },
-  { path: 'saved', component: SavedPageComponent }
-]
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);

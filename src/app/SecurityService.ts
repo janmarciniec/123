@@ -3,13 +3,14 @@ import {BehaviorSubject, Observable} from "rxjs";
 import {MatDialog} from "@angular/material/dialog";
 import {DialogComponent} from "./dialog/dialog.component";
 import {Router} from "@angular/router";
+import {TranslateService} from "@ngx-translate/core";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SecurityService{
 
-  constructor(public dialog: MatDialog, private router:Router) {
+  constructor(public dialog: MatDialog, private router:Router, private translator: TranslateService) {
   }
 
   private isAuth = new BehaviorSubject<boolean>(localStorage.getItem("username")!=null); // false is your initial value
@@ -33,7 +34,7 @@ export class SecurityService{
 
   signUp = (email: string, password: string)=>{
     console.log(email+" "+password);
-    this.openDialog("Rejestracja", "Zostałeś zarejestrowany!", "/");
+    this.openDialog(this.translator.instant("Rejestracja"), this.translator.instant("Zostałeś zarejestrowany!"), "/");
     localStorage.setItem(email, password);
   }
 
@@ -41,10 +42,10 @@ export class SecurityService{
 
     if(localStorage.getItem(email)!=null && localStorage.getItem(email)==password){
       this.setIsAuth=true;
-      this.openDialog("Logowanie", "Zostałeś zalogowany!", "/");
+      this.openDialog(this.translator.instant("Logowanie"), this.translator.instant("Zostałeś zalogowany!"), "/");
       localStorage.setItem("username",email);
     } else {
-      this.openDialog("Logowanie", "Zły email lub hasło", "/login");
+      this.openDialog(this.translator.instant("Logowanie"), this.translator.instant("Zły email lub hasło"), "/login");
     }
 
   }
@@ -52,7 +53,7 @@ export class SecurityService{
   logout = () => {
     localStorage.removeItem("username")
     this.setIsAuth=false;
-    this.openDialog("Wylogowanie", "Zostałeś pomyślnie wylogowany", "/login");
+    this.openDialog(this.translator.instant("Wylogowanie"), this.translator.instant("Zostałeś pomyślnie wylogowany"), "/login");
     };
 
     openDialog(title: String, message: String, redirectPath: String) {
